@@ -12,14 +12,14 @@ class DialogDemo
         string txt = "Очень приятно, " + name + "!";
         MessageBox.Show(txt, "Знакомство состоялось",MessageBoxButtons.OK,MessageBoxIcon.Information);*/
 
-        /*// При работе с консолью нужно в Properties проекта выставить Console Application
+        // При работе с консолью нужно в Properties проекта выставить Console Application
         string name_txt;
         Console.Title = "Давайте познакомимся";
         Console.Write("Как Вас зовут?");
         name_txt = Console.ReadLine();
         string txt_console = "Очень приятно, " + name_txt + "!";
         Console.Title = "Знакомство состоялось";
-        Console.WriteLine(txt_console);*/
+        Console.WriteLine(txt_console);
 
 
     }
