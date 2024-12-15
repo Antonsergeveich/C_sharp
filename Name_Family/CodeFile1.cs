@@ -29,11 +29,13 @@ class DialogName
         Console.WriteLine("Ваше имя: " + name + "\n" + "Ваше фамилия: " + surname+"\n"+"Ваш возраст: "+year);
 #endif
 
-        string name_and_year = Interaction.InputBox("Как Ваше имя и сколько Вам лет?","Ввод данных");
-        string year = string.Concat(name_and_year.Where(char.IsNumber));
-        string name = " "+name_and_year.Split()[0];
+        string name = Interaction.InputBox("Как Ваше имя?","Ввод данных");
+        string year = Interaction.InputBox("Сколько Вам лет?","Ввод данных");
+
+        //string year = string.Concat(name_and_year.Where(char.IsNumber));
+        //string name = " "+name_and_year.Split()[0];
         //string name = new String(name_and_year.Where(Char.IsLetter).ToArray());
-        string txt = "Ваше имя:"+name+"\n"+"Ваш возраст: "+year+"\n";
+        string txt = "Ваше имя: "+name+"\n"+"Ваш возраст: "+year+"\n";
         MessageBox.Show(txt,"Ваши данные");
 
     }
