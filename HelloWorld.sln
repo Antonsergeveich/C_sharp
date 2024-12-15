@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBox", "MessageBox\Me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reading numbers", "Reading numbers\Reading numbers.csproj", "{485945B0-8565-4696-A71D-7D3795FC6851}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Name_Family", "Name_Family\Name_Family.csproj", "{0C506B84-352E-4D32-8775-D36ACAAF75E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{485945B0-8565-4696-A71D-7D3795FC6851}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{485945B0-8565-4696-A71D-7D3795FC6851}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{485945B0-8565-4696-A71D-7D3795FC6851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C506B84-352E-4D32-8775-D36ACAAF75E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C506B84-352E-4D32-8775-D36ACAAF75E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C506B84-352E-4D32-8775-D36ACAAF75E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C506B84-352E-4D32-8775-D36ACAAF75E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
