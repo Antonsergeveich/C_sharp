@@ -119,10 +119,6 @@ class DialogName
         Console.WriteLine(txt); 
 #endif
 
-
-
-
-
     }
 }
 
