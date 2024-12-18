@@ -3,7 +3,7 @@
 //#define MESSAGEBOX_9
 //#define CONSOLE_9
 //#define MESSAGEBOX_10
-#define CONSOLE_10
+//#define CONSOLE_10
 
 using System;
 using Microsoft.VisualBasic;
@@ -91,6 +91,17 @@ class Sum
 			$"Разность двух чисел = {num_minus}"
 			); 
 #endif
-
+		int A = 'A';
+		Console.WriteLine("char 'A' = "+ A);
+		Console.WriteLine();
+		//int sum_int = 'A' + 'B';
+		//Console.WriteLine(sum_int);
+		//char sum_char = (char)('A' + 2);
+		//Console.WriteLine(sum_char);
+		//char res = (char)(4);
+		//Console.WriteLine(res);
+		for (int i = 65; i < 91; i++)
+			Console.WriteLine($"char {(char)i} = {i}");
+		
 	}
 }
