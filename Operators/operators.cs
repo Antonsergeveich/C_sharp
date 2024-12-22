@@ -1,11 +1,14 @@
 ﻿//#define OddEven
 //#define Hundreds
 //#define Cheking_for_three1
+//#define Cheking_three
 //#define Checking2
 //#define Checking3
 //#define Checking4
 //#define Checking5
 #define Checking6
+//#define Checking7
+
 
 using System;
 using Microsoft.VisualBasic;
@@ -14,6 +17,7 @@ using System.Threading;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 using System.Reflection;
+using System.Linq;
 
 
 
@@ -59,6 +63,27 @@ class Checking_for_three
 	}
 } 
 #endif
+#if Cheking_three
+class Checking_three
+{
+	static void Main()
+	{
+		string number = Interaction.InputBox("Введите число", "Проверка делится ли число на три");
+		int[] arr_number = new int[number.Length];
+		int sum = 0;
+		for (int i = 0; i < arr_number.Length; i++)
+		{
+			sum += int.Parse(number[i].ToString());
+		}
+		if (sum % 3 == 0)
+			MessageBox.Show($"Число: {number} делится на три без остатка", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		else MessageBox.Show($"Число: {number} не делится на три без остатка", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+	}
+	//number.ToCharArray().Select(c => int.Parse(c.ToString())).ToArray();
+	//number.Select(q=>int.Parse(new string(q,1))).ToArray();
+} 
+#endif
+
 #if Checking2
 class Cheking2
 {
@@ -120,11 +145,39 @@ class Checking5
 
 class Checking6
 {
+	//static void Main()
+	//{
+	//	int num = Int32.Parse(Interaction.InputBox("Введите положительное целое число", "Checking octal number system"));
+	//	string res = Convert.ToString(num,8);//перевод десятичного числа в восьмеричную систему счисления
+	//	int res_int = Convert.ToInt32(res);
+	//	int num_two = res_int / 10 % 10;
+	//	MessageBox.Show($"Число в восьмеричной системе счисления: {res}\nВторая справа цифра числа: {num_two}");
+	//}
 	static void Main()
 	{
-		int num = Int32.Parse(Interaction.InputBox("Введите положительное целое число", "Checking octal number system"));
-		string res = Convert.ToString(num,8);//перевод десятичного числа в восьмеричную систему счисления
-		MessageBox.Show(res);
+		string num = Interaction.InputBox("Введите положительное целое число", "Checking octal number system");
+		int length = num.Length;
+		string res = "";
+
+		while (length > 0)
+		{
+			res += Convert.ToString(Int32.Parse(num) % 8);
+			num = Convert.ToString(Convert.ToInt32(num) / 8);
+			length--;
+		}
+		char[] resArray = res.ToCharArray();
+		Array.Reverse(resArray);
+		string reversed_res = new string(resArray);
+		MessageBox.Show($"Число в восьмеричной системе счисления: {reversed_res}\nВторая справа цифра числа: {num}");
 	}
 }
+#endif
+#if Checking7
+class Checking7
+{
+	static void Main()
+	{
+
+	}
+} 
 #endif
