@@ -159,7 +159,7 @@ class Checking6
 		int length = num.Length;
 		string res = "";
 
-		while (length > 0)
+		while (length >= 0)
 		{
 			res += Convert.ToString(Int32.Parse(num) % 8);
 			num = Convert.ToString(Convert.ToInt32(num) / 8);
@@ -168,7 +168,8 @@ class Checking6
 		char[] resArray = res.ToCharArray();
 		Array.Reverse(resArray);
 		string reversed_res = new string(resArray);
-		MessageBox.Show($"Число в восьмеричной системе счисления: {reversed_res}\nВторая справа цифра числа: {num}");
+		char n = reversed_res[reversed_res.Length-2];
+		MessageBox.Show($"Число в восьмеричной системе счисления: {reversed_res}\nВторая справа цифра числа: {n}");
 	}
 }
 #endif
