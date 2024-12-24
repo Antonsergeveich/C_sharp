@@ -6,8 +6,8 @@
 //#define Checking3
 //#define Checking4
 //#define Checking5
-#define Checking6
-//#define Checking7
+//#define Checking6
+#define Checking7
 
 
 using System;
@@ -178,7 +178,14 @@ class Checking7
 {
 	static void Main()
 	{
-
+		int number = Int32.Parse(Interaction.InputBox("Введите число", "Input"));
+		string result = Convert.ToString(number,2);
+		//ulong the_third_bit_on_the_right = Convert.ToUInt32(result);
+		int three_bit = number >> 2;
+		string bit = Convert.ToString(three_bit,2);
+		MessageBox.Show($"Вы ввели десятичное число: {number}\n" +
+			$"Число в двоичном представлении: {result}\n" +
+			$"Третий бит справа: {bit}", "Result");
 	}
 } 
 #endif
