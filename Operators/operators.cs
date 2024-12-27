@@ -7,7 +7,8 @@
 //#define Checking4
 //#define Checking5
 //#define Checking6
-#define Checking7
+//#define Checking7
+#define Checking8
 
 
 using System;
@@ -145,6 +146,7 @@ class Checking5
 
 class Checking6
 {
+	#region 1
 	//static void Main()
 	//{
 	//	int num = Int32.Parse(Interaction.InputBox("Введите положительное целое число", "Checking octal number system"));
@@ -152,25 +154,46 @@ class Checking6
 	//	int res_int = Convert.ToInt32(res);
 	//	int num_two = res_int / 10 % 10;
 	//	MessageBox.Show($"Число в восьмеричной системе счисления: {res}\nВторая справа цифра числа: {num_two}");
-	//}
-	static void Main()
-	{
-		string num = Interaction.InputBox("Введите положительное целое число", "Checking octal number system");
-		int length = num.Length;
-		string res = "";
+	//} 
+	#endregion
+	#region 2
+	//static void Main()
+	//{
+	//	string num = Interaction.InputBox("Введите положительное целое число", "Checking octal number system");
+	//	int length = num.Length;
+	//	string res = "";
 
-		while (length >= 0)
-		{
-			res += Convert.ToString(Int32.Parse(num) % 8);
-			num = Convert.ToString(Convert.ToInt32(num) / 8);
-			length--;
-		}
-		char[] resArray = res.ToCharArray();
-		Array.Reverse(resArray);
-		string reversed_res = new string(resArray);
-		char n = reversed_res[reversed_res.Length-2];
-		MessageBox.Show($"Число в восьмеричной системе счисления: {reversed_res}\nВторая справа цифра числа: {n}");
-	}
+	//	while (length >= 0)
+	//	{
+	//		res += Convert.ToString(Int32.Parse(num) % 8);
+	//		num = Convert.ToString(Convert.ToInt32(num) / 8);
+	//		length--;
+	//	}
+	//	char[] resArray = res.ToCharArray();
+	//	Array.Reverse(resArray);
+	//	string reversed_res = new string(resArray);
+	//	char n = reversed_res[reversed_res.Length-2];
+	//	MessageBox.Show($"Число в восьмеричной системе счисления: {reversed_res}\nВторая справа цифра числа: {n}");
+	//} 
+	#endregion
+	#region 3
+	//static void Main()
+	//{
+	//	int number = Int32.Parse(Interaction.InputBox("Введите десятичное положительное число: ", "Input number"));
+	//	string octal = Convert.ToString(number, 8);
+	//	string result = Convert.ToString((number & 56) >> 3);
+	//	MessageBox.Show($"Вы ввели число: {number}\nЧисло в восьмеричном представлении: {octal}\nВторая цифра восьмеричного представления числа справа: {result}", "Результат", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+	//} 
+	#endregion
+	#region 4
+	//static void Main()
+	//{
+	//	int number = Int32.Parse(Interaction.InputBox("Введите положительное десятичное число: ","Ввод числа"));
+	//	string octal = Convert.ToString(number,8);
+	//	int result = (number / 8) % 8;
+	//	MessageBox.Show($"Вы ввели число: {number}\nЧисло в восьмеричном представлении: {octal}\nВторая цифра восьмеричного представления числа справа: {result}");
+	//} 
+	#endregion
 }
 #endif
 #if Checking7
@@ -179,13 +202,24 @@ class Checking7
 	static void Main()
 	{
 		int number = Int32.Parse(Interaction.InputBox("Введите число", "Input"));
-		string result = Convert.ToString(number,2);
-		//ulong the_third_bit_on_the_right = Convert.ToUInt32(result);
-		int three_bit = number >> 2;
-		string bit = Convert.ToString(three_bit,2);
+		string result = Convert.ToString(number, 2);
+		string bit = Convert.ToString((number >> 2) & 1);
 		MessageBox.Show($"Вы ввели десятичное число: {number}\n" +
-			$"Число в двоичном представлении: {result}\n" +
-			$"Третий бит справа: {bit}", "Result");
+		$"Число в двоичном представлении: {result}\n" +
+		$"Третий бит справа: {bit}", "Result");
 	}
 } 
+#endif
+#if Checking8
+class Checking8
+{
+	static void Main()
+	{
+		int number = Int32.Parse(Interaction.InputBox("Введите число", "Input"));
+		int num = number | (1 << 2);
+		MessageBox.Show($"Введённое число: {number}\n" +
+			$"Число в двоичном представлении: {Convert.ToString(number,2)}\n" +
+			$"Третий бит устанавливаем единицей: {Convert.ToString(num,2)}","Result");
+	}
+}
 #endif
