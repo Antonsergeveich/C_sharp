@@ -250,7 +250,7 @@ class Checking10
 	static void Main()
 	{
 		int number = Int32.Parse(Interaction.InputBox("Введите число: ","Input"));
-		int num = number ^ (1 << 2);
+		int num = number ^ (1 << 2); 
 		MessageBox.Show($"Введённое число: {number}\n" +
 			$"Число в бинарном представлении: {Convert.ToString(number,2)}\n" +
 			$"Второй бит меняем на противоположный: {Convert.ToString(num,2)}");
