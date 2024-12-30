@@ -8,7 +8,9 @@
 //#define Checking5
 //#define Checking6
 //#define Checking7
-#define Checking8
+//#define Checking8
+//#define Checking9
+#define Checking10
 
 
 using System;
@@ -219,7 +221,39 @@ class Checking8
 		int num = number | (1 << 2);
 		MessageBox.Show($"Введённое число: {number}\n" +
 			$"Число в двоичном представлении: {Convert.ToString(number,2)}\n" +
-			$"Третий бит устанавливаем единицей: {Convert.ToString(num,2)}","Result");
+			$"Третий бит устанавливаем единицей: {Convert.ToString(num,2)}","Result",
+			MessageBoxButtons.OK,MessageBoxIcon.Stop);
+	}
+}
+#endif
+#if Checking9
+class Checking9
+{
+	static void Main()
+	{
+		int number = Int32.Parse(Interaction.InputBox("Введите Число", "Input"));
+		int num = number & ~(1 << 3);
+		//int num = number | (1 << 3);
+		//num = number | (1 << n); // Установить n-й бит в единицу
+		//num = number & ~(1 << n); // Установить n-й бит в ноль
+		//https://alexgyver.ru/lessons/bitmath/
+		MessageBox.Show($"Введённое число: {number}\n" +
+			$"Число в бинарном представлении: {Convert.ToString(number,2)}\n" +
+			$"Четвёртый бит устанавливаем в ноль: {Convert.ToString(num, 2)}\n");
+			
+	}
+}
+#endif
+#if Checking10
+class Checking10
+{
+	static void Main()
+	{
+		int number = Int32.Parse(Interaction.InputBox("Введите число: ","Input"));
+		int num = number ^ (1 << 2);
+		MessageBox.Show($"Введённое число: {number}\n" +
+			$"Число в бинарном представлении: {Convert.ToString(number,2)}\n" +
+			$"Второй бит меняем на противоположный: {Convert.ToString(num,2)}");
 	}
 }
 #endif
