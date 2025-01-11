@@ -29,7 +29,7 @@ class AnotherSwitchDemo
 	static void Main()
 	{
 		int number;
-		string txt = "";
+		string txt = "Это число не попадает в диапазон от 1 до 9";
 		number = Int32.Parse(Interaction.InputBox("Введите целое число от 1 до 9: ", "Число"));
 		switch (number)
 		{
