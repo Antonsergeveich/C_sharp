@@ -1,5 +1,5 @@
 ﻿//#define WhileDemo
-
+//#define AnotherWhileDemo
 using System;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
@@ -20,17 +20,33 @@ class WhileDemo
 	}
 } 
 #endif
+#if AnotherWhileDemo
 class AnotherWhileDemo
 {
 	static void Main()
 	{
 		int n = 10, s = 0;
 		Console.Write("Сумма 1+3+5+...+{0}= ", 2 * n - 1);
-		while (n>0)
+		while (n > 0)
 		{
 			s += 2 * n - 1;
 			n--;
 		}
+		Console.WriteLine(s);
+	}
+} 
+#endif
+class DoWhileDemo
+{
+	static void Main()
+	{
+		int n = 10, k = 1, s = 0;
+		Console.Write("Сумма 1+3+5+...+{0} = ", 2*n-1);
+		do
+		{
+			s += 2 * k - 1;
+			k++;
+		} while (k <= n);
 		Console.WriteLine(s);
 	}
 }
