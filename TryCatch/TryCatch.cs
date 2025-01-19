@@ -1,9 +1,13 @@
 ﻿//#define TryCatchDemo
-#define Chapter_3_1
+//#define Chapter_3_1
+#define Chapter_3_2
 
 using System;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+
+namespace TryCatch
+{
 
 #if TryCatchDemo
 class TryCatchDemo
@@ -31,7 +35,7 @@ class Chapter_3_1
 	{
 		try
 		{
-			int number = Int32.Parse(Interaction.InputBox("Введите целое число", "Input"));
+			int number = Int32.Parse(Interaction.InputBox("Введите целое число которое делится на три и семь без остатка.\nHint: This is a number - 21", "Input"));
 			if(number % 3 == 0 && number % 7 == 0)
 			{
 				MessageBox.Show($"Число {number} делится на три и семь без остатка","Result",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -49,4 +53,25 @@ class Chapter_3_1
 	}
 }
 
+#endif
+#if Chapter_3_2
+	class Chapter_3_2
+	{
+		static void Main()
+		{
+			try
+			{
+				double num1 = Double.Parse(Interaction.InputBox("Введите первое число: ", "Ввод первого числа"));
+				double num2 = Double.Parse(Interaction.InputBox("Введите второе число: ", "Ввод второго числа"));
+				if (num1 > num2) MessageBox.Show($"Первое число {num1} больше второго {num2}", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else if (num1 < num2) MessageBox.Show($"Второе число {num2} больше чем первое число {num1}", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else if (num1 == num2) MessageBox.Show($"Числа {num1} и {num2} равны", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			catch
+			{
+				MessageBox.Show("Вы ввели не число", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+	}
+}
 #endif
