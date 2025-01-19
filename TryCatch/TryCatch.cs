@@ -81,16 +81,23 @@ class Chapter_3_1
 	{
 		static void Main()
 		{
+			double sum = 0;
 			try
 			{
 				double one_number = Double.Parse(Interaction.InputBox("Введите первое число: ", "Entering a number"));
 				double two_number = Double.Parse(Interaction.InputBox("Введите второе число: ", "Entering a number"));
-				
+				sum = one_number + two_number;
+				while (two_number > 0)
+				{
+					MessageBox.Show($"Сумма введённых Вами чисел равна: {sum}", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					two_number = Double.Parse(Interaction.InputBox("Введите число: ", "Entering a number"));
+					sum += two_number;
+				}
 			}
 			catch
 			{
 				MessageBox.Show("Вы не ввели число, программа закончила работу\n" +
-					"Сумма введённых Вами чисел равна: ", "End",MessageBoxButtons.OK,MessageBoxIcon.Information);
+					$"Сумма введённых Вами чисел равна: {sum}", "End", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 
 		}
