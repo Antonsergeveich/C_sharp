@@ -1,6 +1,7 @@
 ﻿//#define TryCatchDemo
 //#define Chapter_3_1
-#define Chapter_3_2
+//#define Chapter_3_2
+#define Chapter_3_3
 
 using System;
 using System.Windows.Forms;
@@ -71,6 +72,27 @@ class Chapter_3_1
 			{
 				MessageBox.Show("Вы ввели не число", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+	}
+}
+#endif
+#if Chapter_3_3
+	class Chapter_3_3
+	{
+		static void Main()
+		{
+			try
+			{
+				double one_number = Double.Parse(Interaction.InputBox("Введите первое число: ", "Entering a number"));
+				double two_number = Double.Parse(Interaction.InputBox("Введите второе число: ", "Entering a number"));
+				
+			}
+			catch
+			{
+				MessageBox.Show("Вы не ввели число, программа закончила работу\n" +
+					"Сумма введённых Вами чисел равна: ", "End",MessageBoxButtons.OK,MessageBoxIcon.Information);
+			}
+
 		}
 	}
 }
