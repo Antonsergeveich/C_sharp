@@ -1,7 +1,8 @@
 ﻿//#define TryCatchDemo
 //#define Chapter_3_1
 //#define Chapter_3_2
-#define Chapter_3_3
+//#define Chapter_3_3_1
+#define Chapter_3_3_2
 
 using System;
 using System.Windows.Forms;
@@ -76,7 +77,7 @@ class Chapter_3_1
 	}
 }
 #endif
-#if Chapter_3_3
+#if Chapter_3_3_1
 	class Chapter_3_3
 	{
 		static void Main()
@@ -87,20 +88,46 @@ class Chapter_3_1
 				double one_number = Double.Parse(Interaction.InputBox("Введите первое число: ", "Entering a number"));
 				double two_number = Double.Parse(Interaction.InputBox("Введите второе число: ", "Entering a number"));
 				sum = one_number + two_number;
-				while (two_number > 0)
+				do
 				{
 					MessageBox.Show($"Сумма введённых Вами чисел равна: {sum}", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					two_number = Double.Parse(Interaction.InputBox("Введите число: ", "Entering a number"));
 					sum += two_number;
-				}
+				} while (two_number != 0);
 			}
 			catch
 			{
 				MessageBox.Show("Вы не ввели число, программа закончила работу\n" +
 					$"Сумма введённых Вами чисел равна: {sum}", "End", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
-
 		}
 	}
 }
 #endif
+#if Chapter_3_3_2
+	class Chapter_3_3_2
+	{
+		static void Main()
+		{
+			var sum = 0;
+			var number = 0;
+			do
+			{
+				number = int.Parse(Interaction.InputBox("Введите число: ", "Entering a number"));
+				while (!int.TryParse(Convert.ToString(number), out number));
+				sum += number;
+			} while (number != 0);
+			MessageBox.Show($"{sum}");
+		}
+	}
+}
+#endif
+//var sum = 0;
+//var n = 0;
+//do
+//{
+//	Console.Write("=>");
+//	while (!int.TryParse(Console.ReadLine(), out n)) Console.Write("=>");
+//	sum += n;
+//} while (n != 0);
+//Console.WriteLine(sum);
