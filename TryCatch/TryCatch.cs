@@ -2,7 +2,7 @@
 //#define Chapter_3_1
 //#define Chapter_3_2
 //#define Chapter_3_3_1
-#define Chapter_3_3_2
+//#define Chapter_3_3_2
 
 using System;
 using System.Windows.Forms;
@@ -94,8 +94,9 @@ class Chapter_3_1
 					two_number = Double.Parse(Interaction.InputBox("Введите число: ", "Entering a number"));
 					sum += two_number;
 				} while (two_number != 0);
+				throw new Exception();
 			}
-			catch
+			catch 
 			{
 				MessageBox.Show("Вы не ввели число, программа закончила работу\n" +
 					$"Сумма введённых Вами чисел равна: {sum}", "End", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,6 +104,30 @@ class Chapter_3_1
 		}
 	}
 }
+//Оператор throw в C# позволяет генерировать исключения вручную.
+//То есть с его помощью можно создать исключение и вызвать его в процессе выполнения.
+//После оператора throw указывается объект исключения, через конструктор которого можно передать сообщение об ошибке.
+//Затем в блоке catch сгенерированное исключение будет обработано.
+//Существует и другая форма использования оператора throw, когда после него не указывается объект исключения.
+//В подобном виде оператор throw может использоваться только в блоке catch.
+//Например, в программе, где происходит ввод имени пользователя, и нужно, чтобы, если длина имени меньше 2 символов, то возникало исключение.
+//try
+//{
+//	Console.Write("Введите имя: ");
+//	string? name = Console.ReadLine();
+//	if (name == null || name.Length < 2)
+//	{
+//		throw new Exception("Длина имени меньше 2 символов");
+//	}
+//	else
+//	{
+//		Console.WriteLine($"Ваше имя: {name}");
+//	}
+//}
+//catch (Exception e)
+//{
+//	Console.WriteLine($"Ошибка: {e.Message}");
+//}
 #endif
 #if Chapter_3_3_2
 	class Chapter_3_3_2
@@ -120,14 +145,5 @@ class Chapter_3_1
 			MessageBox.Show($"{sum}");
 		}
 	}
-}
 #endif
-//var sum = 0;
-//var n = 0;
-//do
-//{
-//	Console.Write("=>");
-//	while (!int.TryParse(Console.ReadLine(), out n)) Console.Write("=>");
-//	sum += n;
-//} while (n != 0);
-//Console.WriteLine(sum);
+}
