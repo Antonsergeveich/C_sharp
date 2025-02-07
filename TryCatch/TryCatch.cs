@@ -3,6 +3,8 @@
 //#define Chapter_3_2
 //#define Chapter_3_3_1
 //#define Chapter_3_3_2
+//#define Chapter_3_4_1
+//#define Chapter_3_4_2
 
 using System;
 using System.Windows.Forms;
@@ -146,4 +148,63 @@ class Chapter_3_1
 		}
 	}
 #endif
+#if Chapter_3_4_1
+	class Chapter_3_4_1
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Введите число от 1 до 7");
+				int number = int.Parse(Console.ReadLine());
+				switch (number)
+				{
+					case 1: Console.WriteLine("MONDAY - понедельник"); break;
+					case 2: Console.WriteLine("TUESDAY - вторник"); break;
+					case 3: Console.WriteLine("WEDNESDAY - среда"); break;
+					case 4: Console.WriteLine("THURSDAY - четверг"); break;
+					case 5: Console.WriteLine("FRIDAY - пятница"); break;
+					case 6: Console.WriteLine("SATURDAY - суббота"); break;
+					case 7: Console.WriteLine("SUNDAY - воскресенье"); break;
+					default: Console.WriteLine("There is no such day - Такого дня нет"); break;
+				}
+			}
+			catch (Exception)
+			{
+				Console.WriteLine("Error");
+			}
+		}
+	}
+#endif
+#if Chapter_3_4_2
+	class Chapter_3_4_2
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Введите число от 1 до 7");
+				int number = int.Parse(Console.ReadLine());
+				switch (number)
+				{
+					case 1: Console.WriteLine("MONDAY - понедельник"); break;
+					case 2: Console.WriteLine("TUESDAY - вторник"); break;
+					case 3: Console.WriteLine("WEDNESDAY - среда"); break;
+					case 4: Console.WriteLine("THURSDAY - четверг"); break;
+					case 5: Console.WriteLine("FRIDAY - пятница"); break;
+					case 6: Console.WriteLine("SATURDAY - суббота"); break;
+					case 7: Console.WriteLine("SUNDAY - воскресенье"); break;
+					default:
+						Console.WriteLine("There is no such day - Такого дня нет"); break;
+						throw new Exception();
+				}
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine($"Ошибка: {e.Message}");
+			}
+		}
+	}
+#endif
+
 }
