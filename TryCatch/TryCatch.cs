@@ -5,10 +5,13 @@
 //#define Chapter_3_3_2
 //#define Chapter_3_4_1
 //#define Chapter_3_4_2
+//#define Chapter_3_5_1
+#define Chapter_3_5_2
 
 using System;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+
 
 namespace TryCatch
 {
@@ -206,5 +209,48 @@ class Chapter_3_1
 		}
 	}
 #endif
-
+#if Chapter_3_5_1
+	class Chapter_3_5_1
+	{
+		static void Main()
+		{
+			Console.WriteLine("Enter the day of the week: ");
+			string day_of_the_week = Console.ReadLine();
+			day_of_the_week = day_of_the_week.ToUpper(); // Все символы в верхний регистр
+			int number = 0;
+			if (day_of_the_week == "MONDAY") number = 1;
+			else if (day_of_the_week == "TUESDAY") number = 2;
+			else if (day_of_the_week == "WEDNESDAY") number = 3;
+			else if (day_of_the_week == "THURSDAY") number = 4;
+			else if (day_of_the_week == "FRIDAY") number = 5;
+			else if (day_of_the_week == "SATURDAY") number = 6;
+			else if (day_of_the_week == "SUNDAY") number = 7;
+			else Console.WriteLine("Такого дня нет");
+			if (number != 0) Console.WriteLine(number);
+		}
+	}
+#endif
+#if Chapter_3_5_2
+	class Chapter_3_5_1
+	{
+		static void Main()
+		{
+			Console.WriteLine("Enter the day of the week: ");
+			string weekday = Console.ReadLine();
+			weekday = weekday.ToUpper();
+			string dw = " день недели";
+			switch (weekday)
+			{
+				case "MONDAY": Console.WriteLine(1 + dw); break;
+				case "TUESDAY": Console.WriteLine(2 + dw); break;
+				case "WEDNESDAY": Console.WriteLine(3 + dw); break;
+				case "THURSDAY": Console.WriteLine(4 + dw); break;
+				case "FRIDAY": Console.WriteLine(5 + dw); break;
+				case "SATURDAY": Console.WriteLine(6 + dw); break;
+				case "SUNDAY": Console.WriteLine(7 + dw); break;
+				default: Console.WriteLine("Такого дня нет"); break;
+			}
+		}
+	}
+#endif
 }
