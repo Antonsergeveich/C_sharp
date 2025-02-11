@@ -8,7 +8,8 @@
 //#define Chapter_3_5_1
 //#define Chapter_3_5_2
 //#define Chapter_3_6_1
-#define Chapter_3_6_2
+//#define Chapter_3_6_2
+#define Chapter_3_6_3
 
 using System;
 using System.Windows.Forms;
@@ -305,7 +306,32 @@ class Chapter_3_1
 			{
 				Console.WriteLine("Error: The figure was not found!");
 			}
-			
+		}
+	}
+#endif
+#if Chapter_3_6_3
+	class Chapter_3_6_3
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Напишите количество слагаемых\n" +
+								"\"1+3+5+7+9...2n-1\n\" для вычисления суммы нечётных чисел");
+				int quantity = Int32.Parse(Console.ReadLine());
+				int n = quantity;
+				int sum = 0;
+				for (; n > 0; n--)
+				{
+					sum += 2 * n - 1;
+				}
+				Console.WriteLine($"Колличество нечётных чисел:{quantity}\n" +
+						$"Сумма нечётных чисел: {sum}");
+			}
+			catch
+			{
+				Console.WriteLine("Error: The figure was not found!");
+			}
 		}
 	}
 #endif
