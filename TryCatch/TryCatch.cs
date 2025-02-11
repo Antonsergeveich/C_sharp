@@ -6,7 +6,9 @@
 //#define Chapter_3_4_1
 //#define Chapter_3_4_2
 //#define Chapter_3_5_1
-#define Chapter_3_5_2
+//#define Chapter_3_5_2
+//#define Chapter_3_6_1
+#define Chapter_3_6_2
 
 using System;
 using System.Windows.Forms;
@@ -250,6 +252,60 @@ class Chapter_3_1
 				case "SUNDAY": Console.WriteLine(7 + dw); break;
 				default: Console.WriteLine("Такого дня нет"); break;
 			}
+		}
+	}
+#endif
+#if Chapter_3_6_1
+	class Chapter_3_6_1
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Напишите количество слагаемых\n" +
+						"\"1+3+5+7+9+11+...+2n-1\" для вычисления суммы нечётных чисел:");
+				int quantity = Int32.Parse(Console.ReadLine());
+				int n = quantity;
+				int sum = 0;
+				while (n > 0)
+				{
+					sum += 2 * n - 1;
+					n--;
+				}
+				Console.WriteLine($"Количество цифр: {quantity}\nСумма нечётных чисел: {sum}");
+			}
+			catch 
+			{
+				Console.WriteLine("Error: The figure was not found!");
+			}
+		}
+	}
+#endif
+#if Chapter_3_6_2
+	class Chapter_3_6_2
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Напишите количество слагаемых\n" +
+						"\"1+3+5+7+9...2n-1\n\" для вычисления суммы нечётных чисел");
+				int quantity = Int32.Parse(Console.ReadLine());
+				int n = quantity;
+				int sum = 0;
+				do
+				{
+					sum += 2 * n - 1;
+					n--;
+				} while (n > 0);
+				Console.WriteLine($"Колличество нечётных чисел:{quantity}\n" +
+					$"Сумма нечётных чисел: {sum}");
+			}
+			catch 
+			{
+				Console.WriteLine("Error: The figure was not found!");
+			}
+			
 		}
 	}
 #endif
