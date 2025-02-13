@@ -9,7 +9,12 @@
 //#define Chapter_3_5_2
 //#define Chapter_3_6_1
 //#define Chapter_3_6_2
-#define Chapter_3_6_3
+//#define Chapter_3_6_3
+//#define Chapter_3_7_1
+//#define Chapter_3_7_2
+//#define Chapter_3_7_3
+//#define Chapter_3_7_4
+#define Chapter_3_7_5_recursion
 
 using System;
 using System.Windows.Forms;
@@ -332,6 +337,182 @@ class Chapter_3_1
 			{
 				Console.WriteLine("Error: The figure was not found!");
 			}
+		}
+	}
+#endif
+#if Chapter_3_7_1
+	class Chapter_3_7_1
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Calculate the sum of the squares of the natural numbers");
+				Console.WriteLine("Enter the first natural number: ");
+				int one = Int32.Parse(Console.ReadLine());
+				Console.WriteLine("Enter the second natural number: ");
+				int two = Int32.Parse(Console.ReadLine());
+				if (one > two)
+				{
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine("Error. The first number is greater than the second");
+					return;
+				}
+				int sum = 0;
+				while (one <= two)
+				{
+					sum += one * one;
+					one++;
+				}
+				Console.ForegroundColor = ConsoleColor.Green;
+				Console.WriteLine($"The sum of the squares of the natural numbers is: {sum}");
+			}
+			catch 
+			{
+				Console.ForegroundColor= ConsoleColor.Red;
+				Console.WriteLine("You didn't enter a number!!!");
+			}
+		}
+	}
+#endif
+#if Chapter_3_7_2
+	class Chapter_3_7_2
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Calculate the sum of the squares of the natural numbers");
+				Console.WriteLine("Enter the first natural number: ");
+				int one = Int32.Parse(Console.ReadLine());
+				Console.WriteLine("Enter the second natural number: ");
+				int two = Int32.Parse(Console.ReadLine());
+				if (one > two)
+				{
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine("Error. The first number is greater than the second");
+					return;
+				}
+				int sum = 0;
+				do
+				{
+					sum += one * one;
+					one++;
+				} while (one <= two);
+				Console.ForegroundColor = ConsoleColor.Green;
+				Console.WriteLine($"The sum of the squares of the natural numbers is: {sum}");
+			}
+			catch
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("You didn't enter a number!!!");
+			}
+		}
+	}
+#endif
+#if Chapter_3_7_3
+	class Chapter_3_7_3
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Calculate the sum of the squares of the natural numbers");
+				Console.WriteLine("Enter the first natural number: ");
+				int one = Int32.Parse(Console.ReadLine());
+				Console.WriteLine("Enter the second natural number: ");
+				int two = Int32.Parse(Console.ReadLine());
+				if (one > two)
+				{
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine("Error. The first number is greater than the second");
+					return;
+				}
+				int sum = 0;
+				for (int i = one; i <= two; i++)
+				{
+					sum += i * i;
+				}
+				Console.ForegroundColor = ConsoleColor.Green;
+				Console.WriteLine($"The sum of the squares of the natural numbers is: {sum}");
+			}
+			catch
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("You didn't enter a number!!!");
+			}
+		}
+	}
+#endif
+#if Chapter_3_7_4
+	class Chapter_3_7_4
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Calculate the sum of the squares of the natural numbers");
+				Console.WriteLine("Enter the first natural number: ");
+				int one = Int32.Parse(Console.ReadLine());
+				Console.WriteLine("Enter the second natural number: ");
+				int two = Int32.Parse(Console.ReadLine());
+				if (one > two)
+				{
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine("Error. The first number is greater than the second");
+					return;
+				}
+				Console.ForegroundColor = ConsoleColor.Green;
+				Console.WriteLine($"The sum of the squares of the natural numbers is: {snt(one, two)}");
+			}
+			catch 
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("You didn't enter a number!!!");
+			}
+		}
+		static int snt(int one, int two)
+		{
+			int sum = 0;
+			for (int i = one; i <= two; i++)
+			{
+				sum += Convert.ToInt32(Math.Pow(i, 2));
+			}
+			return sum;
+		}
+	}
+#endif
+#if Chapter_3_7_5_recursion
+	class Chapter_3_7_5_recursion
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.WriteLine("Calculate the sum of the squares of the natural numbers");
+				Console.WriteLine("Enter the first natural number: ");
+				int one = Int32.Parse(Console.ReadLine());
+				Console.WriteLine("Enter the second natural number: ");
+				int two = Int32.Parse(Console.ReadLine());
+				if (one > two)
+				{
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine("Error. The first number is greater than the second");
+					return;
+				}
+				Console.ForegroundColor = ConsoleColor.Green;
+				Console.WriteLine($"The sum of the squares of the natural numbers is: {Snt(one, two)}");
+			}
+			catch
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("You didn't enter a number!!!");
+			}
+		}
+		static int Snt(int one, int two)
+		{
+			if(one >= two)return two;
+			return Snt(one, two-1) + two * two;
 		}
 	}
 #endif
