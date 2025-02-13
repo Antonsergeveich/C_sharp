@@ -511,8 +511,8 @@ class Chapter_3_1
 		}
 		static int Snt(int one, int two)
 		{
-			if(one == two)return two;
-			return   two * two + Snt(one, two - 1);
+			if(two < one)return two - one + 1;
+			return  two * two + Snt(one, two - 1);
 		}
 	}
 #endif
