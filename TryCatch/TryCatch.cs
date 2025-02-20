@@ -14,7 +14,10 @@
 //#define Chapter_3_7_2
 //#define Chapter_3_7_3
 //#define Chapter_3_7_4
-#define Chapter_3_7_5_recursion
+//#define Chapter_3_7_5_recursion
+//#define Chapter_3_8_1
+//#define Chapter_3_8_2
+#define Chapter_3_8_3
 
 using System;
 using System.Windows.Forms;
@@ -513,6 +516,76 @@ class Chapter_3_1
 		{
 			if(two < one)return two - one + 1;
 			return  two * two + Snt(one, two - 1);
+		}
+	}
+#endif
+#if Chapter_3_8_1
+	class Chapter_3_8_1
+	{
+		static void Main()
+		{
+			Console.WriteLine("Enter the number of numbers in the fibonacci sequence: ");
+			int quantity = Int32.Parse(Console.ReadLine());
+			int result = 3;
+			int one = 1;
+			int two = 1;
+			int sum = 0;
+			Console.Write("1 1");
+			while(result <= quantity)
+			{
+				sum = one + two;
+				Console.Write($" {sum}");
+				one = two;
+				two = sum;
+				result++;
+			}
+			Console.WriteLine();
+		}
+	}
+#endif
+#if Chapter_3_8_2
+	class Chapter_3_8_2
+	{
+		static void Main()
+		{
+			Console.WriteLine("Enter the number of numbers in the fibonacci sequence: ");
+			int quantity = Int32.Parse(Console.ReadLine());
+			int result = 3;
+			int one = 1;
+			int two = 1;
+			int sum = 0;
+			Console.Write("1 1");
+			do
+			{
+				sum = one + two;
+				Console.Write($" {sum}");
+				one = two;
+				two = sum;
+				result++;
+			} while (result <= quantity);
+				Console.WriteLine();
+		}
+	}
+#endif
+#if Chapter_3_8_3
+	class Chapter_3_8_3
+	{
+		static void Main()
+		{
+			Console.WriteLine("Enter the number of numbers in the fibonacci sequence: ");
+			int quantity = Int32.Parse(Console.ReadLine());
+			int one = 1;
+			int two = 1;
+			int sum = 0;
+			Console.Write("1 1");
+			for (int i = 3; i <= quantity; i++)
+			{
+				sum = one + two;
+				Console.Write($" {sum}");
+				one = two;
+				two = sum;
+			}
+			Console.WriteLine();
 		}
 	}
 #endif
