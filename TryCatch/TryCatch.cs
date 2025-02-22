@@ -17,7 +17,10 @@
 //#define Chapter_3_7_5_recursion
 //#define Chapter_3_8_1
 //#define Chapter_3_8_2
-#define Chapter_3_8_3
+//#define Chapter_3_8_3
+//#define Chapter_3_9_1
+//#define Chapter_3_9_2
+#define Chapter_3_9_3
 
 using System;
 using System.Windows.Forms;
@@ -586,6 +589,75 @@ class Chapter_3_1
 				two = sum;
 			}
 			Console.WriteLine();
+		}
+	}
+#endif
+#if Chapter_3_9_1
+	class Chapter_3_9_1
+	{
+		static void Main()
+		{
+			Console.Write("Enter the first integer: ");
+			int first = Int32.Parse(Console.ReadLine());
+			Console.Write("Enter the second integer: ");
+			int second = Int32.Parse(Console.ReadLine());
+			if (first > second)
+			{
+				int buffer = first;
+				first = second; 
+				second = buffer;
+			}
+			for (int i = first;i <= second; i++)
+			{
+				Console.WriteLine(i);
+			}
+
+		}
+	}
+#endif
+#if Chapter_3_9_2
+	class Chapter_3_9_2
+	{
+		static void Main()
+		{
+			Console.Write("Enter the first integer: ");
+			int first = Int32.Parse(Console.ReadLine());
+			Console.Write("Enter the second integer: ");
+			int second = Int32.Parse(Console.ReadLine());
+			if (first > second)
+			{
+				int buffer = first;
+				first = second;
+				second = buffer;
+			}
+			while (first <= second)
+			{
+				Console.WriteLine(first);
+				first++;
+			}
+		}
+	}
+#endif
+#if Chapter_3_9_3
+	class Chapter_3_9_3
+	{
+		static void Main()
+		{
+			Console.Write("Enter the first integer: ");
+			int first = Int32.Parse(Console.ReadLine());
+			Console.Write("Enter the second integer: ");
+			int second = Int32.Parse(Console.ReadLine());
+			if (first > second)
+			{
+				int buffer = first;
+				first = second;
+				second = buffer;
+			}
+			do
+			{
+				Console.WriteLine(first);
+				first++;
+			} while (first<=second);
 		}
 	}
 #endif
