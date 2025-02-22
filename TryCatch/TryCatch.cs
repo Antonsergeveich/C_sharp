@@ -18,9 +18,9 @@
 //#define Chapter_3_8_1
 //#define Chapter_3_8_2
 //#define Chapter_3_8_3
-//#define Chapter_3_9_1
+#define Chapter_3_9_1
 //#define Chapter_3_9_2
-#define Chapter_3_9_3
+//#define Chapter_3_9_3
 
 using System;
 using System.Windows.Forms;
@@ -597,19 +597,26 @@ class Chapter_3_1
 	{
 		static void Main()
 		{
-			Console.Write("Enter the first integer: ");
-			int first = Int32.Parse(Console.ReadLine());
-			Console.Write("Enter the second integer: ");
-			int second = Int32.Parse(Console.ReadLine());
-			if (first > second)
+			try
 			{
-				int buffer = first;
-				first = second; 
-				second = buffer;
+				Console.Write("Enter the first integer: ");
+				int first = Int32.Parse(Console.ReadLine());
+				Console.Write("Enter the second integer: ");
+				int second = Int32.Parse(Console.ReadLine());
+				if (first > second)
+				{
+					int buffer = first;
+					first = second;
+					second = buffer;
+				}
+				for (int i = first; i <= second; i++)
+				{
+					Console.WriteLine(i);
+				}
 			}
-			for (int i = first;i <= second; i++)
+			catch 
 			{
-				Console.WriteLine(i);
+				Console.WriteLine("You didn't enter an integer.");
 			}
 
 		}
@@ -620,20 +627,27 @@ class Chapter_3_1
 	{
 		static void Main()
 		{
-			Console.Write("Enter the first integer: ");
-			int first = Int32.Parse(Console.ReadLine());
-			Console.Write("Enter the second integer: ");
-			int second = Int32.Parse(Console.ReadLine());
-			if (first > second)
+			try
 			{
-				int buffer = first;
-				first = second;
-				second = buffer;
+				Console.Write("Enter the first integer: ");
+				int first = Int32.Parse(Console.ReadLine());
+				Console.Write("Enter the second integer: ");
+				int second = Int32.Parse(Console.ReadLine());
+				if (first > second)
+				{
+					int buffer = first;
+					first = second;
+					second = buffer;
+				}
+				while (first <= second)
+				{
+					Console.WriteLine(first);
+					first++;
+				}
 			}
-			while (first <= second)
+			catch 
 			{
-				Console.WriteLine(first);
-				first++;
+				Console.WriteLine("You didn't enter an integer.");
 			}
 		}
 	}
@@ -643,21 +657,28 @@ class Chapter_3_1
 	{
 		static void Main()
 		{
-			Console.Write("Enter the first integer: ");
-			int first = Int32.Parse(Console.ReadLine());
-			Console.Write("Enter the second integer: ");
-			int second = Int32.Parse(Console.ReadLine());
-			if (first > second)
+			try
 			{
-				int buffer = first;
-				first = second;
-				second = buffer;
+				Console.Write("Enter the first integer: ");
+				int first = Int32.Parse(Console.ReadLine());
+				Console.Write("Enter the second integer: ");
+				int second = Int32.Parse(Console.ReadLine());
+				if (first > second)
+				{
+					int buffer = first;
+					first = second;
+					second = buffer;
+				}
+				do
+				{
+					Console.WriteLine(first);
+					first++;
+				} while (first <= second);
 			}
-			do
+			catch 
 			{
-				Console.WriteLine(first);
-				first++;
-			} while (first<=second);
+				Console.WriteLine("You didn't enter an integer.");
+			}
 		}
 	}
 #endif
