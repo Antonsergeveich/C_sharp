@@ -18,9 +18,12 @@
 //#define Chapter_3_8_1
 //#define Chapter_3_8_2
 //#define Chapter_3_8_3
-#define Chapter_3_9_1
+//#define Chapter_3_9_1
 //#define Chapter_3_9_2
 //#define Chapter_3_9_3
+//#define Chapter_3_10_1
+//#define Chapter_3_10_2
+//#define Chapter_3_10_3
 
 using System;
 using System.Windows.Forms;
@@ -678,6 +681,99 @@ class Chapter_3_1
 			catch 
 			{
 				Console.WriteLine("You didn't enter an integer.");
+			}
+		}
+	}
+#endif
+#if Chapter_3_10_1
+	class Chapter_3_10_1
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.Write("Enter the number of numbers in the total: ");
+				int quantity_1 = Int32.Parse(Console.ReadLine());
+				int quantity_2 = 0;
+				int number = 0;
+				int sum = 0;
+				for (int i = 0; quantity_2 < quantity_1; i++)
+				{
+					number++;
+					if (number % 5 == 2 && number % 3 == 1)
+					{
+						Console.WriteLine(number);
+						sum += number;
+						quantity_2++;
+					}
+				}
+				Console.WriteLine($"The sum of the numbers: {sum}");
+			}
+			catch 
+			{
+				Console.WriteLine("You didn't enter an integer!!!");	
+			}
+		}
+	}
+#endif
+#if Chapter_3_10_2
+	class Chapter_3_10_2
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.Write("Enter the number of numbers in the total: ");
+				int quantity_1 = Int32.Parse(Console.ReadLine());
+				int quantity_2 = 0;
+				int number = 0;
+				int sum = 0;
+				while (quantity_2 < quantity_1)
+				{
+					number++;
+					if (number % 5 == 2 && number % 3 == 1)
+					{
+						Console.WriteLine(number);
+						sum += number;
+						quantity_2++;
+					}
+				}
+				Console.WriteLine($"The sum of the numbers: {sum}");
+			}
+			catch
+			{
+				Console.WriteLine("You didn't enter an integer!!!");
+			}
+		}
+	}
+#endif
+#if Chapter_3_10_3
+	class Chapter_3_10_3
+	{
+		static void Main()
+		{
+			try
+			{
+				Console.Write("Enter the number of numbers in the total: ");
+				int quantity_1 = Int32.Parse(Console.ReadLine());
+				int quantity_2 = 0;
+				int number = 0;
+				int sum = 0;
+				do
+				{
+					number++;
+					if (number % 5 == 2 && number % 3 == 1)
+					{
+						Console.WriteLine(number);
+						sum += number;
+						quantity_2++;
+					}
+				}while (quantity_2 < quantity_1);
+				Console.WriteLine($"The sum of the numbers: {sum}");
+			}
+			catch
+			{
+				Console.WriteLine("You didn't enter an integer!!!");
 			}
 		}
 	}
