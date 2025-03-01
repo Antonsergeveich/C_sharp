@@ -1,6 +1,8 @@
 ﻿//#define IntArraysDemo
 //#define CharArrayDemo
-#define InitArrayDemo
+//#define InitArrayDemo
+//#define CopyArrayDemo
+#define MaxElementDemo
 
 using System;
 using System.Windows.Forms;
@@ -84,6 +86,81 @@ class InitArrayDemo
 			Console.Write(txts[k]+" ");
 		}
 		Console.WriteLine();
+	}
+}
+#endif
+#if CopyArrayDemo
+class CopyArrayDemo
+{
+	static void Main()
+	{
+		//Целочисленный массив
+		int[] A = { 1, 3, 5, 7, 9 };
+		//Переменные массива
+		int[] B, C;
+		//Присваивание массивов
+		B = A;
+		//Создание нового массива
+		C = new int[A.Length];
+		//Поэлементное копирование массива
+		for(int k = 0; k<A.Length; k++)
+		{
+			C[k] = A[k];
+		}
+		//Изменение значения первого элемента в массива A
+		A[0] = 0;
+		//Изменение значения последнего элемента в массиве B
+		B[B.Length - 1] = 0;
+		//Сообщение в консольном окне
+		Console.WriteLine("A:\tB:\tC");
+		//Отображение содержимого массивов
+		for(int k = 0;k<B.Length; k++)
+		{
+			//Отображение значений элементов массивов
+			Console.WriteLine("{0}\t{1}\t{2}", A[k], B[k], C[k]);
+		}
+	}
+}
+#endif
+#if MaxElementDemo
+class MaxElementDemo
+{
+	static void Main()
+	{
+		Console.WriteLine("Поиск наибольшего значения в массиве: ");
+		//Переменные для записи значения элемента и индекса:
+		int value, index;
+		//Размер массива
+		int size = 15;
+		//Объект для генерирования случайных чисел
+		Random rnd = new Random();
+		//Создание массива
+		int[] nums = new int[size];
+		//Заполнение и отображение массива
+		for(int k = 0; k<nums.Length; k++)
+		{
+			//Значение элемента массива
+			nums[k] = rnd.Next(1, 101);
+			//Отображение значения элемента
+			Console.Write(nums[k]+" ");
+		}
+		Console.WriteLine();
+		//Поиск наибольшего элемента
+		index = 0;				//Начальное значение для индекса
+		value = nums[index];	//Значение элемента с иедексом
+		//Перебор элементов
+		for(int k = 1;  k<nums.Length; k++)
+		{
+			//Если значение проверяемого элемента больше текущего наибольшего значения
+			if (nums[k] > value)
+			{
+				value = nums[k]; //Новое наибольшее значение
+				index = k; //Новое значение для индекса
+			}
+		}
+		// Отображение результата
+		Console.WriteLine("Наибольшее значение: "+ value);
+		Console.WriteLine("Индекс элемента: "+ index);
 	}
 }
 #endif
