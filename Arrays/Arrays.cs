@@ -254,7 +254,10 @@ class TwoDimArrayDemo
 		int value = 1;
 		//Заполнение и отображение массива.
 		//Перебор строк в массиве:
-		for (int i = 0; i < nums.GetLength(0); i++)
+		for (int i = 0; i < nums.GetLength(0); i++) 
+			//метод GetLength() показывает что мы перебираем в цикле for,
+			//если GetLength(0)=>строки 'i', если GetLength(1)=>столбцы 'j'
+			//так как nums [i,j]
 		{
 			//Перебор столбцов в строке:
 			for (int j = 0; j < nums.GetLength(1); j++)
