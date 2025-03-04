@@ -3,7 +3,9 @@
 //#define InitArrayDemo
 //#define CopyArrayDemo
 //#define MaxElementDemo
-#define SortArrayDemo
+//#define SortArrayDemo
+//#define ForeachDemo
+#define TwoDimArrayDemo
 
 using System;
 using System.Windows.Forms;
@@ -204,6 +206,69 @@ class SortArrayDemo
 			Console.Write(symbs[k] + " ");
 		}
 		Console.WriteLine();
+	}
+}
+#endif
+#if ForeachDemo
+class ForeachDemo
+{
+	static void Main()
+	{
+		//Целочисленный массив:
+		int[] nums = { 1, 3, 4, 8, 9 };
+		//Символьный массив:
+		char[] symbs = { 'a', 'b', 'A', 'B', 'Ы' };
+		//Текстовый массив:
+		String[] txts = { "красный", "жёлтый", "синий" };
+		Console.WriteLine("Целочисленный массив");
+		//Циклы по целочисленному массиву:
+		foreach(int s in nums)
+		{
+			Console.WriteLine("Число {0} - {1}", s, s%2==0?"чётное":"нечётное");
+		}
+		Console.WriteLine("Символьный массив");
+		//Цикл по символьному массиву:
+		foreach(char s in symbs)
+		{
+			Console.WriteLine("Код символа {0} - {1}", s, (int)s);
+		}
+		Console.WriteLine("Текстовый массив");
+		//Цикл по текстовому массиву:
+		foreach(string s in txts)
+		{
+			Console.WriteLine("В слове \"{0}\" \t{1} букв", s, s.Length);
+		}
+	}
+}
+#endif
+#if TwoDimArrayDemo
+class TwoDimArrayDemo
+{
+	static void Main()
+	{
+		//Количество строк и столбцов в массиве:
+		int rows = 3, cols = 5;
+		//Создание двумерного массива:
+		int[,] nums = new int[rows, cols];
+		//Значение первого элемента в массиве:
+		int value = 1;
+		//Заполнение и отображение массива.
+		//Перебор строк в массиве:
+		for (int i = 0; i < nums.GetLength(0); i++)
+		{
+			//Перебор столбцов в строке:
+			for (int j = 0; j < nums.GetLength(1); j++)
+			{
+				//Присваивание значений элементу массива:
+				nums[i,j]=value;
+				//Это будет значение следующего элемента:
+				value++;
+				//Отображение элемента в строке:
+				Console.Write(nums[i,j]+"\t");
+			}
+			//Переход к новой строке:
+			Console.WriteLine();
+		}
 	}
 }
 #endif
