@@ -283,6 +283,7 @@ class InitTwoDimArrayDemo
 {
 	static void Main()
 	{
+		Console.WriteLine("Добавление строки и столбца в массив.");
 		//Создание и инициализация двумерного массива:
 		char[,] symbs = { { 'A', 'B', 'C' }, { 'D', 'E', 'F' } };
 		Console.WriteLine("Исходный массив:");
@@ -334,7 +335,7 @@ class InitTwoDimArrayDemo
 		}
 		for(int i = 0;  i < tmp.GetLength(0); i++)
 		{
-			//Если элемент элемент не в добавленной строке:
+			//Если элемент не в добавленной строке:
 			if(i!=row)
 			{
 				//Значение элементов в столбце:
