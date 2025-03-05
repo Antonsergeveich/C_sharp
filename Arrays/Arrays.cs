@@ -440,7 +440,7 @@ class AnotherTwoDimArrayDemo
 			for(int j = 0;j < nums[i].Length; j++)
 			{
 				//Отображение элемента массива:
-				Console.Write("{0,2}", nums[i][j]);
+				Console.Write("{0,3}", nums[i][j]);
 			}
 			Console.WriteLine();
 		}
