@@ -440,7 +440,7 @@ class AnotherTwoDimArrayDemo
 			for(int j = 0;j < nums[i].Length; j++)
 			{
 				//Отображение элемента массива:
-				Console.Write("{0,3}", nums[i][j]);
+				Console.Write("{0,2}", nums[i][j]);
 			}
 			Console.WriteLine();
 		}
@@ -454,6 +454,9 @@ class AnotherTwoDimArrayDemo
 			{
 				//Отображение элемента массива:
 				Console.Write("{0,2}", p);
+				//{0,2} = 0 - значение первого элемента т.е.
+				//'p'- это элемент в массиве на который ссылается элемент массива symbs,
+				//2 - для отображения значения выделяется не менее двух позиций;
 			}
 			Console.WriteLine();
 		}
