@@ -41,5 +41,9 @@
   <ItemGroup>
     <Compile Include="Command_Line_Arguments.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="CommandLineArguments_1.png" />
+    <Content Include="CommandLineArguments_2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
