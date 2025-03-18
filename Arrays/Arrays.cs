@@ -10,7 +10,7 @@
 //#define MultiDimArrayDemo
 //#define AnotherTwoDimArrayDemo
 //#define AnotherTwoDimArrayDemo_2
-#define ObjectArrayDemo
+//#define ObjectArrayDemo
 
 using System;
 using System.Windows.Forms;

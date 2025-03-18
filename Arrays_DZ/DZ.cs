@@ -1,7 +1,9 @@
 ﻿//#define Arrays_4_1
-#define Arrays_4_2
+//#define Arrays_4_2
+#define Arrays_4_3
 
 using System;
+using System.Linq;
 
 #if Arrays_4_1
 class Arrays_4_1
@@ -56,6 +58,41 @@ class Arrays_4_2
 			if(i == 0) nums[i] = 1;
 			Console.WriteLine($"2^{i}\t= " + nums[i]);
 		}
+	}
+}
+#endif
+#if Arrays_4_3
+class Arrays_4_3
+{
+	static void Main()
+	{
+		//Написать программу, в которой создаётся одномерный символьный массив их 10 элементов.
+		//Массив заповлняется буквами "через одну", начиная с буквы 'a':
+		//то есть массив заполняется буквами 'a', 'c', 'e','g' и т.д.
+		int size = 10;
+		int i = 97; //'a'
+		char[] symbs = new char[size];
+		for (int j = 0; j < size; j++)
+		{
+			symbs[j] = (char)i;
+			i += 2;
+			Console.Write(symbs[j] + " ");
+		}
+		Console.WriteLine();
+		for (int j = size - 1; j >= 0; j--)
+		{
+			symbs[j] = (char)(i - 2);
+			i -= 2;
+			Console.Write(symbs[j] + " ");
+		}
+		Console.ReadKey();
+
+		//char[] arr = Enumerable.Range(0, 10).Select(x => (char)('a' + x * 2)).ToArray();
+		/*метод Enumerable.Range() генерирует последовательность из 10 целых чисел, начиная с 0.
+		Затем используется метод Select() для манипуляции этими значениями.
+		Внутри метода каждое сгенерированное число (x) умножается на 2 (x * 2).*/
+		//Console.WriteLine(string.Join(" ", arr)); //String.Join() — метод в C#, который объединяет элементы с указанием разделителя.
+		//Console.ReadKey();
 	}
 }
 #endif
