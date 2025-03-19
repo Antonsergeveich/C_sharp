@@ -179,7 +179,19 @@ class Arrays_4_6
 		/*Написать программу, в которой создаётся целочисленный массив,
 		 заполняется случайными числами и после этого значения элементов в массиве
 		 сортируются в порядке убывания значений.*/
+		Console.Write("Введите размер массива: ");
+		int size = Int32.Parse(Console.ReadLine());
+		int[] nums = new int[size];
+		Random rnd = new Random();
+		for (int i = 0; i < nums.Length; i++)
+		{
+			nums[i] = rnd.Next(8, 129); 
+			if (i % 8 == 0) Console.WriteLine();
+			Console.Write(nums[i] + "\t|");
+		}
 
+		Console.ReadKey();
+		
 	}
 }
 #endif
