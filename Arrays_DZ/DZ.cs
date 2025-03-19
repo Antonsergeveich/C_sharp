@@ -116,6 +116,8 @@ class Arrays_4_4
 			symbs[j] = (char)i;
 			Console.Write(symbs[j] + " = " + count + "\t");
 			if (vowels.Contains(symbs[j]))
+			//Метод Contains() в C# возвращает true, если коллекция содержит определённый элемент, и false в противном случае.
+			//https://learn.microsoft.com/ru-ru/dotnet/api/system.string.contains?view=net-8.0
 			{
 				Console.WriteLine();
 				continue;
