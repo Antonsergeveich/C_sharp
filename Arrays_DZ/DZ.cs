@@ -2,7 +2,8 @@
 //#define Arrays_4_2
 //#define Arrays_4_3
 //#define Arrays_4_4
-#define Arrays_4_5
+//#define Arrays_4_5
+#define Arrays_4_6
 
 using System;
 using System.Linq;
@@ -167,6 +168,18 @@ class Arrays_4_5
 		}
 		Console.WriteLine();
 		Console.ReadKey();
+	}
+}
+#endif
+#if Arrays_4_6
+class Arrays_4_6
+{
+	static void Main()
+	{
+		/*Написать программу, в которой создаётся целочисленный массив,
+		 заполняется случайными числами и после этого значения элементов в массиве
+		 сортируются в порядке убывания значений.*/
+
 	}
 }
 #endif
