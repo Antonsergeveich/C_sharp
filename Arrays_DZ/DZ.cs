@@ -3,7 +3,9 @@
 //#define Arrays_4_3
 //#define Arrays_4_4
 //#define Arrays_4_5
-#define Arrays_4_6
+//#define Arrays_4_6
+//#define Arrays_4_6_BubbleSort
+#define Arrays_4_6_CocktailSort
 
 using System;
 using System.Linq;
@@ -186,12 +188,98 @@ class Arrays_4_6
 		for (int i = 0; i < nums.Length; i++)
 		{
 			nums[i] = rnd.Next(8, 129); 
-			if (i % 8 == 0) Console.WriteLine();
 			Console.Write(nums[i] + "\t|");
 		}
-
+		Console.WriteLine();
+		Array.Sort(nums);
+		for (int i = 0; i < nums.Length; i++)
+		{
+			Console.Write(nums[i] + "\t|");
+		}
 		Console.ReadKey();
-		
+	}
+}
+#endif
+#if Arrays_4_6_BubbleSort
+class Arrays_4_6_1
+{
+	static void Main()
+	{
+		Console.Write("Введите размер массива: ");
+		int size = Int32.Parse(Console.ReadLine());
+		int[] nums = new int[size];
+		Random rnd = new Random();
+		for (int i = 0; i < nums.Length; i++)
+		{
+			nums[i] = rnd.Next(8, 129);
+			Console.Write(nums[i] + "\t|");
+		}
+		Console.WriteLine();
+		for (int i = 1; i < nums.Length; i++)
+		{
+			for (int j = 0; j < nums.Length - i; j++)
+			{
+				if (nums[j] < nums[j+1])
+				{
+					int buffer = nums[j + 1];
+					nums[j+1] = nums[j];
+					nums[j] = buffer;
+				}
+			}
+		}
+		for (int i = 0; i < nums.Length; i++)
+		{
+			Console.Write(nums[i] + "\t|");
+		}
+		Console.WriteLine();
+	}
+}
+#endif
+#if Arrays_4_6_CocktailSort
+class Arrays_4_6_CocktailSort
+{
+	static void Main()
+	{
+		Console.Write("Введите размер массива: ");
+		int size = Int32.Parse(Console.ReadLine());
+		int[] nums = new int[size];
+		Random rnd = new Random();
+		for (int i = 0; i < nums.Length; i++)
+		{
+			nums[i] = rnd.Next(8, 129);
+			Console.Write(nums[i] + "\t|");
+		}
+		Console.WriteLine();
+		int left = 0;
+		int right = nums.Length-1;
+		while (left < right)
+		{
+			for (int i = left; i < right; i++)
+			{
+				if (nums[i] > nums[i+1])
+				{
+					int buffer = nums[i];
+					nums[i] = nums[i+1];
+					nums[i+1] = buffer;
+				}
+			}
+			right--;
+			for (int i = right; i > left; i--)
+			{
+				if (nums[i-1] > nums[i])
+				{
+					int buffer = nums[i-1];
+					nums[i-1] = nums[i];
+					nums[i] = buffer;
+				}
+			}
+			left++;
+		}
+		for (int i = 0; i < nums.Length; i++)
+		{
+			Console.Write(nums[i] + "\t|");
+		}
+		Console.WriteLine();
 	}
 }
 #endif
