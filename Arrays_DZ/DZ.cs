@@ -5,7 +5,8 @@
 //#define Arrays_4_5
 //#define Arrays_4_6
 //#define Arrays_4_6_BubbleSort
-#define Arrays_4_6_CocktailSort
+//#define Arrays_4_6_CocktailSort
+#define Arrays_4_6_InsertionSort
 
 using System;
 using System.Linq;
@@ -280,6 +281,44 @@ class Arrays_4_6_CocktailSort
 			Console.Write(nums[i] + "\t|");
 		}
 		Console.WriteLine();
+	}
+}
+#endif
+#if Arrays_4_6_InsertionSort
+class Arrays_4_6_InsertionSort
+{
+	static void Main()
+	{
+		int[] nums = new int[10];
+		Random rnd = new Random();
+		for (int i = 0; i < nums.Length; i++)
+		{
+			nums[i] = rnd.Next(8, 129);
+			Console.Write(nums[i] + "\t|");
+		}
+		Console.WriteLine();
+		int x,j;
+		for(int i = 1;i< nums.Length; i++)
+		{
+			x = nums[i];
+			j = i;
+			while (j > 0 && nums[j - 1] > x)
+			{
+				Swap(nums, j, j-1);
+				j -= 1;
+			}
+			nums[j] = x;
+		}
+		foreach(int i in nums)
+		{
+			Console.Write($"{i}\t");
+		}
+	}
+	static void Swap(int[] nums, int i, int j)
+	{
+		int buf = nums[i];
+		nums[i] = nums[j];
+		nums[j] = buf;
 	}
 }
 #endif
