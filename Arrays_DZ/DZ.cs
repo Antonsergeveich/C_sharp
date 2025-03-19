@@ -136,9 +136,35 @@ class Arrays_4_5
 	static void Main()
 	{
 		/*Написать программу, в которой создаётся массив и заполняется случайными числами.
-		 Массив отображается в консольном окне. В этом массиве необходимо определить элемент с минимальным значением.
+		Массив отображается в консольном окне. В этом массиве необходимо определить элемент с минимальным значением.
 		В частности, программа должна вывести элемент с минимальным значением и индекс этого элемента.
 		Если элементов с минимальным значением несколько, должны быть выведены индексы всех этих элементов.*/
+		Random rnd = new Random();// Объект для генерации случайных чисел
+		
+		Console.Write("Введите размер массива: ");
+		int size = Int32.Parse(Console.ReadLine());
+		int[] numbers = new int[size];
+		//Console.Write("| ");
+		for (int i = 0; i < numbers.Length; i++)
+		{
+			numbers[i] = rnd.Next(1, 100); //https://learn.microsoft.com/ru-ru/dotnet/api/system.random.next?view=net-8.0
+			if (i % 8 == 0) Console.WriteLine();
+			Console.Write(numbers[i] + "\t|");
+		}
+		Console.WriteLine();
+		int index = 0;
+		int value = numbers[index];
+		for (int i = 0;i < numbers.Length;i++)
+		{
+			if (numbers[i] < value)
+			{
+				value = numbers[i];
+				index = i;
+			}
+		}
+		Console.WriteLine("Значение минимального элемента: " + value);
+		Console.WriteLine("Индекс минимального элемента: " + index);
+		Console.ReadKey();
 
 	}
 }
