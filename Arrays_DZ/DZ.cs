@@ -102,11 +102,28 @@ class Arrays_4_4
 {
 	static void Main()
 	{
-		/*Написать программу, в которой создаётся символьный массив из 10 элементов.
-		 Массив заполнить большими прописными буквами английского алфавита. 
+		/*Написать программу, в которой создаётся символьный массив из элементов английского алфавита.
+		Массив заполнить большими прописными буквами английского алфавита. 
 		Буквы берутся подряд, но только согласные(тоесть гласные буквы 'A','E','I'
 		при присваивании значений элементам массива нужно пропустить)*/
-
+		char[] symbs = new char[26];
+		int i = 65; //'A'
+		string vowels = "AEIOUY";
+		int count = 1;
+		int count_vowels = 0;
+		for (int j = 0; j < symbs.Length; j++, count++, i++)
+		{
+			symbs[j] = (char)i;
+			Console.Write(symbs[j] + " = " + count + "\t");
+			if (vowels.Contains(symbs[j]))
+			{
+				Console.WriteLine();
+				continue;
+			}
+			count_vowels++;
+			Console.WriteLine(symbs[j] + " = " + count_vowels);
+		}
+		Console.WriteLine("==================================");
 	}
 }
 #endif
