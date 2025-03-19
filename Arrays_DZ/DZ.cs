@@ -294,7 +294,7 @@ class Arrays_4_6_InsertionSort
 		for (int i = 0; i < nums.Length; i++)
 		{
 			nums[i] = rnd.Next(8, 129);
-			Console.Write(nums[i] + "\t|");
+			Console.Write(nums[i] + "\t");
 		}
 		Console.WriteLine();
 		int x,j;
@@ -313,6 +313,7 @@ class Arrays_4_6_InsertionSort
 		{
 			Console.Write($"{i}\t");
 		}
+		Console.WriteLine();
 	}
 	static void Swap(int[] nums, int i, int j)
 	{
