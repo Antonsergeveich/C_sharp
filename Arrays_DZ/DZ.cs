@@ -602,6 +602,25 @@ class Arrays_4_6_Merge_Sort
 {
 	static void Main()
 	{
+		Console.WriteLine("Введите размер массива: ");
+		int size = Int32.Parse(Console.ReadLine());
+		int[] array = new int[size];
+		Random random = new Random();
+		for (int i = 0; i < array.Length; i++)
+		{
+			array[i] = random.Next(0, 33);
+			Console.Write(array[i]+" ");
+		}
+		Console.WriteLine();
+		MergeSort(array);
+		foreach (int i in array)
+		{
+			Console.Write(i);
+		}
+		Console.WriteLine();	
+	}
+	private static void MergeSort(int[] array)
+	{
 
 	}
 }
