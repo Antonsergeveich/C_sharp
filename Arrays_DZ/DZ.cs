@@ -768,6 +768,20 @@ class Arrays_4_6_InsertionSort_2
 	//		array[j+1] = buffer;
 	//	}
 	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for (int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j+1]=array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
 	private static void InsertionSort(int[] array)
 	{
 		for (int i = 1; i < array.Length; i++)
@@ -776,7 +790,7 @@ class Arrays_4_6_InsertionSort_2
 			int j = i - 1;
 			while (j >= 0 && array[j] > buffer)
 			{
-				array[j+1]=array[j];
+				array[j+1] = array[j];
 				j--;
 			}
 			array[j+1] = buffer;
