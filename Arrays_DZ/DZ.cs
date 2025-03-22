@@ -366,17 +366,62 @@ class Arrays_4_6_1
 	//		}
 	//	}
 	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length - 1; i++)
+	//	{
+	//		for(int j = 0; j < array.Length - i - 1; j++)
+	//		{
+	//			if (array[j] > array[j + 1])
+	//			{
+	//				int buffer = array[j+1];
+	//				array[j+1] = array[j];
+	//				array[j] = buffer;	
+	//			}
+	//		}
+	//	}
+	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length-1;i++)
+	//	{
+	//		for(int j = 0; j < array.Length - i - 1; j++) 
+	//		{
+	//			if (array[j] > array[j + 1])
+	//			{
+	//				int buffer = array[j+1];
+	//				array[j+1] = array[j];
+	//				array[j] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length - 1;i++)
+	//	{
+	//		for(int j = 0; j<array.Length-i-1;j++)
+	//		{
+	//			if (array[j+1] < array[j])
+	//			{
+	//				int buffer = array[j+1];
+	//				array[j+1] = array[j];
+	//				array[j] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
 	private static void BubbleSort(int[] array)
 	{
-		for(int i = 0;i < array.Length - 1; i++)
+		for (int i = 0; i < array.Length - 1; i++)
 		{
-			for(int j = 0; j < array.Length - i - 1; j++)
+			for (int j = 0; j < array.Length - i - 1; j++)
 			{
-				if (array[j] > array[j + 1])
+				if (array[j + 1] < array[j])
 				{
-					int buffer = array[j+1];
-					array[j+1] = array[j];
-					array[j] = buffer;	
+					int buffer = array[j + 1];
+					array[j + 1] = array[j];
+					array[j] = buffer;
 				}
 			}
 		}
@@ -777,6 +822,62 @@ class Arrays_4_6_InsertionSort_2
 	//		while (j >= 0 && array[j] > buffer)
 	//		{
 	//			array[j+1]=array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for (int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j+1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for (int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j]>buffer)
+	//		{
+	//			array[j+1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for (int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j+1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for (int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j + 1] = array[j];
 	//			j--;
 	//		}
 	//		array[j+1] = buffer;
