@@ -523,6 +523,62 @@ class Arrays_4_6_CocktailSort
 	//		left++;
 	//	}
 	//}
+	//private static void CocktailSort(int[] array)
+	//{
+	//	int left = 0;
+	//	int right = array.Length - 1;
+	//	while (left < right)
+	//	{
+	//		for (int i = left; i < right; i++)
+	//		{
+	//			if (array[i] > array[i+1])
+	//			{
+	//				int buffer = array[i+1];
+	//				array[i+1] = array[i];
+	//				array[i] = buffer;
+	//			}
+	//		}
+	//		right--;
+	//		for (int i = right; i > left; i--)
+	//		{
+	//			if (array[i-1] > array[i])
+	//			{
+	//				int buffer = array[i-1];
+	//				array[i-1] = array[i];
+	//				array[i] = buffer;
+	//			}
+	//		}
+	//		left++;
+	//	}
+	//}
+	//private static void CocktailSort(int[] array)
+	//{
+	//	int left = 0;
+	//	int right = array.Length - 1;
+	//	while (left < right)
+	//	{
+	//		for (int i = left; i < right; i++)
+	//		{
+	//			if (array[i] > array[i + 1])
+	//			{
+	//				int buffer = array[i + 1];
+	//				array[i + 1] = array[i];
+	//				array[i] = buffer;
+	//			}
+	//		}
+	//		right--;
+	//		for (int i = right; i > left; i--)
+	//		{
+	//			if (array[i - 1] > array[i])
+	//			{
+	//				int buffer = array[i-1];
+	//				array[i-1]= array[i];
+	//				array[i] = buffer;
+	//			}
+	//		}
+	//		left++;
+	//	}
+	//}
 	private static void CocktailSort(int[] array)
 	{
 		int left = 0;
