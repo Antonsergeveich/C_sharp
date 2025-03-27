@@ -1679,10 +1679,211 @@ class Arrays_4_6_SelectionSort
 		}
 		Console.WriteLine();
 	}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0; i < array.Length - 1; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i + 1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length-1; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i+1;j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length-1; i++)
+	//	{
+	//		int min = i;
+	//		for (int j = i+1;j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length-1; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i + 1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length - 1; i++)
+	//	{
+	//		int min = i;
+	//		for (int j = i + 1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length-1; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i+1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length-1; i++)
+	//	{
+	//		int min = i;
+	//		for (int j = i+1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length-1; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i+1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length-1; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i + 1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length-1; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i+1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length-1; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i+1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
 	private static void SelectionSort(int[] array)
 	{
-
+		for (int i = 0;i < array.Length-1; i++)
+		{
+			int min = i;
+			for(int j = i+1; j < array.Length; j++)
+			{
+				if(array[min] > array[j])
+				{
+					min = j;
+				}
+			}
+			int buffer = array[i];
+			array[i] = array[min];
+			array[min] = buffer;
+		}
 	}
+
 }
 #endif
 #if Arrays_4_6_Merge_Sort
