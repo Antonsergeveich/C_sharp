@@ -7,8 +7,8 @@
 //#define Arrays_4_6_BubbleSort
 //#define Arrays_4_6_CocktailSort
 //#define Arrays_4_6_InsertionSort
-#define Arrays_4_6_InsertionSort_2
-//#define Arrays_4_6_SelectionSort
+//#define Arrays_4_6_InsertionSort_2
+#define Arrays_4_6_SelectionSort
 
 //#define Arrays_4_6_Merge_Sort
 
@@ -1626,19 +1626,62 @@ class Arrays_4_6_InsertionSort_2
 	//		array[j + 1] = buffer;
 	//	}
 	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for (int i = 1;  i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j+1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
 	private static void InsertionSort(int[] array)
 	{
-		for (int i = 1;  i < array.Length; i++)
+		for (int i = 1; i < array.Length; i++)
 		{
 			int buffer = array[i];
 			int j = i - 1;
 			while (j >= 0 && array[j] > buffer)
 			{
-				array[j+1] = array[j];
+				array[j + 1] = array[j];
 				j--;
 			}
-			array[j+1] = buffer;
+			array[j + 1] = buffer;
 		}
+	}
+}
+#endif
+#if Arrays_4_6_SelectionSort
+class Arrays_4_6_SelectionSort
+{
+	static void Main()
+	{
+		Random rnd = new Random();
+		int[] array = new int[10];
+		for(int i  = 0; i < 10; i++)
+		{
+			array[i] = rnd.Next(0,256);
+		}
+		foreach (int i in array)
+		{
+			Console.Write(i + "\t");
+		}
+		Console.WriteLine();
+		SelectionSort(array);
+		foreach (int i in array)
+		{
+			Console.Write(i+"\t");
+		}
+		Console.WriteLine();
+	}
+	private static void SelectionSort(int[] array)
+	{
+
 	}
 }
 #endif
