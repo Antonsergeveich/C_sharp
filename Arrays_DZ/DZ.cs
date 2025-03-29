@@ -7,8 +7,8 @@
 //#define Arrays_4_6_BubbleSort
 //#define Arrays_4_6_CocktailSort
 //#define Arrays_4_6_InsertionSort
-//#define Arrays_4_6_InsertionSort_2
-#define Arrays_4_6_SelectionSort
+#define Arrays_4_6_InsertionSort_2
+//#define Arrays_4_6_SelectionSort
 
 //#define Arrays_4_6_Merge_Sort
 
@@ -1937,9 +1937,23 @@ class Arrays_4_6_InsertionSort_2
 	//		array[j+1] = buffer;
 	//	}
 	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for(int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j+1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
 	private static void InsertionSort(int[] array)
 	{
-		for(int i = 1; i < array.Length; i++)
+		for (int i = 1; i < array.Length; i++)
 		{
 			int buffer = array[i];
 			int j = i - 1;
@@ -2707,12 +2721,29 @@ class Arrays_4_6_SelectionSort
 	//		array[min] = buffer;
 	//	}
 	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i + 1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
 	private static void SelectionSort(int[] array)
 	{
-		for(int i = 0;i < array.Length; i++)
+		for (int i = 0;i < array.Length; i++)
 		{
 			int min = i;
-			for(int j = i + 1; j < array.Length; j++)
+			for (int j = i + 1; j < array.Length; j++)
 			{
 				if (array[min] > array[j])
 				{
