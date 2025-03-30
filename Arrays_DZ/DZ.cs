@@ -8,7 +8,7 @@
 //#define Arrays_4_6_CocktailSort
 //#define Arrays_4_6_InsertionSort
 //#define Arrays_4_6_InsertionSort_2
-//#define Arrays_4_6_SelectionSort
+#define Arrays_4_6_SelectionSort
 
 //#define Arrays_4_6_Merge_Sort
 
@@ -503,17 +503,47 @@ class Arrays_4_6_1
 	//		}
 	//	}
 	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length-1; i++)
+	//	{
+	//		for(int j = 0; j < array.Length-i-1; j++)
+	//		{
+	//			if (array[j] > array[j + 1])
+	//			{
+	//				int buffer = array[j+1];
+	//				array[j+1] = array[j];
+	//				array[j] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length-1;i++)
+	//	{
+	//		for (int j = 0; j < array.Length - i - 1;j++)
+	//		{
+	//			if (array[j] > array[j + 1])
+	//			{
+	//				int buffer = array[j];
+	//				array[j] = array[j + 1];
+	//				array[j + 1] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
 	private static void BubbleSort(int[] array)
 	{
-		for(int i = 0;i < array.Length-1; i++)
+		for(int i = 0;i < array.Length - 1;i++)
 		{
-			for(int j = 0; j < array.Length-i-1; j++)
+			for (int j = 0; j < array.Length - i - 1; j++)
 			{
 				if (array[j] > array[j + 1])
 				{
-					int buffer = array[j+1];
-					array[j+1] = array[j];
-					array[j] = buffer;
+					int buffer = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = buffer;
 				}
 			}
 		}
@@ -990,29 +1020,58 @@ class Arrays_4_6_CocktailSort
 	//		left++;
 	//	}
 	//}
+	//private static void CocktailSort(int[] array)
+	//{
+	//	int left = 0;
+	//	int right = array.Length - 1;
+	//	while (left < right)
+	//	{
+	//		for (int i = left; i < right; i++)
+	//		{
+	//			if (array[i] > array[i + 1])
+	//			{
+	//				int buffer = array[i + 1];
+	//				array[i+1] = array[i];
+	//				array[i] = buffer;
+	//			}
+	//		}
+	//		right--;
+	//		for(int i = right; i > left; i--)
+	//		{
+	//			if (array[i-1] > array[i])
+	//			{
+	//				int buffer = array[i];
+	//				array[i] = array[i-1];
+	//				array[i-1] = buffer;
+	//			}
+	//		}
+	//		left++;
+	//	}
+	//}
 	private static void CocktailSort(int[] array)
 	{
 		int left = 0;
 		int right = array.Length - 1;
 		while (left < right)
 		{
+
 			for (int i = left; i < right; i++)
 			{
 				if (array[i] > array[i + 1])
 				{
-					int buffer = array[i + 1];
-					array[i+1] = array[i];
-					array[i] = buffer;
+					int buffer = array[i];
+					array[i] = array[i + 1];
+					array[i + 1] = buffer;
 				}
 			}
 			right--;
-			for(int i = right; i > left; i--)
+			for (int i = right; i > left; i--)
 			{
-				if (array[i-1] > array[i])
+				if (array[i - 1] > array[i])
 				{
-					int buffer = array[i];
-					array[i] = array[i-1];
-					array[i-1] = buffer;
+					int buffer = array[i - 1];
+					array[i - 1] = array[i];
+					array[i] = buffer;
 				}
 			}
 			left++;
@@ -1979,13 +2038,27 @@ class Arrays_4_6_InsertionSort_2
 	//		array[j+1]=buffer;
 	//	}
 	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for(int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j]>buffer)
+	//		{
+	//			array[j+1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
 	private static void InsertionSort(int[] array)
 	{
 		for(int i = 1; i < array.Length; i++)
 		{
 			int buffer = array[i];
 			int j = i - 1;
-			while (j >= 0 && array[j]>buffer)
+			while (j >= 0 && array[j] > buffer)
 			{
 				array[j+1] = array[j];
 				j--;
@@ -2772,6 +2845,23 @@ class Arrays_4_6_SelectionSort
 	//	{
 	//		int min = i;
 	//		for (int j = i + 1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i + 1; j < array.Length; j++)
 	//		{
 	//			if (array[min] > array[j])
 	//			{
