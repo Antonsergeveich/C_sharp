@@ -8,9 +8,9 @@
 //#define Arrays_4_6_CocktailSort
 //#define Arrays_4_6_InsertionSort
 //#define Arrays_4_6_InsertionSort_2
-#define Arrays_4_6_SelectionSort
+//#define Arrays_4_6_SelectionSort
+#define Arrays_4_6_Merge_Sort
 
-//#define Arrays_4_6_Merge_Sort
 
 using System;
 using System.Linq;
@@ -2922,13 +2922,13 @@ class Arrays_4_6_Merge_Sort
 		for (int i = 0; i < array.Length; i++)
 		{
 			array[i] = random.Next(0, 257);
-			Console.Write(array[i]+" ");
+			Console.Write(array[i]+"\t");
 		}
 		Console.WriteLine();
 		MergeSort(array);
 		foreach (int i in array)
 		{
-			Console.Write(i + " ");
+			Console.Write(i + "\t");
 		}
 		Console.WriteLine();	
 	}
