@@ -3035,7 +3035,7 @@ class Arrays_4_6_Merge_Sort
 		int[] leftArray = new int[middle];
 		int[] rightArray = new int[length - middle];
 
-		int i = 0; //left arrey
+		int i = 0; //left array
 		int j = 0; //right array
 
 		for (; i < length; i++)
