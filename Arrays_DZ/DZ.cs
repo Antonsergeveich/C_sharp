@@ -4217,27 +4217,209 @@ class Arrays_4_6_Merge_Sort
 	//		array[i] = rightArray[r];r++;i++;
 	//	}
 	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while (l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l];l++;
+	//		}
+	//		else { array[i] = rightArray[r];r++; }
+	//		i++;
+	//	}
+	//	while(r < rightSize)
+	//	{
+	//		array[i] = rightArray[r];r++;i++;
+	//	}
+	//	while (l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++;i++;
+	//	}
+	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while (l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l]; l++; 
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r]; r++;
+	//		}
+	//		i++;
+	//	}
+	//	while (l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//	while(r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++; i++;
+	//	}
+	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while ( l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l]; l++;
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r]; r++;
+	//		}
+	//		i++;
+	//	}
+	//	while ( l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//	while( r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++; i++;
+	//	}
+	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while( l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l]; l++;
+	//		}
+	//           else
+	//		{
+	//			array[i] = rightArray[r]; r++;
+	//           }
+	//		i++;
+	//       }
+	//	while ( l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//	while ( r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++; i++;
+	//	}
+	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while (l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l]; l++;
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r]; r++;
+	//		}
+	//		i++;
+	//	}
+	//	while ( l < leftSize )
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//	while ( r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++; i++;
+	//	}
+	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while ( l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l]; l++;
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r]; r++;
+	//		}
+	//		i++;
+	//	}
+	//	while (l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//	while (r < rightSize)
+	//	{
+	//		array[i] = rightArray[r];  r++; i++;
+	//	}
+	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while (l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l]; l++;
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r]; r++;
+	//		}
+	//		i++;
+	//	}
+	//	while (l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//	while (r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++; i++;
+	//	}
+	//}
 	private static void Merge(int[] leftArray, int[] rightArray, int[] array)
 	{
 		int leftSize = array.Length / 2;
 		int rightSize = array.Length - leftSize;
 		int i = 0, l = 0, r = 0;
-		while (l < leftSize && r < rightSize)
+		while(l < leftSize && r < rightSize)
 		{
 			if (leftArray[l] < rightArray[r])
 			{
 				array[i] = leftArray[l];l++;
 			}
-			else { array[i] = rightArray[r];r++; }
+			else
+			{
+				array[i] = rightArray[r];r++;
+			}
 			i++;
+		}
+		while ( l < leftSize)
+		{
+			array[i] = leftArray[l]; l++; i++;
 		}
 		while(r < rightSize)
 		{
-			array[i] = rightArray[r];r++;i++;
-		}
-		while (l < leftSize)
-		{
-			array[i] = leftArray[l]; l++;i++;
+			array[i] = rightArray[r]; r++; i++;
 		}
 	}
 }
