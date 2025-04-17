@@ -7,9 +7,10 @@
 //#define Arrays_4_6_BubbleSort
 //#define Arrays_4_6_CocktailSort
 //#define Arrays_4_6_InsertionSort
-#define Arrays_4_6_InsertionSort_2
+//#define Arrays_4_6_InsertionSort_2
 //#define Arrays_4_6_SelectionSort
 //#define Arrays_4_6_Merge_Sort
+#define Array_4_6_QuickSort
 
 
 using System;
@@ -6679,5 +6680,33 @@ class Arrays_4_6_Merge_Sort
 	//	}
 	//}
 
+}
+#endif
+#if Array_4_6_QuickSort
+class Array_4_6_QuickSort
+{
+	static void Main()
+	{
+		Console.Write("Welcome to QuickSort!\n" + "Введите размер массива: ");
+		int size = Int32.Parse(Console.ReadLine());
+		int[] array = new int[size];
+		Random random = new Random();
+		for (int i = 0; i < array.Length; i++)
+		{
+			array[i] = random.Next(0, 257);
+			Console.Write(array[i] + "\t");
+		}
+		Console.WriteLine();
+		QuickSort(array);
+		foreach (int i in array)
+		{
+			Console.Write(i + "\t");
+		}
+		Console.WriteLine();
+	}
+	private static void QuickSort(int[] array)
+	{
+
+	}
 }
 #endif
