@@ -14,6 +14,7 @@
 
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 #if Arrays_4_1
@@ -6697,16 +6698,36 @@ class Array_4_6_QuickSort
 			Console.Write(array[i] + "\t");
 		}
 		Console.WriteLine();
-		QuickSort(array);
+		QuickSort(array, 0, size - 1);
 		foreach (int i in array)
 		{
 			Console.Write(i + "\t");
 		}
 		Console.WriteLine();
 	}
-	private static void QuickSort(int[] array)
+	private static void QuickSort(int[] array, int first, int end)
 	{
-
+		if (first < end) 
+		{
+			int left = first;
+			int right = end;
+			int middle = array[(left + right) / 2]; 
+			do
+			{
+				while (array[left] < middle) left++; 
+				while (array[right] > middle) right--;
+				if (left <= right) 
+				{
+					int buffer = array[left];
+					array[left] = array[right];
+					array[right] = buffer;
+					left++;
+					right--;
+				}
+			} while (left < right);  
+			QuickSort(array, first, right); 
+			QuickSort(array, left, end);   
+		}
 	}
 }
 #endif
