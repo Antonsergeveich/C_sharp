@@ -15,7 +15,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 #if Arrays_4_1
 class Arrays_4_1
@@ -535,11 +537,56 @@ class Arrays_4_6_1
 	//		}
 	//	}
 	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length - 1;i++)
+	//	{
+	//		for (int j = 0; j < array.Length - i - 1; j++)
+	//		{
+	//			if (array[j] > array[j + 1])
+	//			{
+	//				int buffer = array[j];
+	//				array[j] = array[j + 1];
+	//				array[j + 1] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for (int i = 0; i < array.Length - 1; i++)
+	//	{
+	//		for (int j = 0; j < array.Length - 1 - i; j++)
+	//		{
+	//			if (array[j] > array[j + 1])
+	//			{
+	//				int buffer = array[j];
+	//				array[j] = array[j+1];
+	//				array[j+1] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for (int i = 0; i < array.Length - 1; i++)
+	//	{
+	//		for (int j = 0; j < array.Length - 1 - i; j++)
+	//		{
+	//			if (array[j] > array[j + 1])
+	//			{
+	//				int buffer = array[j];
+	//				array[j] = array[j + 1];
+	//				array[j + 1] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
 	private static void BubbleSort(int[] array)
 	{
-		for(int i = 0;i < array.Length - 1;i++)
+		for (int i = 0; i < array.Length - 1; i++)
 		{
-			for (int j = 0; j < array.Length - i - 1; j++)
+			for (int j = 0; j < array.Length - 1 - i; j++)
 			{
 				if (array[j] > array[j + 1])
 				{
@@ -2376,18 +2423,60 @@ class Arrays_4_6_InsertionSort_2
 	//		array[j+1] = buffer;
 	//	}
 	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for(int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while(j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j + 1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for (int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j + 1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for (int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j + 1] = array[j];
+	//			j--;
+	//		}
+	//		array[j + 1] = buffer;
+	//	}
+	//}
 	private static void InsertionSort(int[] array)
 	{
-		for(int i = 1; i < array.Length; i++)
+		for (int i = 1; i < array.Length; i++)
 		{
 			int buffer = array[i];
 			int j = i - 1;
-			while(j >= 0 && array[j] > buffer)
+			while (j >= 0 && array[j] > buffer)
 			{
 				array[j + 1] = array[j];
 				j--;
 			}
-			array[j+1] = buffer;
+			array[j + 1] = buffer;
 		}
 	}
 }
@@ -3656,9 +3745,60 @@ class Arrays_4_6_SelectionSort
 	//		array[min] = buffer;
 	//	}
 	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length; i++)
+	//	{
+	//		int min = i;
+	//		for (int j = i + 1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0; i < array.Length; i++)
+	//	{
+	//		int min = i;
+	//		for (int j = i + 1; j < array.Length;j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0; i < array.Length; i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i + 1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
 	private static void SelectionSort(int[] array)
 	{
-		for (int i = 0;i < array.Length; i++)
+		for (int i = 0; i < array.Length; i++)
 		{
 			int min = i;
 			for (int j = i + 1; j < array.Length; j++)
@@ -5326,6 +5466,78 @@ class Arrays_4_6_Merge_Sort
 	//	MergeSort(rightArray);
 	//	Merge(leftArray, rightArray, array);
 	//}
+	//private static void MergeSort(int[] array)
+	//{
+	//	int length = array.Length;
+	//	if (length <= 1) return;
+	//	int middle = array.Length / 2;
+	//	int[] leftArray = new int[middle];
+	//	int[] rightArray = new int[length - middle];
+	//	int j = 0;
+	//	for (int i = 0; i < length; i++)
+	//	{
+	//		if (i < middle)
+	//		{
+	//			leftArray[i] = array[i];
+	//		}
+	//		else
+	//		{
+	//			rightArray[j] = array[i];
+	//			j++;
+	//		}
+	//	}
+	//	MergeSort(leftArray);
+	//	MergeSort(rightArray);
+	//	Merge(leftArray, rightArray, array);
+	//}
+	//private static void MergeSort(int[] array)
+	//{
+	//	int length = array.Length;
+	//	if (length <= 1) return;
+	//	int middle = array.Length / 2;
+	//	int[] leftArray = new int[middle];
+	//	int[] rightArray = new int[length - middle];
+	//	int j = 0;
+	//	for (int i = 0; i < length; i++)
+	//	{
+	//		if (i < middle)
+	//		{
+	//			leftArray[i] = array[i];
+	//		}
+	//		else
+	//		{
+	//			rightArray[j] = array[i];
+	//			j++;
+	//		}
+	//	}
+	//	MergeSort(leftArray);
+	//	MergeSort(rightArray);
+	//	Merge(leftArray, rightArray, array);
+	//}
+	//private static void MergeSort(int[] array)
+	//{
+	//	int length = array.Length;
+	//	if (length <= 1) return;
+	//	int middle = array.Length / 2;
+	//	int[] leftArray = new int[middle];
+	//	int[] rightArray =new int[length - middle];
+	//	int j = 0;
+	//	for (int i = 0; i < length; i++)
+	//	{
+	//		if (i < middle)
+	//		{
+	//			leftArray[i] = array[i];
+	//		}
+	//		else
+	//		{
+	//			rightArray[j] = array[i];
+	//			j++;
+	//		}
+	//	}
+	//	MergeSort(leftArray);
+	//	MergeSort(rightArray);
+	//	Merge(leftArray, rightArray, array);
+	//}
 	private static void MergeSort(int[] array)
 	{
 		int length = array.Length;
@@ -5359,7 +5571,7 @@ class Arrays_4_6_Merge_Sort
 		{
 			if (leftArray[l] < rightArray[r])
 			{
-				array[i] = leftArray[l]; l++;
+				array[i] = leftArray[l];l++; 
 			}
 			else
 			{
@@ -5367,15 +5579,93 @@ class Arrays_4_6_Merge_Sort
 			}
 			i++;
 		}
-		while (l < leftSize)
+		while(l < leftSize)
 		{
 			array[i] = leftArray[l]; l++; i++;
 		}
-		while(r < rightSize)
+		while (r < rightSize)
 		{
 			array[i] = rightArray[r]; r++; i++;
 		}
 	}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while (l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l];l++;
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r];r++;
+	//		}
+	//		i++;
+	//	}
+	//	while (l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//	while (r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++; i++;
+	//	}
+	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while (l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l];l++;
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r];r++;
+	//		}
+	//		i++;
+	//	}
+	//	while (l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++;i++;
+	//	}
+	//	while (r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++;i++;
+	//	}
+	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while (l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l]; l++;
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r];r++;
+	//		}
+	//		i++;
+	//	}
+	//	while (l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//	while(r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++; i++;
+	//	}
+	//}
 	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
 	//{
 	//	int leftSize = array.Length / 2;
@@ -6707,7 +6997,7 @@ class Array_4_6_QuickSort
 	}
 	private static void QuickSort(int[] array, int first, int end)
 	{
-		if (first < end) 
+		if (first <= end) 
 		{
 			int left = first;
 			int right = end;
