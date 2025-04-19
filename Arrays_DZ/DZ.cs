@@ -7139,18 +7139,234 @@ class Array_4_6_QuickSort
 	//		QuickSort(array, left, last);
 	//	}
 	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if(first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + last) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if(left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if(first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if(left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if(left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if(first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if(left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if(left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if(first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
 	private static void QuickSort(int[] array, int first, int last)
 	{
 		if(first < last)
 		{
 			int left = first;
 			int right = last;
-			int middle = array[(left + last) / 2];
+			int middle = array[(left + right) / 2];
 			do
 			{
 				while (array[left] < middle) left++;
 				while (array[right] > middle) right--;
-				if(left <= right)
+				if (left <= right)
 				{
 					int buffer = array[left];
 					array[left] = array[right];
