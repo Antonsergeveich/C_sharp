@@ -9,14 +9,15 @@
 //#define Arrays_4_6_InsertionSort
 //#define Arrays_4_6_InsertionSort_2
 //#define Arrays_4_6_SelectionSort
-//#define Arrays_4_6_Merge_Sort
-#define Array_4_6_QuickSort
+#define Arrays_4_6_Merge_Sort
+//#define Array_4_6_QuickSort
 
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 
 #if Arrays_4_1
@@ -582,17 +583,62 @@ class Arrays_4_6_1
 	//		}
 	//	}
 	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for (int i = 0; i < array.Length - 1; i++)
+	//	{
+	//		for (int j = 0; j < array.Length - 1 - i; j++)
+	//		{
+	//			if (array[j] > array[j + 1])
+	//			{
+	//				int buffer = array[j];
+	//				array[j] = array[j + 1];
+	//				array[j + 1] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for(int i = 0; i < array.Length - 1; i++)
+	//	{
+	//		for(int j = 0; j < array.Length - i - 1; j++)
+	//		{
+	//			if (array[j + 1] < array[j])
+	//			{
+	//				int buffer = array[j + 1];
+	//				array[j + 1] = array[j];
+	//				array[j] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
+	//private static void BubbleSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length - 1;i++)
+	//	{
+	//		for (int j = 0;j < array.Length - i - 1;j++)
+	//		{
+	//			if (array[j + 1] < array[j])
+	//			{
+	//				int buffer = array[j + 1];
+	//				array[j + 1] = array[j];
+	//				array[j] = buffer;
+	//			}
+	//		}
+	//	}
+	//}
 	private static void BubbleSort(int[] array)
 	{
-		for (int i = 0; i < array.Length - 1; i++)
+		for(int i = 0;i < array.Length - 1;i++)
 		{
-			for (int j = 0; j < array.Length - 1 - i; j++)
+			for(int j = 0;j < array.Length - i - 1; j++)
 			{
-				if (array[j] > array[j + 1])
+				if (array[j + 1] < array[j])
 				{
-					int buffer = array[j];
-					array[j] = array[j + 1];
-					array[j + 1] = buffer;
+					int buffer = array[j+ 1];
+					array[j + 1] = array[j];
+					array[j] = buffer;
 				}
 			}
 		}
@@ -1097,16 +1143,128 @@ class Arrays_4_6_CocktailSort
 	//		left++;
 	//	}
 	//}
+	//private static void CocktailSort(int[] array)
+	//{
+	//	int left = 0;
+	//	int right = array.Length - 1;
+	//	while (left < right)
+	//	{
+
+	//		for (int i = left; i < right; i++)
+	//		{
+	//			if (array[i] > array[i + 1])
+	//			{
+	//				int buffer = array[i];
+	//				array[i] = array[i + 1];
+	//				array[i + 1] = buffer;
+	//			}
+	//		}
+	//		right--;
+	//		for (int i = right; i > left; i--)
+	//		{
+	//			if (array[i - 1] > array[i])
+	//			{
+	//				int buffer = array[i - 1];
+	//				array[i - 1] = array[i];
+	//				array[i] = buffer;
+	//			}
+	//		}
+	//		left++;
+	//	}
+	//}
+	//private static void CocktailSort(int[] array)
+	//{
+	//	int left = 0;
+	//	int right = array.Length - 1;
+	//	while(left < right)
+	//	{
+	//		for(int i = 0; i < right; i++)
+	//		{
+	//			if (array[i] > array[i + 1])
+	//			{
+	//				int buffer = array[i];
+	//				array[i] = array[i+ 1];
+	//				array[i+ 1] = buffer;
+	//			}
+	//		}
+	//		right--;
+	//		for(int i = right; i > left; i--)
+	//		{
+	//			if (array[i-1] > array[i])
+	//			{
+	//				int buffer = array[i-1];
+	//				array[i-1] = array[i];
+	//				array[i] = buffer;
+	//			}
+	//		}
+	//		left++;
+	//	}
+	//}
+	//private static void CocktailSort(int[] array)
+	//{
+	//	int left = 0;
+	//	int right = array.Length - 1;
+	//	while(left < right)
+	//	{
+	//		for (int i = 0; i < right; i++)
+	//		{
+	//			if (array[i] > array[i + 1])
+	//			{
+	//				int buffer = array[i];
+	//				array[i] = array[i + 1];
+	//				array[i + 1] = buffer;
+	//			}
+	//		}
+	//		right--;
+	//		for(int i = right; i > left; i--)
+	//		{
+	//			if (array[i-1] > array[i])
+	//			{
+	//				int buffer = array[i - 1];
+	//				array[i-1] = array[i];
+	//				array[i] = buffer;
+	//			}
+	//		}
+	//		left++;
+	//	}
+	//}
+	//private static void CocktailSort(int[] array)
+	//{
+	//	int left = 0;
+	//	int right = array.Length - 1;
+	//	while(left < right)
+	//	{
+	//		for(int i = 0; i < right; i++)
+	//		{
+	//			if (array[i] > array[i + 1])
+	//			{
+	//				int buffer = array[i];
+	//				array[i] = array[i + 1];
+	//				array[i + 1] = buffer;
+	//			}
+	//		}
+	//		right--;
+	//		for(int i = right; i > left; i--)
+	//		{
+	//			if (array[i-1] > array[i])
+	//			{
+	//				int buffer = array[i-1];
+	//				array[i-1] = array[i];
+	//				array[i] = buffer;
+	//			}
+	//		}
+	//		left++;
+	//	}
+	//}
 	private static void CocktailSort(int[] array)
 	{
 		int left = 0;
 		int right = array.Length - 1;
 		while (left < right)
 		{
-
-			for (int i = left; i < right; i++)
+			for(int i = 0; i < right; i++)
 			{
-				if (array[i] > array[i + 1])
+				if (array[i]> array[i + 1])
 				{
 					int buffer = array[i];
 					array[i] = array[i + 1];
@@ -1114,12 +1272,12 @@ class Arrays_4_6_CocktailSort
 				}
 			}
 			right--;
-			for (int i = right; i > left; i--)
+			for(int i = right; i > left; i--)
 			{
-				if (array[i - 1] > array[i])
+				if (array[i-1] > array[i])
 				{
-					int buffer = array[i - 1];
-					array[i - 1] = array[i];
+					int buffer = array[i-1];
+					array[i-1] = array[i];
 					array[i] = buffer;
 				}
 			}
@@ -2465,18 +2623,60 @@ class Arrays_4_6_InsertionSort_2
 	//		array[j + 1] = buffer;
 	//	}
 	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for (int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j + 1] = array[j];
+	//			j--;
+	//		}
+	//		array[j + 1] = buffer;
+	//	}
+	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for(int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j + 1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
+	//private static void InsertionSort(int[] array)
+	//{
+	//	for(int i = 1; i < array.Length; i++)
+	//	{
+	//		int buffer = array[i];
+	//		int j = i - 1;
+	//		while (j >= 0 && array[j] > buffer)
+	//		{
+	//			array[j + 1] = array[j];
+	//			j--;
+	//		}
+	//		array[j+1] = buffer;
+	//	}
+	//}
 	private static void InsertionSort(int[] array)
 	{
-		for (int i = 1; i < array.Length; i++)
+		for(int i = 1; i < array.Length; i++)
 		{
 			int buffer = array[i];
 			int j = i - 1;
-			while (j >= 0 && array[j] > buffer)
+			while(j >= 0 && array[j] > buffer)
 			{
 				array[j + 1] = array[j];
 				j--;
 			}
-			array[j + 1] = buffer;
+			array[j+1] = buffer;
 		}
 	}
 }
@@ -3796,12 +3996,63 @@ class Arrays_4_6_SelectionSort
 	//		array[min] = buffer;
 	//	}
 	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0; i < array.Length; i++)
+	//	{
+	//		int min = i;
+	//		for (int j = i + 1; j < array.Length; j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for (int i = 0;i < array.Length;i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i + 1; j < array.Length;j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
+	//private static void SelectionSort(int[] array)
+	//{
+	//	for(int i = 0;i < array.Length;i++)
+	//	{
+	//		int min = i;
+	//		for(int j = i + 1;j < array.Length;j++)
+	//		{
+	//			if (array[min] > array[j])
+	//			{
+	//				min = j;
+	//			}
+	//		}
+	//		int buffer = array[i];
+	//		array[i] = array[min];
+	//		array[min] = buffer;
+	//	}
+	//}
 	private static void SelectionSort(int[] array)
 	{
-		for (int i = 0; i < array.Length; i++)
+		for(int i = 0;i < array.Length;i++)
 		{
 			int min = i;
-			for (int j = i + 1; j < array.Length; j++)
+			for(int j = i + 1;j < array.Length;j++)
 			{
 				if (array[min] > array[j])
 				{
@@ -5538,6 +5789,54 @@ class Arrays_4_6_Merge_Sort
 	//	MergeSort(rightArray);
 	//	Merge(leftArray, rightArray, array);
 	//}
+	//private static void MergeSort(int[] array)
+	//{
+	//	int length = array.Length;
+	//	if (length <= 1) return;
+	//	int middle = array.Length / 2;
+	//	int[] leftArray = new int[middle];
+	//	int[] rightArray = new int[length - middle];
+	//	int j = 0;
+	//	for (int i = 0; i < length; i++)
+	//	{
+	//		if (i < middle)
+	//		{
+	//			leftArray[i] = array[i];
+	//		}
+	//		else
+	//		{
+	//			rightArray[j] = array[i];
+	//			j++;
+	//		}
+	//	}
+	//	MergeSort(leftArray);
+	//	MergeSort(rightArray);
+	//	Merge(leftArray, rightArray, array);
+	//}
+	//private static void MergeSort(int[] array)
+	//{
+	//	int length = array.Length;
+	//	if (length <= 1) return;
+	//	int middle = array.Length / 2;
+	//	int[] leftArray = new int[middle];
+	//	int[] rightArray = new int[length - middle];
+	//	int j = 0;
+	//	for (int i = 0; i < length; i++)
+	//	{
+	//		if (i < middle)
+	//		{
+	//			leftArray[i] = array[i];
+	//		}
+	//		else
+	//		{
+	//			rightArray[j] = array[i];
+	//			j++;
+	//		}
+	//	}
+	//	MergeSort(leftArray);
+	//	MergeSort(rightArray);
+	//	Merge(leftArray, rightArray, array);
+	//}
 	private static void MergeSort(int[] array)
 	{
 		int length = array.Length;
@@ -5567,27 +5866,78 @@ class Arrays_4_6_Merge_Sort
 		int leftSize = array.Length / 2;
 		int rightSize = array.Length - leftSize;
 		int i = 0, l = 0, r = 0;
-		while (l < leftSize && r < rightSize)
+		while(l < leftSize && r < rightSize)
 		{
 			if (leftArray[l] < rightArray[r])
 			{
-				array[i] = leftArray[l];l++; 
+				array[i] = leftArray[l];l++;i++;
 			}
 			else
 			{
-				array[i] = rightArray[r];r++;
+				array[i] = rightArray[r];r++;i++;
 			}
-			i++;
 		}
 		while(l < leftSize)
 		{
-			array[i] = leftArray[l]; l++; i++;
+			array[i] = leftArray[l];l++;i++;
 		}
 		while (r < rightSize)
 		{
-			array[i] = rightArray[r]; r++; i++;
+			array[i] = rightArray[r];r++;i++;
 		}
 	}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while (l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l]; l++;
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r];r++;
+	//		}
+	//		i++;
+	//	}
+	//	while(r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++;i++;
+	//	}
+	//	while(l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//}
+	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+	//{
+	//	int leftSize = array.Length / 2;
+	//	int rightSize = array.Length - leftSize;
+	//	int i = 0, l = 0, r = 0;
+	//	while (l < leftSize && r < rightSize)
+	//	{
+	//		if (leftArray[l] < rightArray[r])
+	//		{
+	//			array[i] = leftArray[l];l++; 
+	//		}
+	//		else
+	//		{
+	//			array[i] = rightArray[r];r++;
+	//		}
+	//		i++;
+	//	}
+	//	while(l < leftSize)
+	//	{
+	//		array[i] = leftArray[l]; l++; i++;
+	//	}
+	//	while (r < rightSize)
+	//	{
+	//		array[i] = rightArray[r]; r++; i++;
+	//	}
+	//}
 	//private static void Merge(int[] leftArray, int[] rightArray, int[] array)
 	//{
 	//	int leftSize = array.Length / 2;
@@ -7499,9 +7849,297 @@ class Array_4_6_QuickSort
 	//		QuickSort(array, left, last);
 	//	}
 	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if(first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if(left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
+	//private static void QuickSort(int[] array, int first, int last)
+	//{
+	//	if (first < last)
+	//	{
+	//		int left = first;
+	//		int right = last;
+	//		int middle = array[(left + right) / 2];
+	//		do
+	//		{
+	//			while (array[left] < middle) left++;
+	//			while (array[right] > middle) right--;
+	//			if (left <= right)
+	//			{
+	//				int buffer = array[left];
+	//				array[left] = array[right];
+	//				array[right] = buffer;
+	//				left++;
+	//				right--;
+	//			}
+	//		} while (left < right);
+	//		QuickSort(array, first, right);
+	//		QuickSort(array, left, last);
+	//	}
+	//}
 	private static void QuickSort(int[] array, int first, int last)
 	{
-		if(first < last)
+		if (first < last)
 		{
 			int left = first;
 			int right = last;
@@ -7510,7 +8148,7 @@ class Array_4_6_QuickSort
 			{
 				while (array[left] < middle) left++;
 				while (array[right] > middle) right--;
-				if(left <= right)
+				if (left <= right)
 				{
 					int buffer = array[left];
 					array[left] = array[right];
