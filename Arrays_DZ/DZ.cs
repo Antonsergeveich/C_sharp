@@ -11,8 +11,8 @@
 //#define Arrays_4_6_SelectionSort
 //#define Arrays_4_6_Merge_Sort
 //#define Array_4_6_QuickSort
-#define Array_7
-
+//#define Array_7
+#define Array_8
 
 using System;
 using System.Collections.Generic;
@@ -8947,6 +8947,19 @@ class Array_7
 		//{
 		//	Console.Write(arr[i] + "\t");
 		//}
+
+	}
+}
+#endif
+#if Array_8
+class Array_8
+{
+	static void Main()
+	{
+		Console.WriteLine("Напишите программу, в которой создаётся двумерный целочисленный массив.\n" +
+			"Он заполняется случайными числами. Затем в этом массиве строки и столбцы меняются местами:\n" +
+			"первая строка становится первым столбцом, вторая строка становится вторым столбцом и так далее.\n" +
+			"Например если исходный массив состоял из 3 строк и 5 столбцов, то в итоге получаем массив из 5 строк и 3 столбцов.");
 
 	}
 }
