@@ -11,8 +11,8 @@
 //#define Arrays_4_6_SelectionSort
 //#define Arrays_4_6_Merge_Sort
 //#define Array_4_6_QuickSort
-#define Array_7
-//#define Array_8
+//#define Array_7
+#define Array_8
 
 using System;
 using System.Collections.Generic;
@@ -8978,7 +8978,30 @@ class Array_8
 			"Он заполняется случайными числами. Затем в этом массиве строки и столбцы меняются местами:\n" +
 			"первая строка становится первым столбцом, вторая строка становится вторым столбцом и так далее.\n" +
 			"Например если исходный массив состоял из 3 строк и 5 столбцов, то в итоге получаем массив из 5 строк и 3 столбцов.");
-
+		Console.WriteLine("Напишите размер массива: ");
+		int size = int.Parse(Console.ReadLine());
+		int[,] array = new int[size,size];
+		Random rnd = new Random();
+		for(int i = 0; i < size; i++)
+		{
+			for (int j = 0; j < size; j++)
+			{
+				array[i, j] = rnd.Next(0, 256);
+				Console.Write(array[i,j] + "\t");
+			}
+			Console.WriteLine();
+			Console.WriteLine();
+		}
+		Console.WriteLine("-------------------------");
+		for(int j = 0; j < size; j++)
+		{
+			for(int i = 0;i < size; i++)
+			{
+				Console.Write(array[i, j] + "\t");
+			}
+			Console.WriteLine();
+			Console.WriteLine();
+		}
 	}
 }
 #endif
