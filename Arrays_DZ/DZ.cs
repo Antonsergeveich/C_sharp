@@ -12,7 +12,8 @@
 //#define Arrays_4_6_Merge_Sort
 //#define Array_4_6_QuickSort
 //#define Array_7
-#define Array_8
+//#define Array_8
+#define Array_9
 
 using System;
 using System.Collections.Generic;
@@ -9006,3 +9007,40 @@ class Array_8
 	}
 }
 #endif
+class Array_9
+{
+	static void Main()
+	{
+		Console.WriteLine("Напишите прогамму, в которой создаётся и инициализируется двумерный числовой массив." +
+			"Затем из этого массива удаляется строка и столбец (создаётся новый массив, в котором по сравнению с исходным " +
+			"удалена одна строка и один столбец). " +
+			"Индекс удаляемой строки и удаляемого столбца определяется с помощью генератора случайных чисел.");
+		Console.Write("Введите количество строк: ");
+		int rows = int.Parse(Console.ReadLine() + "\n");
+		Console.Write("Введите количество столбцов: ");
+		int cols = int.Parse(Console.ReadLine() + "\n");
+		Console.WriteLine();
+		int[,] array = new int[rows, cols];
+		Random rnd = new Random();
+		for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < cols; j++)
+			{
+				array[i, j] = rnd.Next(0, 256);
+				Console.Write(array[i, j] + "\t");
+			}
+			Console.WriteLine();
+		}
+		int dif_size = 0;
+		for (int i = 0; i < cols; i++)
+		{
+			string dif = array[0, i].ToString();
+			dif_size += dif.Length;
+		}
+		for (int i = 0; i < dif_size; i++)
+		{
+			Console.Write("---");
+		}
+		Console.WriteLine();
+	}
+}
