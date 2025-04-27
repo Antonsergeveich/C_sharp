@@ -8978,13 +8978,14 @@ class Array_8
 			"Он заполняется случайными числами. Затем в этом массиве строки и столбцы меняются местами:\n" +
 			"первая строка становится первым столбцом, вторая строка становится вторым столбцом и так далее.\n" +
 			"Например если исходный массив состоял из 3 строк и 5 столбцов, то в итоге получаем массив из 5 строк и 3 столбцов.");
-		Console.WriteLine("Напишите размер массива: ");
-		int size = int.Parse(Console.ReadLine());
-		int[,] array = new int[size,size];
+		Console.WriteLine("Напишите количество строк массива: ");
+		int rows = int.Parse(Console.ReadLine());
+		int cols = int.Parse(Console.ReadLine());
+		int[,] array = new int[rows,cols];
 		Random rnd = new Random();
-		for(int i = 0; i < size; i++)
+		for(int i = 0; i < rows; i++)
 		{
-			for (int j = 0; j < size; j++)
+			for (int j = 0; j < cols; j++)
 			{
 				array[i, j] = rnd.Next(0, 256);
 				Console.Write(array[i,j] + "\t");
@@ -8993,9 +8994,9 @@ class Array_8
 			Console.WriteLine();
 		}
 		Console.WriteLine("-------------------------");
-		for(int j = 0; j < size; j++)
+		for(int j = 0; j < cols; j++)
 		{
-			for(int i = 0;i < size; i++)
+			for(int i = 0; i < rows; i++)
 			{
 				Console.Write(array[i, j] + "\t");
 			}
