@@ -11,8 +11,8 @@
 //#define Arrays_4_6_SelectionSort
 //#define Arrays_4_6_Merge_Sort
 //#define Array_4_6_QuickSort
-//#define Array_7
-#define Array_8
+#define Array_7
+//#define Array_8
 
 using System;
 using System.Collections.Generic;
@@ -8925,29 +8925,47 @@ class Array_7
 	{
 		Console.WriteLine("Написать программу, в которой создаётся символьный массив," +
 			" а затем порядок элементов меняется на обратный.");
-		Random rnd = new Random();
-		Console.Write("Напишите размер массива: ");
-		int size = Int32.Parse(Console.ReadLine());
-		char[] arr = new char[size];
-		for(int i = 0; i < size; i++)
-		{
-			arr[i] =(char)rnd.Next(65,90);
-		}
-		for(int i = 0; i < arr.Length; i++)
-		{
-			Console.Write(arr[i] + "\t");
-		}
-		Console.WriteLine();
-		for(int i = arr.Length - 1; i >= 0 ; i--)
-		{
-			Console.Write(arr[i] + "\t");
-		}
+		//Random rnd = new Random();
+		//Console.Write("Напишите размер массива: ");
+		//int size = Int32.Parse(Console.ReadLine());
+		//char[] arr = new char[size];
+		//for(int i = 0; i < size; i++)
+		//{
+		//	arr[i] =(char)rnd.Next(65,90);
+		//}
+		//for(int i = 0; i < arr.Length; i++)
+		//{
+		//	Console.Write(arr[i] + "\t");
+		//}
+		//Console.WriteLine();
+		//for(int i = arr.Length - 1; i >= 0 ; i--)
+		//{
+		//	Console.Write(arr[i] + "\t");
+		//}
 		//Array.Reverse(arr);
 		//for(int i = 0; i < arr.Length; i++)
 		//{
 		//	Console.Write(arr[i] + "\t");
 		//}
-
+		Console.WriteLine("Enter the size of the array");
+		int size = int.Parse(Console.ReadLine());
+		Random rnd = new Random();
+		char[] arr = new char[size];
+		for(int i = 0; i < size; i++)
+		{
+			arr[i] = (char)rnd.Next(65,90);
+			Console.Write(arr[i] + "\t");
+		}
+		Console.WriteLine();
+		for(int i = arr.Length - 1; i >= 0; i--)
+		{
+			Console.Write(arr[i]+"\t");
+		}
+		Console.WriteLine();
+		foreach(char c in arr)
+		{
+			Console.Write(c + "\t");
+		}
 	}
 }
 #endif
