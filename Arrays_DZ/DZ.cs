@@ -9042,16 +9042,152 @@ class Array_9
 			Console.Write("---");
 		}
 		Console.WriteLine();
-		int index_row = rnd.Next(array.GetLength(0) - 1);
-		int index_col = rnd.Next(array.GetLength(1) - 1);
+		int index_row = rnd.Next(array.GetLength(0));
+		int index_col = rnd.Next(array.GetLength(1));
 		Console.WriteLine("Удаляется {0}-я строка и {1}-й столбец.", index_row, index_col);
-		int[,] array_2 = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
-		for (int i = 0,k = 0; i < array.GetLength(0); i++)
+		for (int i = 0; i < dif_size; i++)
 		{
-			if (i == index_row) continue;
-			for (int j = 0,u = 0; j < array.GetLength(1); j++)
+			Console.Write("---");
+		}
+		Console.WriteLine();
+		int[,] array_2 = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
+		//for (int i = 0,k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if (i == index_row) continue;
+		//	for (int j = 0,u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if (j == index_col) continue;
+		//		array_2[k, u] = array[i, j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if(i == index_row)continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col) continue;
+		//		array_2[k,u] = array[i,j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for (int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if (i == index_row) continue;
+		//	for (int j = 0, u = 0; j < array.GetLength(1);j++)
+		//	{
+		//		if(j == index_col) continue; 
+		//		array_2[k,u] = array[i,j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if(i == index_row)continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col) continue; 
+		//		array_2[k,u] = array[i,j];
+		//		u++;	
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if(i == index_row)continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col) continue; array_2[k,u] = array[i,j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if (i == index_row) continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col) continue;
+		//		array_2[k, u] = array[i, j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if (i == index_row) continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col) continue;
+		//		array_2[k, u] = array[i, j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if(i == index_row)continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col)continue;
+		//		array_2[k, u] = array[i, j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if (i == index_row) continue;
+		//	for(int j = 0 , u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col) continue;
+		//		array_2[k, u] = array[i, j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if(i == index_row)continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col)continue;
+		//		array_2[k,u] = array[i,j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if (i == index_row) continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col) continue;
+		//		array_2[k,u] = array[i,j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if(i == index_row)continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col)continue;
+		//		array_2[k, u] = array[i, j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		{
+			if(i == index_row)continue;
+			for(int j = 0, u = 0; j < array.GetLength(1); j++)
 			{
-				if (j == index_col) continue;
+				if(j == index_col)continue;
 				array_2[k, u] = array[i, j];
 				u++;
 			}
@@ -9059,9 +9195,9 @@ class Array_9
 		}
 		for (int i = 0; i < array_2.GetLength(0); i++)
 		{
-			for(int j = 0; j < array_2.GetLength(1); j++)
+			for (int j = 0; j < array_2.GetLength(1); j++)
 			{
-				Console.Write(array_2[i,j] + "\t");
+				Console.Write(array_2[i, j] + "\t");
 			}
 			Console.WriteLine();
 		}
