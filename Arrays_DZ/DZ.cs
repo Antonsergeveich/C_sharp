@@ -9042,5 +9042,28 @@ class Array_9
 			Console.Write("---");
 		}
 		Console.WriteLine();
+		int index_row = rnd.Next(array.GetLength(0) - 1);
+		int index_col = rnd.Next(array.GetLength(1) - 1);
+		Console.WriteLine("Удаляется {0}-я строка и {1}-й столбец.", index_row, index_col);
+		int[,] array_2 = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
+		for (int i = 0,j = 0; i < array.GetLength(0); i++)
+		{
+			if (i == index_row) continue;
+			for (int k = 0,u = 0; k < array.GetLength(1); k++)
+			{
+				if (k == index_col) continue;
+				array_2[j, u] = array[i, k];
+				u++;
+			}
+			j++;
+		}
+		for (int i = 0; i < array_2.GetLength(0); i++)
+		{
+			for(int j = 0; j < array_2.GetLength(1); j++)
+			{
+				Console.Write(array_2[i,j] + "\t");
+			}
+			Console.WriteLine();
+		}
 	}
 }
