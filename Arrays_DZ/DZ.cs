@@ -9238,14 +9238,17 @@ class Array_10
 			{
 				array[i, j] = counter++;
 			}
+
 			for (int l = i + 1; l < cols - i; l++)
 			{
 				array[l, cols - 1 - i] = counter++;
 			}
+
 			for (int j = cols - i - 2; j >= i; j--)
 			{
 				array[cols - 1 - i, j] = counter++;
 			}
+
 			for (int l = cols - 2 - i; l > i; l--)
 			{
 				array[l, i] = counter++;
