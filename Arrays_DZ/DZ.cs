@@ -13,7 +13,8 @@
 //#define Array_4_6_QuickSort
 //#define Array_7
 //#define Array_8
-#define Array_9
+//#define Array_9
+#define Array_10
 
 using System;
 using System.Collections.Generic;
@@ -9007,6 +9008,7 @@ class Array_8
 	}
 }
 #endif
+#if Array_9
 class Array_9
 {
 	static void Main()
@@ -9182,12 +9184,23 @@ class Array_9
 		//	}
 		//	k++;
 		//}
-		for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//for(int i = 0, k = 0; i < array.GetLength(0); i++)
+		//{
+		//	if(i == index_row)continue;
+		//	for(int j = 0, u = 0; j < array.GetLength(1); j++)
+		//	{
+		//		if(j == index_col)continue;
+		//		array_2[k, u] = array[i, j];
+		//		u++;
+		//	}
+		//	k++;
+		//}
+		for (int i = 0, k = 0; i < array.GetLength(0); i++)
 		{
-			if(i == index_row)continue;
-			for(int j = 0, u = 0; j < array.GetLength(1); j++)
+			if (i == index_row) continue;
+			for (int j = 0, u = 0; j < array.GetLength(1); j++)
 			{
-				if(j == index_col)continue;
+				if (j == index_col) continue;
 				array_2[k, u] = array[i, j];
 				u++;
 			}
@@ -9202,4 +9215,71 @@ class Array_9
 			Console.WriteLine();
 		}
 	}
+} 
+#endif
+#if Array_10
+class Array_10
+{
+	static void Main()
+	{
+		Console.WriteLine("Написить программу, в которой создаётся двумерный числовой массив и" +
+			"этот массив заполняется <<змейкой>>: сначала первая строка (слева направо), " +
+			"затем последний столбец (сверху вниз), последняя строка (справа налево), " +
+			"первый столбец (снизу вверх), вторая строка (слева направо) и так далее.");
+		Console.WriteLine();
+		int[,] array = new int[5, 5];
+		int counter = 0;
+		for (int i = 0; i < array.GetLength(0); i++)
+		{
+			for (int j = i; j < array.GetLength(1) - i; j++)
+			{
+				array[i, j] = counter++;
+			}
+			for (int l = i + 1; l < array.GetLength(1) - i; l++)
+			{
+				array[l, array.GetLength(1) - 1 - i] = counter++;
+			}
+			for (int j = array.GetLength(1) - i - 2; j >= i; j--)
+			{
+				array[array.GetLength(1) - 1 - i, j] = counter++;
+			}
+			for (int l = array.GetLength(1) - 2 - i; l > i; l--)
+			{
+				array[l, i] = counter++;
+			}
+		}
+
+		//Console.WriteLine();
+		//int[,] array = new int[5, 5];
+		//int value = 1;
+		//for (int i = 0; i < array.GetLength(0); i++)
+		//{
+		//	if (i % 2 == 0)
+		//	{
+		//		for (int j = 0; j < array.GetLength(1); j++)
+		//		{
+		//			array[i, j] = value;
+		//			value++;
+		//		}
+		//	}
+		//	else
+		//	{
+		//		for (int j = array.GetLength(1) - 1; j >= 0; j--)
+		//		{
+		//			array[i, j] = value;
+		//			value++;
+		//		}
+		//	}
+		//}
+		for (int i = 0; i < array.GetLength(0); i++)
+		{
+			for (int j = 0; j < array.GetLength(1); j++)
+			{
+				Console.Write(array[i, j] + "\t");
+			}
+			Console.WriteLine();
+			Console.WriteLine();
+		}
+	}
 }
+#endif
