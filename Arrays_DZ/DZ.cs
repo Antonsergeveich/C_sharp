@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -9228,22 +9229,24 @@ class Array_10
 			"первый столбец (снизу вверх), вторая строка (слева направо) и так далее.");
 		Console.WriteLine();
 		int[,] array = new int[5, 5];
-		int counter = 0;
-		for (int i = 0; i < array.GetLength(0); i++)
+		int counter = 1;
+		int rows = array.GetLength(0);
+		int cols = array.GetLength(1);
+		for (int i = 0; i < rows; i++)
 		{
-			for (int j = i; j < array.GetLength(1) - i; j++)
+			for (int j = i; j < cols - i; j++)
 			{
 				array[i, j] = counter++;
 			}
-			for (int l = i + 1; l < array.GetLength(1) - i; l++)
+			for (int l = i + 1; l < cols - i; l++)
 			{
-				array[l, array.GetLength(1) - 1 - i] = counter++;
+				array[l, cols - 1 - i] = counter++;
 			}
-			for (int j = array.GetLength(1) - i - 2; j >= i; j--)
+			for (int j = cols - i - 2; j >= i; j--)
 			{
-				array[array.GetLength(1) - 1 - i, j] = counter++;
+				array[cols - 1 - i, j] = counter++;
 			}
-			for (int l = array.GetLength(1) - 2 - i; l > i; l--)
+			for (int l = cols - 2 - i; l > i; l--)
 			{
 				array[l, i] = counter++;
 			}
@@ -9271,6 +9274,7 @@ class Array_10
 		//		}
 		//	}
 		//}
+
 		for (int i = 0; i < array.GetLength(0); i++)
 		{
 			for (int j = 0; j < array.GetLength(1); j++)
