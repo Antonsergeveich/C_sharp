@@ -9224,12 +9224,12 @@ class Array_10
 {
 	static void Main()
 	{
-		Console.WriteLine("Написить программу, в которой создаётся двумерный числовой массив и" +
-			"этот массив заполняется <<змейкой>>: сначала первая строка (слева направо), " +
-			"затем последний столбец (сверху вниз), последняя строка (справа налево), " +
-			"первый столбец (снизу вверх), вторая строка (слева направо) и так далее.");
+		//Console.WriteLine("Написить программу, в которой создаётся двумерный числовой массив и" +
+		//	"этот массив заполняется <<змейкой>>: сначала первая строка (слева направо), " +
+		//	"затем последний столбец (сверху вниз), последняя строка (справа налево), " +
+		//	"первый столбец (снизу вверх), вторая строка (слева направо) и так далее.");
 		Console.WriteLine();
-		int[,] array = new int[9, 9];
+		int[,] array = new int[15, 15];
 		int counter = 1;
 		int rows = array.GetLength(0);
 		int cols = array.GetLength(1);
@@ -9253,6 +9253,234 @@ class Array_10
 		//	for (int l = cols - i - 2; l > i; l--)
 		//	{
 		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for(int i = 0; i < rows; i++)
+		//{
+		//	for(int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for(int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for(int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for(int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for(int i = 0; i < rows; i++)
+		//{
+		//	for(int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for(int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for(int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for(int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l,i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for(int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for(int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for(int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for(int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for(int i = 0; i < rows; i++)
+		//{
+		//	for(int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for(int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for(int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for(int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for(int i = 0; i < rows; i++)
+		//{
+		//	for(int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for(int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for(int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for(int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for(int i = 0; i < rows; i++)
+		//{
+		//	for(int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for(int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for(int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1,j] = counter++;
+		//	}
+		//	for(int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j > i; j--)
+		//	{
+		//		array[j, i] = counter++;
 		//	}
 		//}
 		//for (int i = 0; i < rows; i++)
@@ -9326,6 +9554,7 @@ class Array_10
 			Console.WriteLine();
 			Console.WriteLine();
 		}
+		Console.ReadKey();
 	}
 }
 #endif
