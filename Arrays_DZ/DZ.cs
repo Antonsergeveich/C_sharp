@@ -25,6 +25,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Security.AccessControl;
+using System.Threading;
 
 #if Arrays_4_1
 class Arrays_4_1
@@ -9228,28 +9229,66 @@ class Array_10
 			"затем последний столбец (сверху вниз), последняя строка (справа налево), " +
 			"первый столбец (снизу вверх), вторая строка (слева направо) и так далее.");
 		Console.WriteLine();
-		int[,] array = new int[5, 5];
+		int[,] array = new int[9, 9];
 		int counter = 1;
 		int rows = array.GetLength(0);
 		int cols = array.GetLength(1);
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
 		for (int i = 0; i < rows; i++)
 		{
 			for (int j = i; j < cols - i; j++)
 			{
 				array[i, j] = counter++;
 			}
-
 			for (int l = i + 1; l < cols - i; l++)
 			{
-				array[l, cols - 1 - i] = counter++;
+				array[l, cols - i - 1] = counter++;
 			}
-
 			for (int j = cols - i - 2; j >= i; j--)
 			{
-				array[cols - 1 - i, j] = counter++;
+				array[cols - i - 1, j] = counter++;
 			}
-
-			for (int l = cols - 2 - i; l > i; l--)
+			for (int l = cols - i - 2; l > i; l--)
 			{
 				array[l, i] = counter++;
 			}
