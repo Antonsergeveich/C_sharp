@@ -2,7 +2,6 @@
 
 class StatMethDemo
 {
-	
 	static void Main()
 	{
 		//Вызываем статический метод для отображения 
@@ -48,7 +47,7 @@ class StatMethDemo
 		for (int k = 1; k <= n; k++)
 		{
 			//текущее значение умножается на число:
-			s *= k;
+			s *= x;
 		}
 		//Результат метода:
 		return s;
