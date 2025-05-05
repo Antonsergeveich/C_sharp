@@ -109,6 +109,7 @@ class OverloadMethDemo
 		show(z);
 		//Вызываем метод с двумя аргументами:
 		show(num, 'Q');
+		show('L', 'K');
 	}
 }
 #endif
