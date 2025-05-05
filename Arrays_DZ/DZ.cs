@@ -9229,7 +9229,7 @@ class Array_10
 		//	"затем последний столбец (сверху вниз), последняя строка (справа налево), " +
 		//	"первый столбец (снизу вверх), вторая строка (слева направо) и так далее.");
 		Console.WriteLine();
-		int[,] array = new int[15, 15];
+		int[,] array = new int[7, 7];
 		int counter = 1;
 		int rows = array.GetLength(0);
 		int cols = array.GetLength(1);
@@ -9502,6 +9502,158 @@ class Array_10
 		//		array[l, i] = counter++;
 		//	}
 		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//for (int j = i; j < cols - i; j++)
+		//{
+		//array[i, j] = counter++;
+		//}
+		//for (int l = i + 1; l < cols - i; l++)
+		//{
+		//array[l, cols - i - 1] = counter++;
+		//}
+		//for (int j = cols - i - 2; j >= i; j--)
+		//{
+		//array[cols - i - 1, j] = counter++;
+		//}
+		//for (int l = cols - i - 2; l > i; l--)
+		//{
+		//array[l, i] = counter++;
+		//}
+		//}
+		//for(int i = 0; i < rows; i++)
+		//{
+		//	for(int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for(int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for(int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < array.GetLength(0); i++)
+		//{
+		//	for (int j = i; j < array.GetLength(1) - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < array.GetLength(1) - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < array.GetLength(0); i++)
+		//{
+		//	for (int j = i; j < array.GetLength(1) - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for(int l = i + 1; l < array.GetLength(1) - i; l++)
+		//	{
+		//		array[l, array.GetLength(1) - i - 1] = counter++;
+		//	}
+		//	for(int j = array.GetLength(1) - i - 2; j >= i; j--)
+		//	{
+		//		array[array.GetLength(1) - i - 1, j] = counter++;
+		//	}
+		//	for(int l = array.GetLength(1) - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < array.GetLength(0); i++)
+		//{
+		//	for (int j = i; j < array.GetLength(1) - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < array.GetLength(1) - i; l++)
+		//	{
+		//		array[l, array.GetLength(1) - i - 1] = counter++;
+		//	}
+		//	for (int j = array.GetLength(1) - i - 2; j >= i; j--)
+		//	{
+		//		array[array.GetLength(1) - i - 1, j] = counter++;
+		//	}
+		//	for (int l = array.GetLength(1) - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
+		//for (int i = 0; i < rows; i++)
+		//{
+		//	for (int j = i; j < cols - i; j++)
+		//	{
+		//		array[i, j] = counter++;
+		//	}
+		//	for (int l = i + 1; l < cols - i; l++)
+		//	{
+		//		array[l, cols - i - 1] = counter++;
+		//	}
+		//	for (int j = cols - i - 2; j >= i; j--)
+		//	{
+		//		array[cols - i - 1, j] = counter++;
+		//	}
+		//	for (int l = cols - i - 2; l > i; l--)
+		//	{
+		//		array[l, i] = counter++;
+		//	}
+		//}
 		for (int i = 0; i < rows; i++)
 		{
 			for (int j = i; j < cols - i; j++)
@@ -9554,7 +9706,7 @@ class Array_10
 			Console.WriteLine();
 			Console.WriteLine();
 		}
-		Console.ReadKey();
+		//Console.ReadKey();
 	}
 }
 #endif
