@@ -274,6 +274,21 @@ class ArrayFromMethDemo
 		}
 		return nums;
 	}
+	static int[,] multiples_of_5(int m, int n)
+	{
+		int[,] nums = new int[m, n];
+		int val = 0;
+		for(int i = 0; i < nums.GetLength(0); i++)
+		{
+			for(int j = 0;j < nums.GetLength(1); j++)
+			{
+				nums[i, j] = val;
+				if (nums[i, j] % 5 == 0)
+				val = val + 5; 
+			}
+		}
+		return nums;
+	}
 	//Главный метод программы:
 	static void Main()
 	{
@@ -284,6 +299,7 @@ class ArrayFromMethDemo
 		//Переменная для двумерного массива:
 		int[,] C;
 		int[,] D;
+		int[,] E;
 		//Создаётся массив с числами Фибоначчи:
 		A = fibs(10);
 		Console.WriteLine("Числа Фибоначчи:");
@@ -322,6 +338,16 @@ class ArrayFromMethDemo
 			for (int j = 0; j < D.GetLength(1); j++)
 			{
 				Console.Write("{0,4}", D[i, j]);
+			}
+			Console.WriteLine();
+		}
+		Console.WriteLine("Двумерный массив из чисел кратных пяти:");
+		E = multiples_of_5(4, 6);
+		for(int i = 0;i < E.GetLength(0); i++)
+		{
+			for(int j = 0;j < E.GetLength(1); j++)
+			{
+				Console.Write("{0,4}", E[i, j]);
 			}
 			Console.WriteLine();
 		}
