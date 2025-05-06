@@ -269,7 +269,7 @@ class ArrayFromMethDemo
 			for (int j = 0; j < nums.GetLength(1); j++)
 			{
 				nums[i, j] = val;
-				val = +2;
+				val += 2;
 			}
 		}
 		return nums;
