@@ -3,7 +3,8 @@
 //#define ArrayToMethDemo
 //#define ArrayFromMethDemo
 //#define ArgsDemo
-#define RefArgsDemo
+//#define RefArgsDemo
+#define UsingOutDemo
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -499,14 +500,57 @@ class RefArgsDemo
 		Console.WriteLine("До вызова метода alpha(): A = " + A);
 		alpha(ref A);
 		Console.WriteLine("После вызова метода alpha(): A = " + A);
-		int[] B = { 1, 3, 5 };
+		int[] B = [1, 3, 5];
 		Console.WriteLine("До вызова метода bravo(): B = " + ArrayToText(B));
 		bravo(ref B);
 		Console.WriteLine("После вызова метода bravo(): B = " + ArrayToText(B));
-		int[] C = { 2, 4, 6 };
+		int[] C = [2, 4, 6];
 		Console.WriteLine("До вызова метода charlie(): C = " + ArrayToText(C));
 		charlie(ref C);
 		Console.WriteLine("После вызова метода charlie(): C = " + ArrayToText(C));
+	}
+}
+#endif
+#if UsingOutDemo
+class UsingOutDemo
+{
+	//Метод для вычисления значения наименьшего элемента в массиве и его индекса:
+	static int getMin(int[] nums, out int index)
+	{
+		//Начальное значение для индекса:
+		index = 0;
+		//Перебор элементов массива:
+		for (int k = 1; k < nums.Length; k++)
+		{
+			//Если значение элемента меньше текущего минимального значения:
+			if (nums[k] < nums[index])
+			{
+				//Новое значение для индекса:
+				index = k;
+			}
+		}
+		//Результат метода:
+		return nums[index];
+	}
+	// Главный метод программы:
+	static void Main()
+	{
+		//Целочисленный массив:
+		int[] A = { 12, 7, 8, 3, 8, 4, 1, 3, 4, 1, 7, 15 };
+		//Отображение содержимого массива:
+		foreach (int v in A)
+		{
+			Console.Write("| {0}", v);
+		}
+		Console.WriteLine("|");
+		//Объявление переменных:
+		int val, k;
+		//Вычисление элемента с наименьшим значением:
+		val = getMin(A, out k);
+		//Отображение результатов:
+		Console.WriteLine("Наименьшее значение: " + val);
+		Console.WriteLine("Индекс элемента: " + k);
+		Console.WriteLine("Проверка: A[{0}] = {1}", k, A[k]);
 	}
 }
 #endif
