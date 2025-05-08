@@ -6,7 +6,9 @@
 //#define RefArgsDemo
 //#define UsingOutDemo
 //#define RecursionDemo
-#define ParamsDemo
+//#define ParamsDemo
+#define MainMethDemo
+
 using System;
 using System.Runtime.Serialization.Formatters;
 #if StatMethDemo
@@ -1178,6 +1180,18 @@ class ParamsDemo
 		//Отображаются аргументы:
 		show(new int[] { 1, 3, 5 }, 'A', 'B', 'C', 'D', 'E');
 		show(new int[] { 1, 3, 5, 7, 9 }, 'A', 'B', 'C', 'D');
+	}
+}
+#endif
+#if MainMethDemo
+class MainMethDemo
+{
+	//Главный метод возвращает результат:
+	static int Main()
+	{
+		Console.WriteLine("Главный метод возвращает результат!");
+		//Результат главного метода:
+		return 0;
 	}
 }
 #endif
