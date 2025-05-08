@@ -923,53 +923,245 @@ class RecursionDemo
 	}
 #endif
 #if ParamsDemo
+/* Params в C# — это ключевое слово,
+ * которое позволяет передавать методу переменное количество аргументов одного типа 
+ * в виде единственного логического параметра.*/
 class ParamsDemo
 {
 	//Метод для вычисления суммы чисел:
+	//static int sum(params int[] a)
+	//{
+	//	//Локальная переменная (значение суммы):
+	//	int res = 0;
+	//	//Перебор аргументов метода:
+	//	for (int k = 0; k < a.Length; k++)
+	//	{
+	//		//Прибавление слагаемого к сумме:
+	//		res += a[k];
+	//	}
+	//	//Результат метода:
+	//	return res;
+	//}
+	//static int sum(params int[] a)
+	//{
+	//	int res = 0;
+	//	for(int k = 0; k < a.Length; k++)
+	//	{
+	//		res += a[k];
+	//	}
+	//	return res;
+	//}
+	//static int sum(params int[] a)
+	//{
+	//	int res = 0;
+	//	for(int k = 0; k < a.Length; k++)
+	//	{
+	//		res += a[k];
+	//	}
+	//	return res;
+	//}
+	//static int sum(params int[] a)
+	//{
+	//	int res = 0;
+	//	for(int k =0; k< a.Length; k++)
+	//	{
+	//		res += a[k];
+	//	}
+	//	return res;
+	//}
 	static int sum(params int[] a)
 	{
-		//Локальная переменная (значение суммы):
 		int res = 0;
-		//Перебор аргументов метода:
 		for (int k = 0; k < a.Length; k++)
 		{
-			//Прибавление слагаемого к сумме:
 			res += a[k];
 		}
-		//Результат метода:
 		return res;
 	}
 	//Метод для извлечения символа из текста:
+	//static string getText(string t, params int[] a)
+	//{
+	//	//Начальное значение формируемой текстовой строки:
+	//	string res = "";
+	//	//Перебор аргументов метода:
+	//	for (int k = 0; k < a.Length; k++)
+	//	{
+	//		//Добавления символа в текст:
+	//		res += t[a[k]];
+	//	}
+	//	//Результат метода:
+	//	return res;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for(int k = 0; k < a.Length; k++)
+	//	{
+	//		res += t[a[k]];
+	//	}
+	//	return res;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for(int k = 0; k < a.Length; k++)
+	//	{
+	//		res += t[a[k]];
+	//	}
+	//	return res;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for(int k = 0; k < a.Length; k++)
+	//	{
+	//		res += t[a[k]];
+	//	}
+	//	return res;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for (int k = 0; k < a.Length; k++)
+	//	{
+	//		res += t[a[k]];
+	//	}
+	//	return res;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for(int k = 0; k < a.Length; k++)
+	//	{
+	//		res += t[a[k]];
+	//	}
+	//	return res;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for (int i = 0; i < a.Length; i++)
+	//	{
+	//		res += t[a[i]];
+	//	}
+	//	return res;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for(int j = 0; j < a.Length; j++)
+	//	{
+	//		res += t[a[j]];
+	//	}
+	//	return res;
+	//}
+	//static string getText(string q, params int[] b)
+	//{
+	//	string text = "";
+	//	for(int i = 0; i < b.Length; i++)
+	//	{
+	//		text += q[b[i]];
+	//	}
+	//	return text;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for(int k = 0; k < a.Length; k++)
+	//	{
+	//		res += t[a[k]];
+	//	}
+	//	return res;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for(int k = 0; k < a.Length; k++)
+	//	{
+	//		res += t[a[k]];
+	//	}
+	//	return res;
+	//}
+	//static string getText(string t, params int[] a)
+	//{
+	//	string res = "";
+	//	for(int i = 0; i < a.Length; i++)
+	//	{
+	//		res += t[a[i]];
+	//	}
+	//	return res;
+	//}
 	static string getText(string t, params int[] a)
 	{
-		//Начальное значение формируемой текстовой строки:
 		string res = "";
-		//Перебор аргументов метода:
 		for (int k = 0; k < a.Length; k++)
 		{
-			//Добавления символа в текст:
 			res += t[a[k]];
 		}
-		//Результат метода:
 		return res;
 	}
 	//Метод отображения значения аргументов:
+	//static void show(int[] a, params char[] b)
+	//{
+	//	//Количество элементов в числовом массиве:
+	//	Console.Write("Чисел " + a.Length + ": ");
+	//	//Значение элементов в числовом массиве:
+	//	for (int k = 0; k < a.Length - 1; k++)
+	//	{
+	//		Console.Write(a[k] + " ");
+	//	}
+	//	Console.WriteLine("и " + a[a.Length - 1]);
+	//	//Количество символьных аргументов:
+	//	Console.Write("Символов " + b.Length + ": ");
+	//	//Значение символьных аргументов:
+	//	for (int k = 0; k < b.Length - 1; k++)
+	//	{
+	//		Console.Write(b[k] + " ");
+	//	}
+	//	Console.WriteLine("и " + b[b.Length - 1]);
+	//}
+	//static void show(int[] a, params char[] b)
+	//{
+	//	Console.Write("Чисел " + a.Length + ": ");
+	//	for (int k = 0; k < a.Length - 1; k++)
+	//	{
+	//		Console.Write(a[k] + " ");
+	//	}
+	//	Console.WriteLine("и " + a[a.Length - 1]);
+	//	Console.Write("Символов "+b.Length + ": ");
+	//	for(int k = 0; k < b.Length - 1; k++)
+	//	{
+	//		Console.Write(b[k] + " ");
+	//	}
+	//	Console.WriteLine("и " + b[b.Length - 1]);
+	//}
+	//static void show(int[] a, params char[] b)
+	//{
+	//	Console.Write("Чисел " + a.Length + ": ");
+	//	for(int k = 0; k < a.Length - 1; k++)
+	//	{
+	//		Console.Write(a[k]+" ");
+	//	}
+	//	Console.WriteLine("и " + a[a.Length-1]);
+	//	Console.Write("Символов " + b.Length + ": ");
+	//	for(int k = 0; k < b.Length - 1; k++)
+	//	{
+	//		Console.Write(b[k]+" ");
+	//	}
+	//	Console.WriteLine("и " + b[b.Length-1]);
+	//}
 	static void show(int[] a, params char[] b)
 	{
-		//Количество элементов в числовом массиве:
 		Console.Write("Чисел " + a.Length + ": ");
-		//Значение элементов в числовом массиве:
-		for (int k = 0; k < a.Length - 1; k++)
+		for (int i = 0; i < a.Length - 1; i++)
 		{
-			Console.Write(a[k] + " ");
+			Console.Write(a[i] + " ");
 		}
 		Console.WriteLine("и " + a[a.Length - 1]);
-		//Количество символьных аргументов:
 		Console.Write("Символов " + b.Length + ": ");
-		//Значение символьных аргументов:
-		for (int k = 0; k < b.Length - 1; k++)
+		for (int i = 0; i < b.Length - 1; i++)
 		{
-			Console.Write(b[k] + " ");
+			Console.Write(b[i] + " ");
 		}
 		Console.WriteLine("и " + b[b.Length - 1]);
 	}
