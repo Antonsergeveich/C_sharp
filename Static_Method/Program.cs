@@ -4,10 +4,10 @@
 //#define ArrayFromMethDemo
 //#define ArgsDemo
 //#define RefArgsDemo
-//#define UsingOutDemo
+#define UsingOutDemo
 //#define RecursionDemo
 //#define ParamsDemo
-#define MainMethDemo
+//#define MainMethDemo
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -518,21 +518,57 @@ class RefArgsDemo
 class UsingOutDemo
 {
 	//Метод для вычисления значения наименьшего элемента в массиве и его индекса:
+	//static int getMin(int[] nums, out int index)
+	//{
+	//	//Начальное значение для индекса:
+	//	index = 0;
+	//	//Перебор элементов массива:
+	//	for (int k = 1; k < nums.Length; k++)
+	//	{
+	//		//Если значение элемента меньше текущего минимального значения:
+	//		if (nums[k] < nums[index])
+	//		{
+	//			//Новое значение для индекса:
+	//			index = k;
+	//		}
+	//	}
+	//	//Результат метода:
+	//	return nums[index];
+	//}
+	//static int getMin(int[] nums, out int index)
+	//{
+	//	index = 0;
+	//	for(int k = 1; k < nums.Length; k++)
+	//	{
+	//		if (nums[k] < nums[index])
+	//		{
+	//			index = k;
+	//		}
+	//	}
+	//	return nums[index];
+	//}
+	//static int getMin(int[] nums, out int index)
+	//{
+	//	index = 0;
+	//	for(int k = 0; k < nums.Length; k++)
+	//	{
+	//		if (nums[k] < nums[index])
+	//		{
+	//			index = k;
+	//		}
+	//	}
+	//	return nums[index];
+	//}
 	static int getMin(int[] nums, out int index)
 	{
-		//Начальное значение для индекса:
 		index = 0;
-		//Перебор элементов массива:
-		for (int k = 1; k < nums.Length; k++)
+		for(int i = 0; i < nums.Length; i++)
 		{
-			//Если значение элемента меньше текущего минимального значения:
-			if (nums[k] < nums[index])
+			if (nums[i] < nums[index])
 			{
-				//Новое значение для индекса:
-				index = k;
+				index = i;
 			}
 		}
-		//Результат метода:
 		return nums[index];
 	}
 
@@ -1152,16 +1188,46 @@ class ParamsDemo
 	//	}
 	//	Console.WriteLine("и " + b[b.Length-1]);
 	//}
+	//static void show(int[] a, params char[] b)
+	//{
+	//	Console.Write("Чисел " + a.Length + ": ");
+	//	for (int i = 0; i < a.Length - 1; i++)
+	//	{
+	//		Console.Write(a[i] + " ");
+	//	}
+	//	Console.WriteLine("и " + a[a.Length - 1]);
+	//	Console.Write("Символов " + b.Length + ": ");
+	//	for (int i = 0; i < b.Length - 1; i++)
+	//	{
+	//		Console.Write(b[i] + " ");
+	//	}
+	//	Console.WriteLine("и " + b[b.Length - 1]);
+	//}
+	//static void show(int[] a, params char[] b)
+	//{
+	//	Console.Write("Чисел " + a.Length + ": ");
+	//	for (int i = 0; i < a.Length - 1; i++)
+	//	{
+	//		Console.Write(a[i] + " ");
+	//	}
+	//	Console.WriteLine("и " + a[a.Length - 1]);
+	//	Console.Write("Символов " + b.Length + ": ");
+	//	for (int i = 0; i < b.Length - 1; i++)
+	//	{
+	//		Console.Write(b[i] + " ");
+	//	}
+	//	Console.WriteLine("и " + b[b.Length - 1]);
+	//}
 	static void show(int[] a, params char[] b)
 	{
 		Console.Write("Чисел " + a.Length + ": ");
-		for (int i = 0; i < a.Length - 1; i++)
+		for(int i = 0; i < a.Length - 1; i++)
 		{
 			Console.Write(a[i] + " ");
 		}
 		Console.WriteLine("и " + a[a.Length - 1]);
 		Console.Write("Символов " + b.Length + ": ");
-		for (int i = 0; i < b.Length - 1; i++)
+		for(int i = 0; i < b.Length - 1; i++)
 		{
 			Console.Write(b[i] + " ");
 		}
