@@ -1267,8 +1267,8 @@ class StaticDZ_1
 {
 	static void Main()
 	{
-		/*Написать прогарамму, в которой описан статический метод для вычисления двойного факторила числа,
-		перданного аргументом методу.
+		/*Написать прогарамму, в которой описан статический метод для вычисления двойного факториала числа,
+		переданного аргументом методу.
 		По определению, двойной факториал числа n (обозначается как n!!) - 
 		это произведение через одно всех чисел, не больших числа n. То есть 
 		n!! = n * (n-2) *(n-4)*...(последний множитель равен 1 для нечетного n 
@@ -1277,8 +1277,9 @@ class StaticDZ_1
 		Console.Write("Введите число для вычисления двойного факториала: ");
 		int value = Int32.Parse(Console.ReadLine());
 		Console.WriteLine($"Двойной факториал числа {value} равен: ");
-		Console.WriteLine(factorial_double(value));
-		Console.WriteLine(factorial_double_2(value));
+		//Console.WriteLine(factorial_double(value));
+		//Console.WriteLine(factorial_double_2(value));
+		Console.WriteLine(factorial_double_3(value));
 	}
 	static int factorial_double(int value)
 	{
@@ -1313,6 +1314,11 @@ class StaticDZ_1
 			int j = i % 2 == 0 ? fact = fact * i : fact = fact * i;
 		}
 		return fact;
+	}
+	static int factorial_double_3(int value)
+	{
+		if (value == 0 || value == 1) return 1;
+		return value * factorial_double_3(value - 2);
 	}
 }
 #endif
