@@ -4,10 +4,11 @@
 //#define ArrayFromMethDemo
 //#define ArgsDemo
 //#define RefArgsDemo
-#define UsingOutDemo
+//#define UsingOutDemo
 //#define RecursionDemo
 //#define ParamsDemo
 //#define MainMethDemo
+#define StaticDZ_1
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -1258,6 +1259,49 @@ class MainMethDemo
 		Console.WriteLine("Главный метод возвращает результат!");
 		//Результат главного метода:
 		return 0;
+	}
+}
+#endif
+#if StaticDZ_1
+class StaticDZ_1
+{
+	static void Main()
+	{
+		/*Написать прогарамму, в которой описан статический метод для вычисления двойного факторила числа,
+		перданного аргументом методу.
+		По определению, двойной факториал числа n (обозначается как n!!) - 
+		это произведение через одно всех чисел, не больших числа n. То есть 
+		n!! = n * (n-2) *(n-4)*...(последний множитель равен 1 для нечетного n 
+		и равен 2 для чётного n). Например, 6!! = 6 * 4 * 2 = 48 и 5!! = 5 * 3 * 1 = 15.
+		Предложите версию метода без рекурсии и с рекурсией. */
+		Console.Write("Введите число для вычисления двойного факториала: ");
+		int value = Int32.Parse(Console.ReadLine());
+		Console.WriteLine($"Двойной факториал числа {value} равен: ");
+		Console.WriteLine(factorial_double(value));
+	}
+	static int factorial_double(int value)
+	{
+		if (value <= 2)
+		{
+			Console.WriteLine("Вы ввели число меньше трёх!");
+			return value;
+		}
+		int fact = value;
+		if (value % 2 == 0)
+		{
+			for (int i = value - 2; i >= 2; i--)
+			{
+				if (i % 2 == 0) fact = fact * i;
+			}
+		}
+		else
+		{
+			for (int i = value - 2; i >= 1; i--)
+			{
+				if (i % 2 != 0) fact = fact * i;
+			}
+		}
+		return fact;
 	}
 }
 #endif
