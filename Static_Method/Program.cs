@@ -1278,6 +1278,7 @@ class StaticDZ_1
 		int value = Int32.Parse(Console.ReadLine());
 		Console.WriteLine($"Двойной факториал числа {value} равен: ");
 		Console.WriteLine(factorial_double(value));
+		Console.WriteLine(factorial_double_2(value));
 	}
 	static int factorial_double(int value)
 	{
@@ -1300,6 +1301,16 @@ class StaticDZ_1
 			{
 				if (i % 2 != 0) fact = fact * i;
 			}
+		}
+		return fact;
+	}
+	static int factorial_double_2(int value)
+	{
+		if (value == 0 || value == 1) return value == 0 ? 0 : 1;
+		int fact = value;
+		for (int i = value - 2; i >= 2; i -= 2)
+		{
+			int j = i % 2 == 0 ? fact = fact * i : fact = fact * i;
 		}
 		return fact;
 	}
