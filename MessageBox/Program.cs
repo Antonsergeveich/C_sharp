@@ -6,6 +6,7 @@ class DialogDemo
     static void Main()
     {
         //При работе с окнами нужно в Properties проекта выставить Windows Application
+        //Project -> name Proparties -> Application -> Windows Aplication
         //MessageBox.Show("Продолжаем изучать C#");
         //MessageBox.Show("Всем привет", "Окно с названием", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         /*string name = Interaction.InputBox("Как Вас зовут?", "Давайте познакомимся");
