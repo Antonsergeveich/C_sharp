@@ -10,7 +10,8 @@
 //#define MainMethDemo
 //#define StaticDZ_1
 //#define StaticDZ_2
-#define StaticDZ_3
+//#define StaticDZ_3
+#define StaticDZ_4
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -1436,6 +1437,17 @@ class StaticDZ_3
 			}
 		}
 		return new_array;
+	}
+}
+#endif
+#if StaticDZ_4
+class StaticDZ_4
+{
+	/*Написать программу со статическим методом, аргументом которому передаётся символьный массив,
+	а результатом возвращается ссылка на целочисленный массив, состоящий из кодов символов из массива-аргумента.*/
+	static void Main()
+	{
+
 	}
 }
 #endif
