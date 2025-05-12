@@ -12,8 +12,9 @@
 //#define StaticDZ_2
 //#define StaticDZ_3
 //#define StaticDZ_4
-//#define StaticSZ_5
-#define StaticSZ_6
+//#define StaticDZ_5
+//#define StaticDZ_6
+#define StaticDZ_7
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -1478,8 +1479,8 @@ class StaticDZ_4
 	}
 }
 #endif
-#if StaticSZ_5
-class StaticSZ_5
+#if StaticDZ_5
+class StaticDZ_5
 {
 	/* Написать программу со статическим методом, аргументом которому передаётся целочисленный массив,
 	а результатом возвращается среднее значение для элементов массива
@@ -1506,8 +1507,8 @@ class StaticSZ_5
 	}
 }
 #endif
-#if StaticSZ_6
-class StaticSZ_6
+#if StaticDZ_6
+class StaticDZ_6
 {
 	/* Написать программу со статическим методом, аргументом которому передаётся двумерный целочисленный массив.
 	У метода, кроме аргумента-массива, есть два неинециализированных аргумента.
@@ -1580,6 +1581,43 @@ class StaticSZ_6
 			}
 		}
 		return array[row, col];
+	}
+}
+#endif
+#if StaticDZ_7
+class StaticDZ_7
+{
+	/*Написать программу со статическим методом, аргументом которому передаётся одномерный символьный массив.
+	В результате вызова метода элементы массива попарно меняются местами: первый с последним, 
+	второй с предпоследним и так далее.*/
+	static void Main()
+	{
+		char[] array = { 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
+		foreach (char c in array)
+		{
+			Console.Write(c + " ");
+		}
+		Console.WriteLine();
+		Revers(array);
+		foreach (char c in array)
+		{
+			Console.Write(c + " ");
+		}
+		Console.WriteLine();
+	}
+	static char[] Revers(char[] array)
+	{
+		int i = 0;
+		int j = array.Length - 1;
+		while (i < j)
+		{
+			char buffer = array[i];
+			array[i] = array[j];
+			array[j] = buffer;
+			i++;
+			j--;
+		}
+		return array;
 	}
 }
 #endif
