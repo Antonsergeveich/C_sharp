@@ -1544,7 +1544,7 @@ class StaticSZ_6
 	}
 	static int element_max(int[,] array, out int row, out int col)
 	{
-		int the_largest_element = 0;
+		int element = 0;
 		//Прежде чем присваивать новые значения элементов с ключевым словом out нужно их инициализировать
 		row = 0;
 		col = 0;
@@ -1552,9 +1552,9 @@ class StaticSZ_6
 		{
 			for (int j = 0; j < array.GetLength(1); j++)
 			{
-				if (array[i, j] >= the_largest_element)
+				if (array[i, j] >= element)
 				{
-					the_largest_element = array[i, j];
+					element = array[i, j];
 					row = i;
 					col = j;
 				}
@@ -1564,16 +1564,16 @@ class StaticSZ_6
 	}
 	static int element_min(int[,] array, out int row, out int col)
 	{
-		int the_largest_element = 0;
+		int element = 0;
 		row = 0;
 		col = 0;
 		for (int i = 0; i < array.GetLength(0); i++)
 		{
 			for (int j = 0; j < array.GetLength(1); j++)
 			{
-				if (array[i, j] <= the_largest_element)
+				if (array[i, j] <= element)
 				{
-					the_largest_element = array[i, j];
+					element = array[i, j];
 					row = i;
 					col = j;
 				}
