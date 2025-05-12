@@ -11,7 +11,8 @@
 //#define StaticDZ_1
 //#define StaticDZ_2
 //#define StaticDZ_3
-#define StaticDZ_4
+//#define StaticDZ_4
+#define StaticSZ_5
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -1473,6 +1474,34 @@ class StaticDZ_4
 			arr[i] = array_chars[i];
 		}
 		return arr;
+	}
+}
+#endif
+#if StaticSZ_5
+class StaticSZ_5
+{
+	/* Написать программу со статическим методом, аргументом которому передаётся целочисленный массив,
+	а результатом возвращается среднее значение для элементов массива
+	(сумма значений элементов, делённая на количество элементов в массиве). */
+	static void Main()
+	{
+		int[] array = { 11, 28, 3, 47, 511, 6, 72, 8 };
+		foreach (int i in array)
+		{
+			Console.Write(i + "\t");
+		}
+		Console.WriteLine();
+		double value = the_average_value(array);
+		Console.WriteLine($"Среднее значение для элементов массива: {value}");
+	}
+	static double the_average_value(int[] array)
+	{
+		int sum = 0;
+		for (int i = 0; i < array.Length; i++)
+		{
+			sum += array[i];
+		}
+		return (double)sum / array.Length;
 	}
 }
 #endif
