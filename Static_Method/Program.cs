@@ -1447,7 +1447,32 @@ class StaticDZ_4
 	а результатом возвращается ссылка на целочисленный массив, состоящий из кодов символов из массива-аргумента.*/
 	static void Main()
 	{
-
+		Console.Write("Введите текст: ");
+		string s = Console.ReadLine();
+		Console.WriteLine($"Строковый массив : {s}");
+		char[] array_chars = s.ToCharArray();
+		Console.Write("Символьный массив: ");
+		foreach (char c in array_chars)
+		{
+			Console.Write(c + " ");
+		}
+		Console.WriteLine();
+		int[] arr = array_int(array_chars);
+		Console.Write("Результат: ");
+		foreach (int i in arr)
+		{
+			Console.Write(i + " ");
+		}
+		Console.WriteLine();
+	}
+	static int[] array_int(char[] array_chars)
+	{
+		int[] arr = new int[array_chars.Length];
+		for(int i = 0; i < array_chars.Length; i++)
+		{
+			arr[i] = array_chars[i];
+		}
+		return arr;
 	}
 }
 #endif
