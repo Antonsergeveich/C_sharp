@@ -1415,7 +1415,7 @@ class StaticDZ_3
 			Console.Write(i + "\t");
 		}
 		Console.WriteLine();
-		Console.Write("Введите количество которое нужно взять из исходного массива: ");
+		Console.Write("Введите количество элементов которое нужно взять из исходного массива: ");
 		int number = Int32.Parse(Console.ReadLine());
 		int[] array_2 = Count_minus(array, number);
 		foreach (int i in array_2)
