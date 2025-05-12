@@ -9,7 +9,8 @@
 //#define ParamsDemo
 //#define MainMethDemo
 //#define StaticDZ_1
-#define StaticDZ_2
+//#define StaticDZ_2
+#define StaticDZ_3
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -1392,6 +1393,49 @@ class StaticDZ_2
 		}
 		return sum;
 	}
+}
+#endif
+#if StaticDZ_3
+class StaticDZ_3
+{
+	/* Написать программу со статическим методом, которому аргументом передаётся целочисленный массив и целое число.
+	Результатом метод возвращает ссылку на новый массив,
+	который получается из исходного массива (переданного первым аргументом методу), 
+	если в нём взять несколько начальных элементов. Количество элементов, которые нужно взять из исходного массива,
+	определяются вторым аргументом метода.
+	Если второй аргумент метода больше длины массива, переданного первым аргументом, то методом создаётся копия исходного
+	массива и возвращается ссылка на эту копию. */
 
+	static void Main()
+	{
+		int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+		foreach (int i in array)
+		{
+			Console.Write(i + "\t");
+		}
+		Console.WriteLine();
+		Console.Write("Введите количество которое нужно взять из исходного массива: ");
+		int number = Int32.Parse(Console.ReadLine());
+		int[] array_2 = Count_minus(array, number);
+		foreach (int i in array_2)
+		{
+			Console.Write(i + "\t");
+		}
+		Console.WriteLine();
+
+	}
+	static int[] Count_minus(int[] array, int number)
+	{
+		int[] new_array = new int[number >= array.Length ? array.Length : number];
+		if (number >= array.Length) new_array = array;
+		else
+		{
+			for (int i = 0; i < number; i++)
+			{
+				new_array[i] = array[i];
+			}
+		}
+		return new_array;
+	}
 }
 #endif
