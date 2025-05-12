@@ -12,7 +12,8 @@
 //#define StaticDZ_2
 //#define StaticDZ_3
 //#define StaticDZ_4
-#define StaticSZ_5
+//#define StaticSZ_5
+#define StaticSZ_6
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -1502,6 +1503,83 @@ class StaticSZ_5
 			sum += array[i];
 		}
 		return (double)sum / array.Length;
+	}
+}
+#endif
+#if StaticSZ_6
+class StaticSZ_6
+{
+	/* Написать программу со статическим методом, аргументом которому передаётся двумерный целочисленный массив.
+	У метода, кроме аргумента-массива, есть два неинециализированных аргумента.
+	Результатом метод возвращает значение наибольшего элемента в массиве. Неинециаллизированным аргументам
+	присваиваются значения индексов этого элемента. */
+	static void Main()
+	{
+		int[,] array = new int[5, 5];
+		int row, col;
+		Random rnd = new Random();
+		for (int i = 0; i < array.GetLength(0); i++)
+		{
+			for (int j = 0; j < array.GetLength(1); j++)
+			{
+				array[i, j] = rnd.Next(0, 32);
+			}
+		}
+		for (int i = 0; i < array.GetLength(0); i++)
+		{
+			for (int j = 0; j < array.GetLength(1); j++)
+			{
+				Console.Write(array[i, j] + "\t");
+			}
+			Console.WriteLine();
+		}
+		int max_element = element_max(array, out row, out col);
+		Console.WriteLine($"Значение наибольшего элемента в массива: {max_element}");
+		Console.WriteLine($"Индекс строки наибольшего элемента: {row}");
+		Console.WriteLine($"Индекс столбца наибольшего элемента: {col}");
+		int min_element = element_min(array, out row, out col);
+		Console.WriteLine($"Значение наименьшего элемента в массива: {min_element}");
+		Console.WriteLine($"Индекс строки наименьшего элемента: {row}");
+		Console.WriteLine($"Индекс столбца наименьшего элемента: {col}");
+	}
+	static int element_max(int[,] array, out int row, out int col)
+	{
+		int the_largest_element = 0;
+		//Прежде чем присваивать новые значения элементов с ключевым словом out нужно их инициализировать
+		row = 0;
+		col = 0;
+		for (int i = 0; i < array.GetLength(0); i++)
+		{
+			for (int j = 0; j < array.GetLength(1); j++)
+			{
+				if (array[i, j] >= the_largest_element)
+				{
+					the_largest_element = array[i, j];
+					row = i;
+					col = j;
+				}
+			}
+		}
+		return array[row, col];
+	}
+	static int element_min(int[,] array, out int row, out int col)
+	{
+		int the_largest_element = 0;
+		row = 0;
+		col = 0;
+		for (int i = 0; i < array.GetLength(0); i++)
+		{
+			for (int j = 0; j < array.GetLength(1); j++)
+			{
+				if (array[i, j] <= the_largest_element)
+				{
+					the_largest_element = array[i, j];
+					row = i;
+					col = j;
+				}
+			}
+		}
+		return array[row, col];
 	}
 }
 #endif
