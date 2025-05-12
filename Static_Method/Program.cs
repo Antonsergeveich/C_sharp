@@ -8,10 +8,12 @@
 //#define RecursionDemo
 //#define ParamsDemo
 //#define MainMethDemo
-#define StaticDZ_1
+//#define StaticDZ_1
+#define StaticDZ_2
 
 using System;
 using System.Runtime.Serialization.Formatters;
+using System.Security.Authentication;
 #if StatMethDemo
 class StatMethDemo
 {
@@ -1315,10 +1317,81 @@ class StaticDZ_1
 		}
 		return fact;
 	}
-	static int factorial_double_3(int value)
+	//static int factorial_double_3(int value)
+	//{
+	//	if (value == 0 || value == 1) return 1;
+	//	return value * factorial_double_3(value - 2);
+	//}
+	//static int factorial_double_3(int value)
+	//{
+	//	if (value == 0 || value == 1) return 1;
+	//	return value * factorial_double_3(value - 2);
+	//}
+	//static int factorial_double_3(int value)
+	//{
+	//	if (value == 0 || value == 1) return 1;
+	//	return value * factorial_double_3(value - 2);
+	//}
+	//static int factorial_double_3(int value)
+	//{
+	//	if (value == 0 || value == 1) return 1;
+	//	return value * factorial_double_3(value - 2);
+	//}
+	//static int factorial_double_3(int value)
+	//{
+	//	if (value == 0 || value == 1) return 1;
+	//	return value * factorial_double_3(value - 2);
+	//}
+	//static int factorial_double_3(int value)
+	//{
+	//	if (value == 0 || value == 1) return 1;
+	//	return value * factorial_double_3(value - 2);
+	//}
+	//static double factorial_double_3(int value)
+	//{
+	//	if (value == 0 || value == 1) return 1;
+	//	return value * factorial_double_3(value - 2);
+	//}
+	//static double factorial_double_3(int value)
+	//{
+	//	if (value == 0 || value == 1) return 1;
+	//	return value * factorial_double_3(value - 2);
+	//}
+	static double factorial_double_3(int value)
 	{
 		if (value == 0 || value == 1) return 1;
 		return value * factorial_double_3(value - 2);
 	}
+}
+#endif
+#if StaticDZ_2
+class StaticDZ_2
+{
+	/*Написать программу со статическим методом, которым вычисляется сумма квадратов натуральных чисел 1^2+2^2+3^2+...n^2.
+	Число n передаётся аргументом методу. Предложите версию метода с рекурсией и без рекурсии. Для проверки результата 
+	можно использовать формулу 1^2 + 2^2 + 3^2 + ... + n^2 = (n(n+1) * (2n+1))/6 . */
+	static void Main()
+	{
+		Console.WriteLine("Введите число для вычисления суммы квадратов: ");
+		int number = Int32.Parse(Console.ReadLine());
+		Console.WriteLine("Сумма квадратов с рекурсией числа {0} = {1}", number, sum_of_squares(number));
+		Console.WriteLine("Сумма квадратов без рекурсии числа {0} = {1}", number, sum_of_squares_1(number));
+	}
+	static int sum_of_squares(int number)
+	{
+		if (number == 0 || number == 1) return 1;
+		return (number * number) + sum_of_squares(number - 1);	
+	}
+	static int sum_of_squares_1(int number)
+	{
+		int sum = 1;
+		while(number > 1)
+		{
+			sum += number * number;
+			number--;
+		}
+		return sum;
+	}
+
 }
 #endif
