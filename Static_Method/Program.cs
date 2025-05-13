@@ -16,7 +16,8 @@
 //#define StaticDZ_6
 //#define StaticDZ_7
 //#define StaticDZ_8
-#define StaticDZ_9
+//#define StaticDZ_9
+#define StaticDZ_10
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -1721,6 +1722,28 @@ class StaticDZ_9
 		result[0] = min;
 		result[1] = max;
 		return result;
+	}
+}
+#endif
+#if StaticDZ_10
+class StaticDZ_10
+{
+	/*Написать программу со статическим методом, которому передаётся тексе и произвольное количество символьных аргументов.
+	Результатом возвращается текст, который получается добавлением в конец исходного текста (первый аргумент метода) 
+	символьных значений, переданных аргументами методу.*/
+	static void Main()
+	{
+		string text = "Привет Антон!";
+		Console.WriteLine(Text(text,' ','С',' ','Д','н','ё','м',' ','П','о','б','е','д','ы','!'));
+	}
+	static string Text(string text, params char[] symbol)
+	{
+		string res = text;
+		for (int i = 0; i < symbol.Length; i++)
+		{
+			res += symbol[i];
+		}
+		return res;
 	}
 }
 #endif
