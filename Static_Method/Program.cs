@@ -20,6 +20,7 @@
 using System;
 using System.Runtime.Serialization.Formatters;
 using System.Security.Authentication;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 #if StatMethDemo
 class StatMethDemo
 {
@@ -1632,9 +1633,55 @@ class StaticDZ_8
 	передаются два символьных значения, то результатом возвращается ссылка на массив, состоящий из последовательности
 	символов, а первый и последний символы определяются аргументами метода. 
 	Например, если передать аргументами методу символы 'B' и 'D', то в результате получим массив из символов 'B','C'и'D'.*/
+	
 	static void Main()
 	{
-
+		show(the_data_array(0,32));
+		show(the_data_array('A', 'z'));
+	}
+	static int[] the_data_array(int one, int two)
+	{
+		int size = two - one + 1;
+		int[] array = new int[size];
+		array[0] = one;
+		for (int i = 1; i < size; i++)
+		{
+			array[i] = array[i - 1] + 1;
+		}
+		return array;
+	}
+	static void show(int[] array)
+	{
+		for (int i = 0; i < array.Length; i++)
+		{
+			Console.Write(array[i] + " ");
+		}
+		Console.WriteLine();
+	}
+	static void show(char[] array)
+	{
+		for (int i = 0; i < array.Length; i++)
+		{
+			Console.Write(array[i] + " ");
+		}
+		Console.WriteLine();
+	}
+	static char[] the_data_array(char one, char two)
+	{
+		if (one > two)
+		{
+			char buffer  = one;
+			one = two;
+			two = buffer;
+		}
+		int size = two - one + 1;
+		char[] array = new char[size];
+		array[0] = one;
+		for (int i = 1; i < size; i++)
+		{
+			array[i] = (char)(array[i - 1] + 1);
+		}
+		return array;
 	}
 }
 #endif
