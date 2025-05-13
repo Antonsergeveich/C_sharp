@@ -15,7 +15,8 @@
 //#define StaticDZ_5
 //#define StaticDZ_6
 //#define StaticDZ_7
-#define StaticDZ_8
+//#define StaticDZ_8
+#define StaticDZ_9
 
 using System;
 using System.Runtime.Serialization.Formatters;
@@ -1682,6 +1683,44 @@ class StaticDZ_8
 			array[i] = (char)(array[i - 1] + 1);
 		}
 		return array;
+	}
+}
+#endif
+#if StaticDZ_9
+class StaticDZ_9
+{
+	/*Напишите программу со статическим методом,
+	аргументом которому передаётся произвольное количество целочисленных аргуметов.
+	Результатом метод возвращает массив из двух элементов:
+	это значения наибольшего и наименьшего значений среди аргументов, переданных методу.
+	*/
+	static void Main()
+	{
+		Random rnd = new Random();
+		int size = rnd.Next(1, 16);
+		int[] array = new int[size];
+		for (int i = 0; i < size; i++)
+		{
+			array[i] = rnd.Next(0, 32);
+			Console.Write(array[i] + " ");
+		}
+		Console.WriteLine();
+		foreach (int id in min_max(array)) Console.WriteLine(id);
+		Console.WriteLine();
+	}
+	static int[] min_max(params int[] array)
+	{
+		int[] result = new int[2];
+		int min = array[0];
+		int max = array[0];
+		for (int i = 0; i < array.Length; i++)
+		{
+			if (array[i] < min) min = array[i];
+			if (array[i] > max) max = array[i];
+		}
+		result[0] = min;
+		result[1] = max;
+		return result;
 	}
 }
 #endif
