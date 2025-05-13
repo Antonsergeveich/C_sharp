@@ -1735,6 +1735,7 @@ class StaticDZ_10
 	{
 		string text = "Привет Антон!";
 		Console.WriteLine(Text(text,' ','С',' ','Д','н','ё','м',' ','П','о','б','е','д','ы','!'));
+		Console.ReadKey();
 	}
 	static string Text(string text, params char[] symbol)
 	{
