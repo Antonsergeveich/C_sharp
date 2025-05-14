@@ -17,7 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum", "Sum\Sum.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operators", "Operators\Operators.csproj", "{4656588A-5871-4787-ACAA-45643F180B88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Static_Method", "Static_Method\Static_Method.csproj", "{FAF453D1-0833-446E-86D4-3FF7292450E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Static_Method", "Static_Method\Static_Method.csproj", "{FAF453D1-0833-446E-86D4-3FF7292450E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Base", "OOP_Base\OOP_Base.csproj", "{46157910-479B-44E6-AA26-0ACE41BB5A09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{FAF453D1-0833-446E-86D4-3FF7292450E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF453D1-0833-446E-86D4-3FF7292450E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF453D1-0833-446E-86D4-3FF7292450E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46157910-479B-44E6-AA26-0ACE41BB5A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46157910-479B-44E6-AA26-0ACE41BB5A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46157910-479B-44E6-AA26-0ACE41BB5A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46157910-479B-44E6-AA26-0ACE41BB5A09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
