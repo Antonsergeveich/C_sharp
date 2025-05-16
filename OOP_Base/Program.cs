@@ -1,5 +1,6 @@
 ﻿//#define UsingObjsDemo
-#define AnotherObjsDemo
+//#define AnotherObjsDemo
+#define MethodsDemo
 
 using System;
 
@@ -80,6 +81,63 @@ class AnotherObjsDemo
 		B.number = 321;
 		//Вызов метода через первую объектную переменную:
 		A.show();
+	}
+}
+#endif
+#if MethodsDemo
+class MyClass
+{
+	//Закрытое целочисленное поле:
+	private int number;
+	//Закрытое символьное поле:
+	private char symbol;
+	//Открытый метод для отображения значения полей:
+	public void show()
+	{
+		Console.WriteLine("Поля объекта: " + number + " и " + symbol);
+	}
+	//Открытый метод для присваивания значений полям.
+	//Версия с двумя аргументами:
+	public void set(int n, char s)
+	{
+		number = n; //Значение целочисленного поля
+		symbol = s; //Значение символьного поля
+	}
+	//Открытый метод для присваивания значения полям.
+	//Версия с одним целочисленным аргументом:
+	public void set(int n)
+	{
+		number = n;   //Значение целочисленного поля
+		symbol = 'B'; //Значение символьного поля
+	}
+	//Открытый метод для присваивания значений полям.
+	//Версия без аргументов:
+	public void set()
+	{
+		//Вызов версии метода с двумя аргументами:
+		set(100, 'A');
+	}
+}
+//Главный класс:
+class MethodsDemo
+{
+	//Главный метод:
+static void Main()
+	{
+		//Создание объекта:
+		MyClass obj = new MyClass();
+		//Присваивание значений полям:
+		obj.set();
+		//Отображение значений полей:
+		obj.show();
+		//Присваивание значений полям:
+		obj.set(200);
+		//Отображение значений полей:
+		obj.show();
+		//Присваивание значений полям:
+		obj.set(300, 'C');
+		//Отображение значений полей:
+		obj.show();
 	}
 }
 #endif
