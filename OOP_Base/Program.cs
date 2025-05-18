@@ -277,9 +277,137 @@ class ConstructorDemo
 //		Console.ReadKey();
 //	}
 //}
+//class MyClass
+//{
+//	private string name;
+//	public MyClass(string txt)
+//	{
+//		name = txt;
+//		Console.WriteLine("Создан объект \"{0}\"", name);
+//	}
+//	~MyClass()
+//	{
+//		Console.WriteLine("Удалён объект \"{0}\"", name);
+//	}
+//}
+//class DestructorDemo
+//{
+//	static void maker(string txt)
+//	{
+//		new MyClass(txt);
+//	}
+//	static void Main()
+//	{
+//		MyClass A = new MyClass("One");
+//		new MyClass("Two");
+//		A = new MyClass("Three");
+//		maker("Four");
+//		A = new MyClass("Five");
+//		Console.ReadKey();
+//	}
+//}
+//class MyClass
+//{
+//	private string name;
+//	public MyClass(string txt)
+//	{
+//		name = txt;
+//		Console.WriteLine("Создан объект \"{0}\"", name);
+//	}
+//	~MyClass()
+//	{
+//		Console.WriteLine("Удалён объект \"{0}\"", name);
+//	}
+//}
+//class DestructorDemo
+//{
+//	static void maker(string txt)
+//	{
+//		new MyClass(txt);
+//	}
+//	static void Main()
+//	{
+//		MyClass A = new MyClass("One");
+//		new MyClass("Two");
+//		A = new MyClass("Three");
+//		maker("Four");
+//		A = new MyClass("Five");
+//		Console.ReadKey();
+//	}
+//}
+//class MyClass
+//{
+//	private string name;
+//	public MyClass(string txt)
+//	{
+//		name = txt;
+//		Console.WriteLine("Создан объект \"{0}\"", name);
+//	}
+//	~MyClass()
+//	{
+//		Console.WriteLine("Удалён объект \"{0}\"", name);
+//	}
+//}
+//class DestructorDemo
+//{
+//	static void maker(string txt)
+//	{
+//		new MyClass(txt);
+//	}
+//	static void Main()
+//	{
+//		MyClass A = new MyClass("One");
+//		A = new MyClass("Two");
+//		new MyClass("Three");
+//		maker("Four");
+//		A = new MyClass("Five");
+//		maker("Six");
+//		maker("Seven");
+//		maker("Eight");
+//		maker("Nine");
+//		maker("Ten");
+//		maker("Eleven");
+//		maker("Twelve");
+//	}
+//}
+//class MyClass
+//{
+//	private string name;
+//	public MyClass(string txt)
+//	{
+//		name = txt;
+//		Console.WriteLine("Создан объект \"{0}\"", name);
+//	}
+//	~MyClass()
+//	{
+//		Console.WriteLine("Удалён объект \"{0}\"", name);
+//	}
+//}
+//class DestructorDemo
+//{
+//	static void maker(string txt)
+//	{
+//		new MyClass(txt);
+//	}
+//	static void Main()
+//	{
+//		MyClass A = new MyClass("One");
+//		A = new MyClass("Two");
+//		new MyClass("Three");
+//		maker("Four");
+//		A = new MyClass("Five");
+//		maker("Six");
+//		maker("Seven");
+//		maker("Eight");
+//		new MyClass("Nine");
+//		new MyClass("Ten");
+//		MyClass B = new MyClass("Eleven");
+//		B = new MyClass("Twelve");
+//	}
+//}
 class MyClass
 {
-	private string name;
+	private static string name;
 	public MyClass(string txt)
 	{
 		name = txt;
@@ -299,11 +427,17 @@ class DestructorDemo
 	static void Main()
 	{
 		MyClass A = new MyClass("One");
-		new MyClass("Two");
-		A = new MyClass("Three");
+		A = new MyClass("Two");
+		new MyClass("Three");
 		maker("Four");
-		A = new MyClass("Five");
-		Console.ReadKey();
+		new MyClass("Five");
+		MyClass B = new MyClass("Six");
+		B = new MyClass("Seven");
+		MyClass C = new MyClass("Eight");
+		C = new MyClass("Nine");
+		maker("Ten");
+		MyClass D = new MyClass("Eleven");
+		D = new MyClass("Twelve");
 	}
 }
 #endif
