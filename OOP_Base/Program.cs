@@ -1,6 +1,8 @@
 ﻿//#define UsingObjsDemo
 //#define AnotherObjsDemo
-#define MethodsDemo
+//#define MethodsDemo
+//#define ConstructorsDemo
+#define DestructorDemo
 
 using System;
 
@@ -138,6 +140,141 @@ static void Main()
 		obj.set(300, 'C');
 		//Отображение значений полей:
 		obj.show();
+	}
+}
+#endif
+#if ConstructorsDemo
+//Описание класса с конструктором:
+class MyClass
+{
+	//Закрытые поля:
+	public int num;    //Целочисленное поле
+	public char symb;  //Сивольное поле
+	public string txt; //Текстовое поле
+	//Открытый метод для отображения значений полей:
+	public void show()
+	{
+		Console.WriteLine("Поля: {0}, \'{1}\', и \"{2}\"", num, symb, txt);
+	}
+	//Конструктор без аргументов:
+	public MyClass()
+	{
+		//Значения полей:
+		num = 100;
+		symb = 'A';
+		txt = "Красный";
+	}
+	//Конструктор с одним целочисленным аргументом:
+	public MyClass(int n)
+	{
+		//Значения полей:
+		num = n;
+		symb = 'B';
+		txt = "Жёлтый";
+	}
+	//Конструктор с двумя аргументами:
+	public MyClass(int n, char s)
+	{
+		//Значения полей:
+		num = n;
+		symb = s;
+		txt = "Зелёный";
+	}
+	//Конструктор с тремя аргументами:
+	public MyClass(int n, char s, string t)
+	{
+		//Значения полей:
+		num = n;
+		symb = s; 
+		txt = t;
+	}
+	//Конструктор с одним текстовым аргументом:
+	public MyClass(string t)
+	{
+		//Значения полей:
+		num = 0;
+		symb = 'Z';
+		txt = t;
+	}
+}
+//Класс с главным методом:
+class ConstructorDemo
+{
+	//Главный метод:
+	static void Main()
+	{
+		//Создание объектов.
+		//Вызывается конструктор без аргументов:
+		MyClass A = new MyClass();
+		//Проверяем значения полей объекта:
+		A.show();
+		//Вызываем конструктор с целочисленным аргументом:
+		MyClass B = new MyClass(200);
+		//Проверяем значения полей объекта:
+		B.show();
+		//Вызываем конструктор с двумя аргументами:
+		MyClass C = new MyClass(300, 'C');
+		//Проверяем значения полей объекта:
+		C.show();
+		//Вызываем конструктор с тремя аргументами:
+		MyClass D = new MyClass(400, 'D', "Синий");
+		//Проверяем значения полей объекта:
+		D.show();
+		//Вызываем конструктор с символьным аргументом:
+		MyClass F = new MyClass('A');
+		//Проверяем значения полей объекта:
+		F.show();
+		//Вызывается конструктор с текстовым аргументом;
+		MyClass G = new MyClass("Серый");
+		//Проверяем значения полей объекта:
+		G.show();
+	}
+}
+#endif
+#if DestructorDemo
+//Класс с конструктором и деструктором:
+class MyClass
+{
+	//Закрытое текстовое поле:
+	private string name;
+	//Конструктор:
+	public MyClass(string txt)
+	{
+		//Присваивание значения полю:
+		name = txt;
+		//Отображение сообщения:
+		Console.WriteLine("Создан объект \"{0}\"", name);
+	}
+	//Деструктор:
+	~MyClass()
+	{
+		//Отображение сообщения:
+		Console.WriteLine("Удалён объект \"{0}\"", name);
+	}
+}
+//Класс с главным методом:
+class DestructorDemo
+{
+	//Статический метод:
+	static void maker(string txt)
+	{
+		//Создание анонимного объекта:
+		new MyClass(txt);
+	}
+	//Главный метод:
+	static void Main()
+	{
+		//Создание объекта:
+		MyClass A = new MyClass("Первый");
+		//Создание анонимного объекта:
+		new MyClass("Второй");
+		//Новый объект:
+		A = new MyClass("Третий");
+		//Вызов статического метода:
+		maker("Четвёртый");
+		//Новый объект:
+		A = new MyClass("Пятый");
+		Console.ReadKey();
 	}
 }
 #endif
