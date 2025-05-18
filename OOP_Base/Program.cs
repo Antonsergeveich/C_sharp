@@ -233,47 +233,76 @@ class ConstructorDemo
 #endif
 #if DestructorDemo
 //Класс с конструктором и деструктором:
+//class MyClass
+//{
+//	//Закрытое текстовое поле:
+//	private string name;
+//	//Конструктор:
+//	public MyClass(string txt)
+//	{
+//		//Присваивание значения полю:
+//		name = txt;
+//		//Отображение сообщения:
+//		Console.WriteLine("Создан объект \"{0}\"", name);
+//	}
+//	//Деструктор:
+//	~MyClass()
+//	{
+//		//Отображение сообщения:
+//		Console.WriteLine("Удалён объект \"{0}\"", name);
+//	}
+//}
+////Класс с главным методом:
+//class DestructorDemo
+//{
+//	//Статический метод:
+//	static void maker(string txt)
+//	{
+//		//Создание анонимного объекта:
+//		new MyClass(txt);
+//	}
+//	//Главный метод:
+//	static void Main()
+//	{
+//		//Создание объекта:
+//		MyClass A = new MyClass("Первый");
+//		//Создание анонимного объекта:
+//		new MyClass("Второй");
+//		//Новый объект:
+//		A = new MyClass("Третий");
+//		//Вызов статического метода:
+//		maker("Четвёртый");
+//		//Новый объект:
+//		A = new MyClass("Пятый");
+//		Console.ReadKey();
+//	}
+//}
 class MyClass
 {
-	//Закрытое текстовое поле:
 	private string name;
-	//Конструктор:
 	public MyClass(string txt)
 	{
-		//Присваивание значения полю:
 		name = txt;
-		//Отображение сообщения:
 		Console.WriteLine("Создан объект \"{0}\"", name);
 	}
-	//Деструктор:
 	~MyClass()
 	{
-		//Отображение сообщения:
 		Console.WriteLine("Удалён объект \"{0}\"", name);
 	}
 }
-//Класс с главным методом:
 class DestructorDemo
 {
-	//Статический метод:
 	static void maker(string txt)
 	{
-		//Создание анонимного объекта:
 		new MyClass(txt);
 	}
-	//Главный метод:
 	static void Main()
 	{
-		//Создание объекта:
-		MyClass A = new MyClass("Первый");
-		//Создание анонимного объекта:
-		new MyClass("Второй");
-		//Новый объект:
-		A = new MyClass("Третий");
-		//Вызов статического метода:
-		maker("Четвёртый");
-		//Новый объект:
-		A = new MyClass("Пятый");
+		MyClass A = new MyClass("One");
+		new MyClass("Two");
+		A = new MyClass("Three");
+		maker("Four");
+		A = new MyClass("Five");
 		Console.ReadKey();
 	}
 }
