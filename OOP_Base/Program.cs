@@ -4,7 +4,9 @@
 //#define ConstructorsDemo
 //#define DestructorDemo
 //#define StaticDemo
-#define StaticDemo_2
+//#define StaticDemo_2
+//#define This
+//#define This_2
 
 using System;
 
@@ -755,6 +757,43 @@ class StaticDemo
 //		Console.WriteLine("Контрольное значение: {0}",Math.Sin(z));
 //	}
 //}
+//class MyMath
+//{
+//	public const double Pi = 3.141592;
+//	private static int N = 100;
+//	public static double exp(double x)
+//	{
+//		double s = 0, q = 1;
+//		for (int k = 0; k <= N; k++)
+//		{
+//			s += q;
+//			q *= x / (k + 1);
+//		}
+//		return s;
+//	}
+//	public static double sin(double x)
+//	{
+//		double s = 0, q = x;
+//		for (int k = 0; k <= N; k++)
+//		{
+//			s += q;
+//			q *= (-1) * x * x / (2 * k + 2) / (2 * k + 3);
+//		}
+//		return s;
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		double z = 1;
+//		Console.WriteLine("exp({0}) = {1}", z, MyMath.exp(z));
+//		Console.WriteLine("Контрольное значение: {0}", Math.Exp(z));
+//		z = MyMath.Pi / 4;
+//		Console.WriteLine("sin({0}) = {1}", z, MyMath.sin(z));
+//		Console.WriteLine("Контрольное значение: {0}", Math.Sin(z));
+//	}
+//}
 class MyMath
 {
 	public const double Pi = 3.141592;
@@ -762,7 +801,7 @@ class MyMath
 	public static double exp(double x)
 	{
 		double s = 0, q = 1;
-		for (int k = 0; k <= N; k++)
+		for(int k = 0; k <= N; k++)
 		{
 			s += q;
 			q *= x / (k + 1);
@@ -772,7 +811,7 @@ class MyMath
 	public static double sin(double x)
 	{
 		double s = 0, q = x;
-		for (int k = 0; k <= N; k++)
+		for(int k = 0; k <= N; k++)
 		{
 			s += q;
 			q *= (-1) * x * x / (2 * k + 2) / (2 * k + 3);
@@ -785,11 +824,107 @@ class StaticDemo
 	static void Main()
 	{
 		double z = 1;
-		Console.WriteLine("exp({0}) = {1}", z, MyMath.exp(z));
-		Console.WriteLine("Контрольное значение: {0}", Math.Exp(z));
+		Console.WriteLine("exp({0}) = {1}",z,MyMath.exp(z));
+		Console.WriteLine("Контрольное значение: {0}",Math.Exp(z));
 		z = MyMath.Pi / 4;
-		Console.WriteLine("sin({0}) = {1}", z, MyMath.sin(z));
-		Console.WriteLine("Контрольное значение: {0}", Math.Sin(z));
+		Console.WriteLine("sin({0}) = {1}",z, MyMath.sin(z));
+		Console.WriteLine("Контрольное значение: {0}",Math.Sin(z));
+	}
+}
+#endif
+#if This
+//Класс:
+class MyClass
+{
+	//Закрытое целочисленное поле:
+	private int code;
+	//Открытый метод:
+	public int get()
+	{
+		//Использовано ключевое слово this:
+		return this.code;
+	}
+	//Открытый метод:
+	public void set(int code)
+	{
+		//Использовано ключевое слово this:
+		this.code = code;
+	}
+	//Конструктор:
+	public MyClass(int code)
+	{
+		//Использовано ключевое слово this:
+		this.code = code;
+		//Использовано ключевое слово this:
+		Console.WriteLine("Создан объект: " + this.get());
+	}
+}
+//Класс с главным методом:
+class UsingThisDemo
+{
+	//Главный метод:
+	static void Main()
+	{
+		//Создание объекта:
+		MyClass obj = new MyClass(100);
+		//Присваивание значения полю:
+		obj.set(200);
+		//Проверка значения поля:
+		Console.WriteLine("Новое значение: " + obj.get());
+	}
+}
+#endif
+#if This_2
+//Класс с перегрузкой конструкторов:
+class MyClass
+{
+	//Целочисленные поля:
+	public int alpha;
+	public int bravo;
+	//Конструктор с одним аргументом:
+	public MyClass(int a)
+	{
+		//Сообщение в консольном окне:
+		Console.WriteLine("Конструктор с одним аргументом");
+		//Значения полей:
+		alpha = a;
+		bravo = alpha;
+		//Отображения значения полей:
+		Console.WriteLine("Оба поля равны " + alpha);
+	}
+	//Конструктор с двумя аргументами:
+	public MyClass(int a, int b)  : this(a)
+	{ 
+		//Сообщение в консольном окне:
+		Console.WriteLine("Конструктор с двумя аргументами");
+		//Значение второго поля:
+		bravo = b;
+		//Отображение значений полей:
+		Console.WriteLine("Поля " + alpha + " и " +  bravo);
+	}
+	//Конструктор без аргументов:
+	public MyClass() : this(400, 500)
+	{
+		//Сообщение в консольном окне:
+		Console.WriteLine("Конструктор без аргументов");
+		//Отображение значений полей:
+		Console.WriteLine("Значения " + alpha + " и " + bravo);
+	}
+}
+//Класс с главным методом:
+class ConstrAndThisDemo
+{
+	//Главный метод:
+	static void Main()
+	{
+		//Вызов конструктора с одним аргументом:
+		MyClass A = new MyClass(100);
+		Console.WriteLine();
+		//Вызов конструктора с двумя аргументами:
+		MyClass B = new MyClass(200, 300);
+		Console.WriteLine();
+		//Вызов конструктора без аргументов:
+		MyClass C = new MyClass();
 	}
 }
 #endif
