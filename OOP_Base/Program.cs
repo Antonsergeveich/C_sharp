@@ -2,7 +2,9 @@
 //#define AnotherObjsDemo
 //#define MethodsDemo
 //#define ConstructorsDemo
-#define DestructorDemo
+//#define DestructorDemo
+//#define StaticDemo
+#define StaticDemo_2
 
 using System;
 
@@ -438,6 +440,319 @@ class DestructorDemo
 		maker("Ten");
 		MyClass D = new MyClass("Eleven");
 		D = new MyClass("Twelve");
+	}
+}
+#endif
+#if StaticDemo
+////Класс со статическим полем и методом:
+//class MyClass
+//{
+//	//Статическое поле:
+//	public static int code = 100;
+//	//Статический метод:
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: " + code);
+//	}
+//}
+////Класс с главным методом:
+//class StaticDemo
+//{
+//	//Главный метод:
+//	static void Main()
+//	{
+//		//Вызов статического метода:
+//		MyClass.show();
+//		//Обращение к статическому полю:
+//		MyClass.code = 200;
+//		//Вызов статического метода:
+//		MyClass.show();
+//	}
+//}
+//class MyClass
+//{
+//	public static int code = 100;
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: " + code);
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		MyClass.show();
+//		MyClass.code = 300;
+//		MyClass.show();
+//	}
+//}
+//class MyClass
+//{
+//	public static int code = 100;
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: " + code);
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		MyClass.show();
+//		MyClass.code = 200;
+//		MyClass.show();
+//	}
+//}
+//class MyClass
+//{
+//	public static int code = 300;
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: " + code);
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		MyClass.show();
+//		MyClass.code = 500;
+//		MyClass.show();
+//	}
+//}
+//class MyClass
+//{
+//	public static int code = 100;
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: " + code);
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		MyClass.show();
+//		MyClass.code = 400;
+//		MyClass.show();
+//	}
+//}
+//class MyClass
+//{
+//	public static int code = 100;
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: " + code);
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		MyClass.show();
+//		MyClass.code = 300;
+//		MyClass.show();
+//	}
+//}
+//class MyClass
+//{
+//	public static int code = 300;
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: " + code);
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		MyClass.show();
+//		MyClass.code = 900;
+//		MyClass.show();
+//	}
+//}
+//class MyClass
+//{
+//	public static int code = 100;
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: " + code);
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		MyClass.show();
+//		MyClass.code = 700;
+//		MyClass.show();
+//	}
+//}
+//class MyClass
+//{
+//	public static int code = 300;
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: " + code);
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		MyClass.show();
+//		MyClass.code = 500;
+//		MyClass.show();	
+//	}
+//}
+//class MyClass
+//{
+//	public static int code = 100;
+//	public static void show()
+//	{
+//		Console.WriteLine("Статическое поле: "+ code);
+//	}
+//}
+//class StaticDemo
+//{
+//	static void Main()
+//	{
+//		MyClass.show();
+//		MyClass.code = 200;
+//		MyClass.show();
+//	}
+//}
+class MyClass
+{
+	public static int code = 200;
+	public static void show()
+	{
+		Console.WriteLine("Статическое поле: " + code);
+	}
+}
+class StaticDemo
+{
+	static void Main()
+	{
+		MyClass.show();
+		MyClass.code = 800;
+		MyClass.show();
+	}
+}
+#endif
+#if StaticDemo_2
+/* Экспонента нужна для математического описания процессов,
+в которых скорость изменения некоторого количества в каждый момент пропорциональна самому количеству. 
+Области, где используется экспонента:
+- Финансы. Моделирование роста капитала, процентных ставок. 
+- Физика. Описание процессов распада радиоактивных веществ, заряда и разряда конденсаторов. 
+- Биология. Моделирование процессов роста популяций и распространения инфекций. 
+- Информационные технологии. Анализ процессов увеличения объёма данных и трафика в сети. 
+
+Синус — это тригонометрическая функция, которая описывает взаимосвязь углов и сторон прямоугольного треугольника. 
+Области, в которых используется синус:
+- Представление изменений физических величин. Синус применяют для выражения периодического изменения таких величин, 
+как смещение при простом гармоническом движении, переменный ток, звуковые волны. 
+- Машиностроение. Функции синуса используют для представления вращательных движений валов, шестерён, кулачков и коленчатых валов. 
+Также с их помощью моделируют механические колебания, которые в дальнейшем применяют для изготовления виброизоляторов и демпферов. 
+- Компьютерная графика. Функции синуса используют для создания анимации высокой чёткости, 
+эффектов молнии и моделирования различных природных явлений, таких как рябь, образование облаков. 
+- Обработка сигналов. Синус применяют для анализа различных типов сигналов и манипулирования ими.  
+- Определение размеров, которые трудно или невозможно измерить напрямую. 
+Например, зная расстояние до дома и угол, под которым его видно, можно вычислить высоту.*/
+
+////Класс со статическими методами и полями:
+//class MyMath
+//{
+//	//Константное поле (число "Pi"):
+//	public const double Pi = 3.141592;
+//	//Закрытое статическое поле(граница суммы):
+//	private static int N = 100;
+//	//Статический метода для вычисления экспоненты:
+//	public static double exp(double x)
+//	{
+//		//Сумма и добавка к сумме:
+//		double s = 0, q = 1;
+//		//Вычисление суммы:
+//		for(int k = 0; k <= N; k++)
+//		{
+//			s += q; //Прибавление добавки к сумме
+//			q*=x/(k+1); //Добавка для следующей итерации
+//		}
+//		//Результат:
+//		return s;
+//	}
+//	//Статический метода для вычисления синуса:
+//	public static double sin(double x)
+//	{
+//		//Сумма и добавка к сумме:
+//		double s = 0, q = x;
+//		//Вычисление суммы:
+//		for(int k =0;k <= N; k++)
+//		{
+//			s += q;//Прибавление добавки к сумме
+//				   //Добавка для следующей итерации:
+//			q *= (-1) * x * x / (2 * k + 2) / (2 * k + 3);
+//		}
+//		//Результат:
+//		return s;
+//	}
+//}
+////Главный класс:
+//class StaticDemo
+//{
+//	//Главный метод:
+//	static void Main()
+//	{
+//		//Аргумент для статических методов:
+//		double z = 1;
+//		//Вычисление экспоненты:
+//		Console.WriteLine("exp({0}) = {1}",z,MyMath.exp(z));
+//		//Контрольное значение:
+//		Console.WriteLine("Контрольное значение: {0}",Math.Exp(z));
+//		//Новое значение аргумента:
+//		z = MyMath.Pi / 4;
+//		//Вычисление синуса:
+//		Console.WriteLine("sin({0})={1}",z, MyMath.sin(z));
+//		//Контрольное значение:
+//		Console.WriteLine("Контрольное значение: {0}",Math.Sin(z));
+//	}
+//}
+class MyMath
+{
+	public const double Pi = 3.141592;
+	private static int N = 100;
+	public static double exp(double x)
+	{
+		double s = 0, q = 1;
+		for (int k = 0; k <= N; k++)
+		{
+			s += q;
+			q *= x / (k + 1);
+		}
+		return s;
+	}
+	public static double sin(double x)
+	{
+		double s = 0, q = x;
+		for(int k = 0;k <= N; k++)
+		{
+			s += q;
+			q *= (-1) * x * x / (2 * k + 2) / (2 * k + 3);
+		}
+		return s;
+	}
+}
+class StaticDemo
+{
+	static void Main()
+	{
+		double z = 1;
+		Console.WriteLine("exp({0}) = {1}", z, MyMath.exp(z));
+		Console.WriteLine("Контрольное значение: {0}", Math.Exp(z));
+		z = MyMath.Pi / 4;
+		Console.WriteLine("sin({0}) = {1}", z, MyMath.sin(z));
+		Console.WriteLine("Контрольное значение: {0}",Math.Sin(z));
 	}
 }
 #endif
