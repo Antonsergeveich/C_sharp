@@ -8,7 +8,8 @@
 //#define This
 //#define This_2
 //#define DZ_1
-#define DZ_2
+//#define DZ_2
+#define DZ_3
 
 using System;
 using System.Runtime.CompilerServices;
@@ -994,6 +995,53 @@ class DZ_2
 		Symbol sym = new Symbol();
 		sym.set('A','G');
 		sym.show();
+	}
+}
+#endif
+#if DZ_3
+//Написать программу с классом, у которого есть два целочисленных поля. В классе должны быть описаны конструкторы,
+//позволяющие создавать объекты без передачи аргументов, с передачей одного аргумента и с передачей двух аргументов.
+class Numbers
+{
+	private static int num_1;
+	private static int num_2;
+	public Numbers()
+	{
+		num_1 = 0;
+		num_2 = 1;
+		Console.WriteLine("Конструктор без аргументов: ");
+	}
+	public Numbers(int x) 
+	{
+		num_1 = x;
+		num_2 = 1;
+		Console.WriteLine("Конструктор с одним аргументом: ");
+	}
+	public Numbers(int x, int y)
+	{
+		num_1 = x;
+		num_2 = y;
+		Console.WriteLine("Конструктор с двумя аргументами: ");
+	}
+	public void show()
+	{
+		Console.WriteLine(num_1 + " " + num_2);
+	}
+	public static void show1()
+	{
+		Console.WriteLine(num_1 + " " + num_2);
+	}
+}
+class DZ_3
+{
+	static void Main()
+	{
+		new Numbers();
+		Numbers.show1();
+		Numbers num = new Numbers(5);
+		num.show();
+		new Numbers(4, 6);
+		Numbers.show1();
 	}
 }
 #endif
