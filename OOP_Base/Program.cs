@@ -7,8 +7,11 @@
 //#define StaticDemo_2
 //#define This
 //#define This_2
+//#define DZ_1
+#define DZ_2
 
 using System;
+using System.Runtime.CompilerServices;
 
 #if UsingObjsDemo
 //Описание класса:
@@ -925,6 +928,72 @@ class ConstrAndThisDemo
 		Console.WriteLine();
 		//Вызов конструктора без аргументов:
 		MyClass C = new MyClass();
+	}
+}
+#endif
+#if DZ_1
+//Напишите программу с классом, в котором есть закрытое символьное поле и три открытых метода.
+//Один из методов ползволяет присвоить значение полю.
+//Ещё один метод при вызове возвращает результатом код символа.
+//Третий метод позволяет вывести в консольное окно символ(значение поля) и его код.
+class Symbol
+{
+	private char symbol;
+	public void set(char symbol)
+	{
+		this.symbol = symbol;
+	}
+	public int get()
+	{
+		return symbol;
+	}
+	public void show()
+	{
+		Console.WriteLine("Символ: {0} и его код {1}", symbol, get());
+	}
+}
+class DZ_1
+{
+	static void Main()
+	{
+		Symbol sym = new Symbol();
+		sym.set('A');
+		sym.show();
+	}
+}
+#endif
+#if DZ_2
+//Написать программу с классом, у которого есть два символьных поля и метод. Он не возвращает результат, и у него нет аргументов.
+//При вызове метод выводит в консольное окно все символы из кодовой таблицы,
+//которые находятся "между" символами, являющимися значениями полей объекта(из которого вызывается метод).
+//Например, если полям объекта присвоены значения 'А' и 'D', то при вызове метода в консольное окно должны выводиться все 
+//символы от 'A' до 'D' включительно.
+class Symbol
+{
+	private char begin;
+	private char end;
+	public void set(char begin, char end)
+	{
+		this.begin = begin;
+		this.end = end;
+	}
+	public void show()
+	{
+		while (begin <= end)
+		{
+			Console.Write(begin + " ");
+			begin++;
+		}
+		Console.WriteLine();
+	}
+}
+class DZ_2
+{
+	static void Main()
+	{
+		Symbol sym = new Symbol();
+		sym.set('A','G');
+		sym.show();
 	}
 }
 #endif
