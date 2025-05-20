@@ -1092,5 +1092,50 @@ class Num_Symb
 Однако если переданное аргументом методу значение превышает 100, то значением полю присваеивается число 100.
 Предусмотрите в классе конструктор, который работает по томуже принципу, что и метод для присваивания значения полю.
 Также в классе должен быть метод, позволяющий проверить значение поля.*/
-
+class DZ_5
+{
+	private int number;
+	public void show()
+	{
+		Console.WriteLine("Значение поля: " + number);
+	}
+	public void set()
+	{
+		number = 0;
+	}
+	public void set(int value)
+	{
+		if (value > 100) number = 100;
+		else number = value;
+	}
+	public DZ_5()
+	{
+		number = 0;
+	}
+	public DZ_5(int number)
+	{
+		if (number > 100)
+		{
+			this.number = 100;
+		}
+		else
+		{
+			this.number = number;
+		}
+	}
+}
+class Number
+{
+	static void Main()
+	{
+		DZ_5 obj = new DZ_5();
+		obj.show();
+		obj.set(98);
+		obj.show();
+		DZ_5 obj1 = new DZ_5(105);
+		obj1.show();
+		obj1.set(54);
+		obj1.show();
+	}
+}
 #endif
