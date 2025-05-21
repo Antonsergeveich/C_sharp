@@ -14,7 +14,8 @@
 //#define DZ_5
 //#define DZ_6
 //#define DZ_7
-#define DZ_8
+//#define DZ_8
+#define DZ_9
 
 using System;
 using System.Runtime.CompilerServices;
@@ -1292,5 +1293,98 @@ class DZ_7
 /*Напишите программу с классом, в котором есть закрытое статическое целочисленное поле с начальным нулевым значением.
 В классе должен быть описан статический метод, при вызове которого отображается текущее значение статического поля,
 после чего значение поля увеличивается на единицу.*/
-
+class STP
+{
+	private static int number = 0;
+	public static void show()
+	{
+		Console.WriteLine("Значение статического поля: " + number);
+		number++;
+	}
+}
+class DZ_8
+{
+	static void Main()
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			STP.show();
+		}
+	}
+}
+#endif
+#if DZ_9
+/* Напишите программу с классом, в котором есть статические методы, которым можно передавать произвольное количество целочисленных 
+аргументов (или целочисленный массив).
+Методы, на основании переданных аргументов или массива, позволяют вычислить: наибольшее значение, наименьшее значение,
+а также среднее значение из набора чисел.*/
+class Rand
+{
+	private static int min;
+	private static int max;
+	private static int sum;
+	private static double avg;
+	static public void arbitrary(out int min, out int max, out int sum, out double avg, params int[] number)
+	{
+		sum = 0;
+		min = number[0];
+		max = number[number.Length - 1];
+		for (int i = 0; i < number.Length; i++)
+		{
+			sum += number[i];
+			if (min > number[i]) min = number[i];
+			if (max < number[i]) max = number[i];
+		}
+		avg = (double)sum / number.Length;
+	}
+	static public void the_min_element(out int min, params int[] number)
+	{
+		min = number[0];
+		for (int i = 0; i < number.Length; i++)
+		{
+			if (min > number[i])
+			{
+				min = number[i];
+			}
+		}
+	}
+	static public void the_max_element(out int max, params int[] number)
+	{
+		max = 0;
+		for (int i = 0; i < number.Length; i++)
+		{
+			if (max < number[i]) max = number[i];
+		}
+	}
+	static public int the_sum(out int sum, params int[] number)
+	{
+		sum = 0;
+		for (int i = 0; i < number.Length; i++)
+		{
+			sum += number[i];
+		}
+		return sum;
+	}
+	static public double the_avg(out double avg, params int[] number)
+	{
+		return avg = the_sum(out sum, number);
+	}
+}
+class DZ_9
+{
+	static void Main()
+	{
+		int[] num = { 1, 2, 3, 4, 5 };
+		int min, max, sum;
+		double avg;
+		//Rand.arbitrary(out min, out max, out sum, out avg, num);
+		//Console.WriteLine("min = {0}\nmax = {1}\nsum = {2}\navg = {3}", min, max, sum, avg);
+		//Console.WriteLine();
+		//Rand.arbitrary(out min, out max, out sum, out avg, 6, 7, 8, 9, 10);
+		//Console.WriteLine("min = {0}\nmax = {1}\nsum = {2}\navg = {3}", min, max, sum, avg);
+		//Console.WriteLine();
+		Rand.the_min_element(out min, 11, 12, 13, 14, 15);
+		Console.WriteLine("min = {0}", min);
+	}
+}
 #endif
