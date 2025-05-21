@@ -1367,7 +1367,7 @@ class Rand
 	}
 	static public double the_avg(out double avg, params int[] number)
 	{
-		return avg = the_sum(out sum, number);
+		return avg = the_sum(out sum, number)/number.Length;
 	}
 }
 class DZ_9
@@ -1377,14 +1377,26 @@ class DZ_9
 		int[] num = { 1, 2, 3, 4, 5 };
 		int min, max, sum;
 		double avg;
-		//Rand.arbitrary(out min, out max, out sum, out avg, num);
-		//Console.WriteLine("min = {0}\nmax = {1}\nsum = {2}\navg = {3}", min, max, sum, avg);
-		//Console.WriteLine();
-		//Rand.arbitrary(out min, out max, out sum, out avg, 6, 7, 8, 9, 10);
-		//Console.WriteLine("min = {0}\nmax = {1}\nsum = {2}\navg = {3}", min, max, sum, avg);
-		//Console.WriteLine();
-		Rand.the_min_element(out min, 11, 12, 13, 14, 15);
+		Rand.arbitrary(out min, out max, out sum, out avg, num);
+		Console.WriteLine("min = {0}\nmax = {1}\nsum = {2}\navg = {3}", min, max, sum, avg);
+		Console.WriteLine();
+		Rand.arbitrary(out min, out max, out sum, out avg, 6, 7, 8, 9, 10);
+		Console.WriteLine("min = {0}\nmax = {1}\nsum = {2}\navg = {3}", min, max, sum, avg);
+		Console.WriteLine();
+		Rand.the_min_element(out min, 11, 10, 9, 14, 3, 8, 1);
 		Console.WriteLine("min = {0}", min);
+		int[] maximal = { 5, 9, 2, 6, 15, 4, 7, 54, 11, 3 };
+		Rand.the_max_element(out max, maximal);
+		Console.WriteLine("max = {0}", max);
+		Rand.the_sum(out sum, num);
+		Console.WriteLine("sum = {0}", sum);
+		Rand.the_avg(out avg, 50, 4, 12, 46, 7, 8, 11, 5);
+		Rand.the_avg(out avg, num);
+		Console.WriteLine("avg = {0}", avg);
+		Rand.the_avg(out avg, 1,2,3,4,5);
+		Console.WriteLine("avg = {0}", avg);
+		Rand.the_avg(out avg, maximal);
+		Console.WriteLine("avg = {0}", avg);
 	}
 }
 #endif
