@@ -15,7 +15,8 @@
 //#define DZ_6
 //#define DZ_7
 //#define DZ_8
-#define DZ_9
+//#define DZ_9
+#define DZ_10
 
 using System;
 using System.Runtime.CompilerServices;
@@ -1399,4 +1400,10 @@ class DZ_9
 		Console.WriteLine("avg = {0}", avg);
 	}
 }
+#endif
+#if DZ_10
+/* Напишите программу со статическим методом для вычисления косинуса.
+   В классе также должны быть статические методы для вычисления гиперболического синуса
+   и гиперболического косинуса. */
+
 #endif
