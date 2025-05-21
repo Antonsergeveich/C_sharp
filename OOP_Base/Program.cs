@@ -1150,5 +1150,75 @@ class Number
 Самое большое из значений присваивается полю max, а самое маленькое из значений присваивается полю min.
 Предусмотрите конструктор, который работает по тому же принципу, что и метод для присваивания значения полям.
 В классе также должен быть метод, отображающий в консольном окне значения полей объекта.*/
-
+class Max_Min
+{
+	private int max;
+	private int min;
+	public void set(int max)
+	{
+		min = 0;
+		if (max == 0)
+		{
+			this.max = 1;
+		}
+		else
+		{
+			this.max = max;
+		}
+	}
+	public void set(int min, int max)
+	{
+		if (min > max)
+		{
+			int buffer = min;
+			min = max;
+			max = buffer;
+		}
+		this.min = min;
+		this.max = max;
+	}
+	public void show()
+	{
+		Console.WriteLine("Min = {0}\nMax = {1}\n", min, max);
+	}
+	public Max_Min(int max)
+	{
+		min = 0;
+		if (max == 0)
+		{
+			this.max = 1;
+		}
+		else
+		{
+			this.max = max;
+		}
+	}
+	public Max_Min(int min, int max)
+	{
+		if (min > max)
+		{
+			int buffer = min;
+			min = max;
+			max = buffer;
+		}
+		this.min = min;
+		this.max = max;
+	}
+}
+class DZ_6
+{
+	static void Main()
+	{
+		Max_Min one = new Max_Min(1);
+		one.show();
+		one = new Max_Min(2, 3);
+		one.show();
+		one.set(4, 5);
+		one.show();
+		one.set(6);
+		one.show();
+		one.set(0);
+		one.show();
+	}
+}
 #endif
