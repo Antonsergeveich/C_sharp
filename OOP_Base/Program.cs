@@ -1405,5 +1405,43 @@ class DZ_9
 /* Напишите программу со статическим методом для вычисления косинуса.
    В классе также должны быть статические методы для вычисления гиперболического синуса
    и гиперболического косинуса. */
-
+class MyMath
+{
+	public const double Pi = 3.141592;
+	private static int N = 100;
+	public static double sin(double x)
+	{
+		double s = 0;
+		double q = x;
+		for (int k = 0; k <= N; k++)
+		{
+			s += q;
+			q *= (-1) * x * x / (2 * k + 2) / (2 * k + 3);
+		}
+		return s;
+	}
+	public static double cos(double x)
+	{
+		double s = 1;
+		double q = 1;
+		for (int k = 1; k <= N; k++)
+		{
+			q *= -x * x / (2 * k * (2 * k - 1));
+			s += q;
+		}
+		return s;
+	}
+}
+class StaticDemo
+{
+	static void Main()
+	{
+		double z = 1;
+		Console.WriteLine("cos({0}) = {1}", z, MyMath.cos(z));
+		Console.WriteLine("Контрольное значение Cos: {0}", Math.Cos(z));
+		z = MyMath.Pi / 4;
+		Console.WriteLine("sin({0}) = {1}", z, MyMath.sin(z));
+		Console.WriteLine("Контрольное значение Sin: {0}", Math.Sin(z));
+	}
+}
 #endif
