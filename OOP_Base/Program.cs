@@ -1431,6 +1431,28 @@ class MyMath
 		}
 		return s;
 	}
+	public static double sh(double x)
+	{
+		double s = x;
+		double q = x;
+		for (int k = 1; k <= N; k++)
+		{
+			q *= x * x / ((2 * k) * (2 * k + 1));
+			s += q;
+		}
+		return s;
+	}
+	public static double ch(double x)
+	{
+		double s = 1;
+		double q = 1;
+		for (int k = 1; k <= N; k++)
+		{
+			q *= x * x / (2 * k * (2 * k - 1));
+			s += q;
+		}
+		return s;
+	}
 }
 class StaticDemo
 {
@@ -1442,6 +1464,11 @@ class StaticDemo
 		z = MyMath.Pi / 4;
 		Console.WriteLine("sin({0}) = {1}", z, MyMath.sin(z));
 		Console.WriteLine("Контрольное значение Sin: {0}", Math.Sin(z));
+		Console.WriteLine("sh({0}) = {1}", z, MyMath.sh(z));
+		Console.WriteLine("Контрольное значение Sh: {0}", Math.Sinh(z));
+		z = 1;
+		Console.WriteLine("ch({0}) = {1}", z, MyMath.ch(z));
+		Console.WriteLine("Контрольное значение: Ch: {0}", Math.Cosh(z));
 	}
 }
 #endif
