@@ -110,17 +110,71 @@ class IndexingStringDemo
 		Console.WriteLine(B);
 	}
 	//Статический метод для создания текстового объекта, в котором текст записан в обратном порядке:
+	//static String getReversed(String txt)
+	//{
+	//	//Локальная текстовая переменная:
+	//	String str = "";
+	//	//Формирование текстовой строки:
+	//	foreach(char s in txt)
+	//	{
+	//		//Добавление символа в начало строки:
+	//		str = s + str;
+	//	}
+	//	//Результат метода:
+	//	return str;
+	//}
+	//static String getReversed(String txt)
+	//{
+	//	String str = "";
+	//	foreach (char s in txt)
+	//	{
+	//		str = s + str;
+	//	}
+	//	return str;
+	//}
+	//static String getReversed(String txt)
+	//{
+	//	String str = "";
+	//	foreach(char s in txt)
+	//	{
+	//		str = s + str;
+	//	}
+	//	return str;
+	//}
+	//static String getReversed(String txt)
+	//{
+	//	String str = "";
+	//	foreach(char s in txt)
+	//	{
+	//		str = s + str;
+	//	}
+	//	return str;
+	//}
+	//static String getReversed(String txt)
+	//{
+	//	String str = "";
+	//	foreach (char s in txt)
+	//	{
+	//		str = s + str;
+	//	}
+	//	return str;
+	//}
+	//static  String getReversed(String txt)
+	//{
+	//	String str = "";
+	//	foreach (char s in txt)
+	//	{
+	//		str = s + str;
+	//	}
+	//	return str;
+	//}
 	static String getReversed(String txt)
 	{
-		//Локальная текстовая переменная:
 		String str = "";
-		//Формирование текстовой строки:
 		foreach(char s in txt)
 		{
-			//Добавление символа в начало строки:
 			str = s + str;
 		}
-		//Результат метода:
 		return str;
 	}
 	//Статический метод для отображения текста в обратном порядке:
