@@ -197,17 +197,53 @@ class IndexingStringDemo
 class CompStringDemo
 {
 	//Статический метод для сравнения текстовых строк:
+	//static bool StrCmp(String X, String Y)
+	//{
+	//	//Если строки разной длины:
+	//	if (X.Length != Y.Length) return false;
+	//	//Если строки одинаковой длины:
+	//	for (int k = 0; k < X.Length; k++)
+	//	{
+	//		//Если символы в текстовых строках разные:
+	//		if (X[k] != Y[k]) return false;
+	//	}
+	//	//Результат метода, если строки одинаковой длины и все символы в текстовых строках совпадают:
+	//	return true;
+	//}
+	//static bool StrCmp(String X, String Y)
+	//{
+	//	if (X.Length != Y.Length) return false;
+	//	for(int k = 0; k < X.Length; k++)
+	//	{
+	//		if (X[k] != Y[k]) return false;
+	//	}
+	//	return true;
+	//}
+	//static bool StrCmp(String X, String Y)
+	//{
+	//	if (X.Length != Y.Length) return false;
+	//	for(int k = 0; k < X.Length; k++)
+	//	{
+	//		if (X[k] != Y[k]) return false;
+	//	}
+	//	return true;
+	//}
+	//static bool StrCmp(String X, String Y)
+	//{
+	//	if (X.Length != Y.Length) return false;
+	//	for(int i = 0; i < X.Length; i++)
+	//	{
+	//		if (X[i] != Y[i]) return false;
+	//	}
+	//	return true;
+	//}
 	static bool StrCmp(String X, String Y)
 	{
-		//Если строки разной длины:
 		if (X.Length != Y.Length) return false;
-		//Если строки одинаковой длины:
-		for (int k = 0; k < X.Length; k++)
+		for(int i = 0; i < X.Length; i++)
 		{
-			//Если символы в текстовых строках разные:
-			if (X[k] != Y[k]) return false;
+			if (X[i] != Y[i]) return false;
 		}
-		//Результат метода, если строки одинаковой длины и все символы в текстовых строках совпадают:
 		return true;
 	}
 	//Главный метод:
