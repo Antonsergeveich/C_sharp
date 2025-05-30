@@ -461,8 +461,30 @@ class SplittingStringDemo
 		//{
 		//	Console.Write(symbs[k] + " ");
 		//}
-		String words;
-
+		String[] words;
+		words = txt.Split();
+		for (int i = 0; i < words.Length; i++)
+		{
+			Console.WriteLine((i + 1) + ": " + words[i]);
+		}
+		Console.WriteLine();
+		words = txt.Split('у', 'и');
+		for (int i = 0; i < words.Length; i++)
+		{
+			Console.WriteLine((i + 1) + ": " + words[i]);
+		}
+		Console.WriteLine();
+		words = txt.Split(new char[] { 'у', 'и' }, 3);
+		for(int i = 0; i < words.Length; i++)
+		{
+			Console.WriteLine((i+1) + ": " + words[i]);	
+		}
+		char[] symbs;
+		symbs = txt.ToCharArray();
+		for (int i = 0; i < symbs.Length; i++)
+		{
+			Console.Write(symbs[i] + " ");
+		}
 		Console.WriteLine();
 	}
 }
