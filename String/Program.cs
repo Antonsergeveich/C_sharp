@@ -3,8 +3,8 @@
 //#define CompStringDemo
 //#define SearchStringDemo
 //#define ReplaceStringDemo
-#define SplittingStringDemo
-
+//#define SplittingStringDemo
+#define ToStringDemo
 using System;
 using System.Data.SqlTypes;
 using System.Diagnostics.SymbolStore;
@@ -486,6 +486,61 @@ class SplittingStringDemo
 			Console.Write(symbs[i] + " ");
 		}
 		Console.WriteLine();
+	}
+}
+#endif
+#if ToStringDemo
+//Класс с переопределённым методом ToString():
+class MyClass
+{
+	//Целочисленное поле:
+	public int num;
+	//Символьное поле:
+	public char symb;
+	//Конструктор:
+	public MyClass(int n, char s)
+	{
+		//Присваивание значение полям:
+		num = n;
+		symb = s;
+		//Отображение сообщения о создании объекта.
+		//Неявно вызывается метод ToString():
+		Console.WriteLine("Создан новый объект\n" + this);
+	}
+	//Переопределение метода  ToString():
+	public override String ToString()
+	{
+		//Локальная текстовая переменная:
+		String txt = "Числовое поле: " + num;
+		txt += "\nСимвольное поле: " + symb;
+		//Результат метода:
+		return txt;
+	}
+}
+//Класс с главным методм программы:
+class ToStringDemo
+{
+	//Главный метод:
+	static void Main()
+	{
+		//Создание нового объекта:
+		MyClass obj = new MyClass(100, 'A');
+		//Новые значения полей объекта:
+		obj.num = 200;
+		obj.symb = 'B';
+		Console.WriteLine("Новые значения полей объекта");
+		//Отображение значений полей объекта.
+		//Неявно вызывается метод  ToString():
+		Console.WriteLine(obj);
+		//Разбивка текста с описанием объекта на подстроки.
+		//Метод ToString() вызывается в явном виде:
+		String[] str = obj.ToString().Split('\n');
+		Console.WriteLine("Явный вызов метода ToString() ");
+		//Отображение подстрок, содержащих значения полей объекта:
+		for (int k = 0; k < str.Length; k++)
+		{
+			Console.WriteLine("[* " + str[k] + " *]");
+		}
 	}
 }
 #endif
