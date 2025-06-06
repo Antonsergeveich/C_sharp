@@ -5,8 +5,8 @@
 //#define ReplaceStringDemo
 //#define SplittingStringDemo
 //#define ToStringDemo
-#define DZ_1
-//#define DZ_2
+//#define DZ_1
+#define DZ_2
 //#define DZ_3
 //#define DZ_4
 //#define DZ_5
@@ -582,9 +582,29 @@ class Text_value
 #endif
 #if DZ_2
 /*Напишите программу, в которой есть статический метод,
- возвращающий результат текстовое значение и получющий аргументом текст.
+ возвращающий результат текстовое значение и получающий аргументом текст.
  Результат метода - это переданный аргументом текст, в котором слова следуют в обратном подядке.
  Словами считать блоки текста, разделённые пробелами.*/
+class Text_value
+{
+	static string Reverse(string text)
+	{
+		string[] array = text.Split(' ');
+		text = "";
+		for (int i = array.Length - 1; i >= 0; i--)
+		{
+			text += (array[i] + " ");
+		}
+		text.Remove(text.Length - 1);
+		return text;
+	}
+	static void Main()
+	{
+		string txt = "Hello World, my name is Anton !";
+		Console.WriteLine(txt);
+		Console.WriteLine(Reverse(txt));
+	}
+}
 #endif
 #if DZ_3
 /*Напишите программу со статическим методом для сравнения текстовых строк.
