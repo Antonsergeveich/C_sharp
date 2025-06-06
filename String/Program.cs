@@ -595,7 +595,7 @@ class Text_value
 		{
 			text += (array[i] + " ");
 		}
-		text.Remove(text.Length - 1);
+		text.Remove(text.Length - 1);//Удаляет все символы, начиная с указанной позиции и до конца строки.
 		return text;
 	}
 	static void Main()
