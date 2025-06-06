@@ -19,6 +19,7 @@
 using System;
 using System.Data.SqlTypes;
 using System.Diagnostics.SymbolStore;
+using System.Security.Cryptography.X509Certificates;
 
 #if StringDemo
 class StringDemo
@@ -560,7 +561,24 @@ class ToStringDemo
  Аргументом методу передаётся текстовое значение.
  Результатом метод возвращает текст, в котором, по сравенению с текстом - аргументом,
  между символами вставлены пробелы.*/
-
+class Text_value
+{
+	static string Text(string text)
+	{
+		string txt = "";
+		for (int i = 0; i < text.Length; i++)
+		{
+			txt += (text[i] + " ");
+		}
+		return txt;
+	}
+	static void Main()
+	{
+		string txt = "Programming in the Visual Studio development environment in C#.";
+		Console.WriteLine(txt);
+		Console.WriteLine(Text(txt));
+	}
+}
 #endif
 #if DZ_2
 /*Напишите программу, в которой есть статический метод,
