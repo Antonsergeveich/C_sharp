@@ -6,8 +6,8 @@
 //#define SplittingStringDemo
 //#define ToStringDemo
 //#define DZ_1
-#define DZ_2
-//#define DZ_3
+//#define DZ_2
+#define DZ_3
 //#define DZ_4
 //#define DZ_5
 //#define DZ_6
@@ -589,7 +589,7 @@ class Text_value
 {
 	static string Reverse(string text)
 	{
-		string[] array = text.Split(' ');
+		string[] array = text.Split(' ');//метод String.Split() позволяет разделить строку на массив подстрок по указанному разделителю. 
 		text = "";
 		for (int i = array.Length - 1; i >= 0; i--)
 		{
@@ -612,6 +612,47 @@ class Text_value
  Правило сравнения символов такое: два символа считаются одинаковыми,
  если их коды отличаются не больше, чем на единицу.
  Текстовые строки совпадают, если у них совпадают символы(в указанном выше смысле).*/
+class Comparison
+{
+	static void Equality(params string[] text)
+	{
+		string txt = "Equals";
+		for (int i = 0; i < text.Length - 1; i++)
+		{
+			if (text[i].Length != text[i + 1].Length)
+			{
+				txt = "Not Equals";
+				break;
+			}
+			for (int j = 0; j < text[i].Length; j++)
+			{
+				if (text[i][j] != text[i + 1][j] && text[i][j] + 1 != text[i + 1][j] && text[i][j] - 1 != text[i + 1][j])
+				{
+					txt = "Not Equals";
+					break;
+				}
+			}
+		}
+		Console.WriteLine(txt);
+	}
+	static void Main()
+	{
+		string Anton, Zhenya, Irina;
+		Anton =  "ABCD";
+		Zhenya = "BCDE";
+		Irina =  "CDEF";
+		Equality(Anton, Zhenya, Irina);
+		Anton =  "ABCD";
+		Zhenya = "BCDEF";
+		Irina =  "CDEF";
+		Equality(Anton, Zhenya, Irina);
+		Anton =  "ABCD";
+		Zhenya = "BCDE";
+		Irina =  "CDEA";
+		Equality(Anton, Zhenya, Irina);
+
+	}
+}
 #endif
 #if DZ_4
 /*Напишите программу со статическим методом, который выполняет сравнение текстовых строк.
